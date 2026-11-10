@@ -1,203 +1,148 @@
 import type { ReactNode } from 'react'
-import { ConsentBanner, ConsentSettingsButton, Link, navigate, PoweredBy, PreviewBanner, SearchField, StoreLogo, useCart, useCollections, useMenu, useStorefront, useWishlist } from '@dripfunnel/storefront-core/theme'
-import { Menu } from './interactive/Menu'
-import { NavItem } from './interactive/NavItem'
-import styles from '../styles/layout.module.css'
+import { ConsentBanner, ConsentSettingsButton, Link, PoweredBy, PreviewBanner, useStorefront } from '@dripfunnel/storefront-core/theme'
+import { BrandMark } from './BrandMark'
+import { CertificatesFooterLink } from './interactive/CertificatesFooterLink'
+import { RecipesFooterLink } from './interactive/RecipesFooterLink'
+import { SiteHeader } from './interactive/SiteHeader'
+import layout from '../styles/layout.module.css'
+import styles from '../styles/site.module.css'
 
-// The theme rules allow no URL encoding, so the characters that would break the query are dropped instead.
-const searchFor = (words: string) => navigate(`/search/?q=${words.replace(/[&+%#]/g, ' ').trim()}`)
+/** Each social network's glyph, by the name Site settings gives it; one without a glyph shows its name. */
+const SocialGlyph = ({ network }: { network: string }) => {
+  switch (network) {
+    case 'instagram':
+      return (
+        <>
+          <rect x="4" y="4" width="16" height="16" rx="4.5" />
+          <circle cx="12" cy="12" r="3.6" />
+          <circle cx="17" cy="7" r="0.6" />
+        </>
+      )
+    case 'facebook':
+      return <path d="M14 8.5h2.5V5H14a3.5 3.5 0 00-3.5 3.5V11H8v3.5h2.5V21H14v-6.5h2.5L17 11h-3V9a.5.5 0 01.5-.5z" />
+    case 'youtube':
+      return (
+        <>
+          <rect x="3" y="6" width="18" height="12" rx="3.5" />
+          <path d="M10.5 9.5v5l4.5-2.5z" />
+        </>
+      )
+    case 'x':
+      return <path d="M5 4l14 16M19 4L5 20" />
+    case 'whatsapp':
+      return <path d="M12 3.5a8.5 8.5 0 00-7.3 12.8L3.5 20.5l4.3-1.1A8.5 8.5 0 1012 3.5zM9 8.5c.3 2.8 3.2 5.9 6.5 6.5l1-1.5-2-1-1 .8c-1-.5-2-1.5-2.4-2.4l.8-1-1-2z" />
+    default:
+      return <circle cx="12" cy="12" r="8" />
+  }
+}
 
 export const Layout = ({ children }: { children: ReactNode }) => {
   const { store, t, mode, poweredBy } = useStorefront()
-  const menu = useMenu()
-  // `first: 20` matches the home page's request, so both share one answer.
-  const { collections: fetched, status } = useCollections({ first: 20 })
-  const collections = status === 'ready' ? fetched : []
-  const { count } = useCart()
-  const { count: wished } = useWishlist()
   const whatsapp = store.social.find((s) => s.network === 'whatsapp')
+  const address = store.address ? [store.address.street, store.address.city, store.address.region, store.address.postal].filter(Boolean).join(', ') : ''
   return (
-    <div className={styles.shell}>
-      {mode === 'live' ? null : <PreviewBanner t={t} className={styles.preview} />}
-      <header className={styles.header}>
-        <div className={styles.bar}>
-          <Link href="/" className={styles.brand}>
-            <StoreLogo className={styles.logo} />
-          </Link>
-          <SearchField label={t('common.tools.search')} placeholder={t('common.tools.searchPrompt')} button={t('common.tools.search')} value="" onSearch={searchFor} suggest={4} className={styles.search} />
-          <div className={styles.tools}>
-            <Link href="/account/" className={styles.account}>
-              <svg className={styles.icon} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <circle cx="12" cy="8.5" r="3.8" />
-                <path d="M4.5 20c1.2-3.6 4-5.4 7.5-5.4s6.3 1.8 7.5 5.4" />
-              </svg>
-              <span className={styles.accountLabel}>{t('common.tools.account')}</span>
-            </Link>
-            <span className={styles.divider} aria-hidden="true" />
-            <Link href="/account/wishlist/" className={styles.tool}>
-              <svg className={styles.icon} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0112 7.3a4.3 4.3 0 017.5 2.5C19.5 15.4 12 20 12 20z" />
-              </svg>
-              <span className={styles.hidden}>{wished > 0 ? t('common.tools.wishlistCount', { count: wished }) : t('common.tools.wishlist')}</span>
-              {wished > 0 ? (
-                <span className={styles.count} aria-hidden="true">
-                  {wished}
-                </span>
-              ) : null}
-            </Link>
-            <Link href="/cart/" className={styles.tool}>
-              <svg className={styles.icon} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M5.5 8h13l-1 12h-11z" />
-                <path d="M9 8V6.5a3 3 0 016 0V8" />
-              </svg>
-              <span className={styles.hidden}>{count > 0 ? t('common.tools.cartCount', { count }) : t('common.tools.cart')}</span>
-              {count > 0 ? (
-                <span className={styles.count} aria-hidden="true">
-                  {count}
-                </span>
-              ) : null}
-            </Link>
-          </div>
-        </div>
-      </header>
-      <div className={styles.navBar}>
-        <div className={styles.navInner}>
-          <Menu label={t('common.nav.menu')}>
-            <nav className={styles.nav} aria-label={t('common.nav.label')}>
-              <Link href="/" className={styles.navLink}>
-                {t('common.nav.home')}
-              </Link>
-              {menu.items.length ? (
-                menu.items.map((item) => <NavItem key={item.id} item={item} />)
-              ) : (
-                <>
-                  <Link href="/collections/all/" className={styles.navLink}>
-                    {t('common.nav.shopAll')}
-                  </Link>
-                  {collections.map((c) => (
-                    <Link key={c.id} href={c.href} className={styles.navLink}>
-                      {c.name}
-                    </Link>
-                  ))}
-                  <Link href="/about/" className={styles.navLink}>
-                    {t('common.nav.about')}
-                  </Link>
-                  <Link href="/contact/" className={styles.navLink}>
-                    {t('common.nav.contact')}
-                  </Link>
-                </>
-              )}
-            </nav>
-          </Menu>
-          <ul className={styles.chips}>
-            <li>
-              <Link href="/collections/all/" className={styles.chip}>
-                {t('common.nav.shopAll')}
-              </Link>
-            </li>
-            {collections.map((c) => (
-              <li key={c.id}>
-                <Link href={c.href} className={styles.chip}>
-                  {c.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <main className={styles.main}>{children}</main>
+    <div className={layout.shell}>
+      {mode === 'live' ? null : <PreviewBanner t={t} className={layout.preview} />}
+      <Link href="#main" className={styles.skip}>
+        {t('common.skip')}
+      </Link>
+      <p className={styles.announce}>{t('common.announcement', { store: store.name })}</p>
+      <SiteHeader />
+      <main id="main" className={layout.main}>
+        {children}
+      </main>
       <footer className={styles.footer}>
-        <div className={styles.columns}>
-          <div className={styles.about}>
-            <p className={styles.footerBrand}>{store.name}</p>
-            {store.tagline ? <p className={styles.tagline}>{store.tagline}</p> : null}
-            <p className={styles.note}>{store.description || t('common.footer.note')}</p>
+        <div className={styles.footerInner}>
+          <div className={styles.footerBrand}>
+            <Link href="/" className={styles.footerLogo}>
+              <BrandMark className={styles.footerMark} />
+              <span>{store.name}</span>
+            </Link>
+            <p className={styles.footerNote}>{store.description || t('common.footer.note')}</p>
             {store.social.length ? (
-              <div className={styles.social}>
+              <ul className={styles.social}>
                 {store.social.map((s) => (
-                  <Link key={s.network} href={s.url} className={styles.socialLink}>
-                    {s.network}
-                  </Link>
+                  <li key={s.network}>
+                    <Link href={s.url} className={styles.socialLink}>
+                      <svg className={styles.socialIcon} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <SocialGlyph network={s.network} />
+                      </svg>
+                      <span className={styles.hidden}>{t('common.footer.follow', { network: s.network })}</span>
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             ) : null}
           </div>
-          <div className={styles.links}>
-            <h2 className={styles.heading}>{t('common.footer.shop')}</h2>
-            {menu.items.length ? (
-              menu.items.map((item) => (
-                <Link key={item.id} href={item.href} className={styles.footerLink}>
-                  {item.label}
-                </Link>
-              ))
-            ) : (
-              <Link href="/collections/all/" className={styles.footerLink}>
-                {t('common.footer.all')}
-              </Link>
-            )}
-          </div>
-          <div className={styles.links}>
-            <h2 className={styles.heading}>{t('common.footer.help')}</h2>
+          <nav className={styles.footerCol} aria-label={t('common.footer.quick')}>
+            <h2 className={styles.footerHeading}>{t('common.footer.quick')}</h2>
+            <Link href="/" className={styles.footerLink}>
+              {t('common.nav.home')}
+            </Link>
             <Link href="/collections/all/" className={styles.footerLink}>
               {t('common.footer.all')}
             </Link>
-            <Link href="/account/orders/" className={styles.footerLink}>
-              {t('common.footer.orders')}
+            <Link href="/about/" className={styles.footerLink}>
+              {t('common.footer.story')}
             </Link>
-            <Link href="/account/" className={styles.footerLink}>
-              {t('common.tools.account')}
+            <Link href="/#collections" className={styles.footerLink}>
+              {t('common.footer.collections')}
             </Link>
-            <Link href="/cart/" className={styles.footerLink}>
-              {t('common.tools.cart')}
-            </Link>
+            <CertificatesFooterLink className={styles.footerLink} currentClassName={styles.footerCurrent}>
+              {t('common.footer.certificates')}
+            </CertificatesFooterLink>
+            <RecipesFooterLink className={styles.footerLink} currentClassName={styles.footerCurrent}>
+              {t('common.footer.recipes')}
+            </RecipesFooterLink>
             <Link href="/contact/" className={styles.footerLink}>
               {t('common.nav.contact')}
             </Link>
-            <Link href="/help/" className={styles.footerLink}>
-              {t('common.footer.faq')}
-            </Link>
-          </div>
-          <nav className={styles.links} aria-label={t('common.footer.legal')}>
-            <h2 className={styles.heading}>{t('common.footer.legal')}</h2>
-            <Link href="/about/" className={styles.footerLink}>
-              {t('common.nav.about')}
-            </Link>
-            <Link href="/policies/privacy/" className={styles.footerLink}>
-              {t('common.footer.privacy')}
+          </nav>
+          <nav className={styles.footerCol} aria-label={t('common.footer.support')}>
+            <h2 className={styles.footerHeading}>{t('common.footer.support')}</h2>
+            <Link href="/policies/shipping/" className={styles.footerLink}>
+              {t('common.footer.shipping')}
             </Link>
             <Link href="/policies/returns/" className={styles.footerLink}>
               {t('common.footer.returns')}
             </Link>
-            <Link href="/policies/shipping/" className={styles.footerLink}>
-              {t('common.footer.shipping')}
+            <Link href="/policies/privacy/" className={styles.footerLink}>
+              {t('common.footer.privacy')}
             </Link>
             <Link href="/policies/terms/" className={styles.footerLink}>
               {t('common.footer.terms')}
             </Link>
+            <Link href="/help/" className={styles.footerLink}>
+              {t('common.footer.faq')}
+            </Link>
           </nav>
-          {store.contactEmail || store.contactPhone ? (
-            <div className={styles.links}>
-              <h2 className={styles.heading}>{t('common.footer.touch')}</h2>
-              {store.contactPhone ? <p className={styles.contact}>{store.contactPhone}</p> : null}
-              {store.contactEmail ? <p className={styles.contact}>{store.contactEmail}</p> : null}
+          <div className={styles.footerCol}>
+            <h2 className={styles.footerHeading}>{t('common.footer.touch')}</h2>
+            <div className={styles.contact}>
+              <span className={styles.contactName}>{t('common.footer.founder')}</span>
+              <span>{t('common.footer.clinic')}</span>
+              {address ? <span>{address}</span> : null}
+              {store.contactPhone ? <span>{t('common.footer.phone', { phone: store.contactPhone })}</span> : null}
+              {store.contactEmail ? <span>{t('common.footer.email', { email: store.contactEmail })}</span> : null}
+              <span>{t('common.footer.website')}</span>
             </div>
-          ) : null}
+          </div>
         </div>
-        <div className={styles.base}>
+        <div className={styles.footerBase}>
           <p className={styles.copyright}>{t('common.footer.rights', { store: store.name })}</p>
           <ConsentSettingsButton t={t} className={styles.cookies} />
           <PoweredBy brand={poweredBy} t={t} className={styles.powered} />
         </div>
       </footer>
       {whatsapp ? (
-        <Link href={whatsapp.url} className={styles.whatsapp}>
-          <svg className={styles.whatsappIcon} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <Link href={whatsapp.url} className={layout.whatsapp}>
+          <svg className={layout.whatsappIcon} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path d="M12 3a9 9 0 00-7.8 13.5L3 21l4.6-1.2A9 9 0 1012 3zm4.4 12.4c-.2.5-1.1 1-1.6 1-.4.1-.9.1-1.5-.1a13 13 0 01-1.4-.5 10.6 10.6 0 01-4-3.6 4.6 4.6 0 01-1-2.4c0-1.2.6-1.7.8-2 .2-.2.5-.3.6-.3h.5c.1 0 .4 0 .6.4l.8 1.9c.1.1.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.3z" />
           </svg>
           <span className={styles.hidden}>{t('common.footer.whatsapp')}</span>
         </Link>
       ) : null}
-      <ConsentBanner t={t} className={styles.consent} />
+      <ConsentBanner t={t} className={layout.consent} />
     </div>
   )
 }

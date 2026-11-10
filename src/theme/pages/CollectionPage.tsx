@@ -3,11 +3,19 @@ import { Layout } from '../components/Layout'
 import { ListingResults } from '../components/ListingResults'
 import { Notice } from '../components/Notice'
 import { Retry } from '../components/interactive/Retry'
+import { ShopAllView } from '../components/interactive/ShopAllView'
 import styles from '../styles/shop.module.css'
 
 export const CollectionPage = () => {
   const { t } = useStorefront()
   const page = useCollection()
+  // Shop All has its own page: every product with search, categories, price and availability filters together.
+  if (page.all && page.found !== 'missing')
+    return (
+      <Layout>
+        <ShopAllView listing={page} />
+      </Layout>
+    )
   const name = page.collection?.name ?? (page.all ? t('shop.collection.all') : null)
   const lead = page.collection ? page.collection.description : page.all ? t('shop.collection.allLead') : null
   return (

@@ -1,0 +1,77 @@
+{
+  "seo": {
+    "title": "Shop All Herbal Teas | Govind Madhav Herbal Tea",
+    "description": "Explore every Govind Madhav herbal tea and infusion, inspired by Ayurveda. Filter by collection, price and availability."
+  },
+  "header": {
+    "crumb": "Shop All",
+    "title": "Shop All Herbal Teas",
+    "lead": "Explore our collection of thoughtfully crafted herbal teas and infusions, inspired by Ayurveda and the goodness of nature."
+  },
+  "count": {
+    "showing": "{count, plural, =0 {Showing 0 products} one {Showing # product} other {Showing # products}}",
+    "active": "{count, plural, one {# filter active} other {# filters active}}",
+    "matching": "{count, plural, =0 {No matching products} one {Show # product} other {Show # products}}"
+  },
+  "filters": {
+    "label": "Product filters",
+    "title": "Filters",
+    "search": "Search Products",
+    "searchHint": "Search herbal teas...",
+    "clearSearch": "Clear search",
+    "categories": "Categories",
+    "price": "Price Range",
+    "priceMin": "Minimum Price",
+    "priceMax": "Maximum Price",
+    "priceMinHandle": "Minimum price",
+    "priceMaxHandle": "Maximum price",
+    "priceLoading": "Loading prices",
+    "availability": "Availability",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "clearAll": "Clear All Filters",
+    "priceTo": "to",
+    "priceSingle": "Every product starts at"
+  },
+  "toolbar": {
+    "sort": "Sort by",
+    "filterSort": "Filter & Sort",
+    "clearAll": "Clear All",
+    "searchChip": "Search:",
+    "sorts": {
+      "featured": "Featured",
+      "priceLow": "Price: Low to High",
+      "priceHigh": "Price: High to Low",
+      "nameAz": "Name: A to Z",
+      "nameZa": "Name: Z to A",
+      "newest": "Newest First"
+    },
+    "removeLabel": "Remove filter"
+  },
+  "drawer": {
+    "title": "Filter & Sort",
+    "close": "Close filters",
+    "sort": "Sort"
+  },
+  "card": {
+    "from": "From",
+    "inStock": "In stock",
+    "outOfStock": "Out of stock",
+    "morePacks": "More pack sizes available",
+    "choose": "Choose Pack Size",
+    "view": "View Details",
+    "noPicture": "No picture yet"
+  },
+  "empty": {
+    "title": "No Products Found",
+    "lead": "Try adjusting your filters or exploring our complete collection of herbal teas.",
+    "clear": "Clear All Filters",
+    "continue": "Continue Shopping",
+    "noneTitle": "Nothing here yet",
+    "noneLead": "There are no products to show here yet. Come back soon."
+  },
+  "more": {
+    "button": "Load More",
+    "showingOf": "Showing {shown} of {total}"
+  }
+}

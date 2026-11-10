@@ -1,0 +1,766 @@
+/* The site's frame: announcement, sticky header with navigation and tools, and the footer. */
+
+.hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip {
+  position: absolute;
+  z-index: 60;
+  top: 8px;
+  left: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-160%);
+  transition: transform 0.2s ease;
+}
+
+.skip:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  transform: none;
+}
+
+.announce {
+  margin: 0;
+  padding: 9px 16px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+/* Header */
+
+.header {
+  position: sticky;
+  z-index: 40;
+  top: 0;
+  border-bottom: 1px solid var(--line);
+  background: var(--nav-bg);
+  backdrop-filter: saturate(140%) blur(10px);
+}
+
+.bar {
+  display: flex;
+  box-sizing: border-box;
+  width: min(100%, 1320px);
+  min-height: 64px;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto;
+  padding: 8px 12px;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentcolor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+
+.menuToggle,
+.tool,
+.subToggle {
+  position: relative;
+  display: inline-flex;
+  min-width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.menuToggle:hover,
+.tool:hover {
+  background: var(--header-hover);
+}
+
+.brand {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+  margin-right: auto;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.brandMark {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.brandName {
+  max-width: 130px;
+  font-family: var(--heading-font);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+}
+
+.toolWish {
+  display: none;
+}
+
+.count {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  display: flex;
+  min-width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--deep);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Navigation: a drawer under the bar on phones, a centred row on wide screens. */
+
+.nav {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  display: none;
+  max-height: calc(100vh - 110px);
+  overflow-y: auto;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  box-shadow: 0 18px 40px rgb(23 63 50 / 12%);
+}
+
+.navOpen {
+  display: block;
+  animation: drop 0.25s ease-out both;
+}
+
+.navList {
+  margin: 0;
+  padding: 8px 16px 20px;
+  list-style: none;
+}
+
+.navList > li {
+  border-bottom: 1px solid var(--line);
+}
+
+.navLink {
+  position: relative;
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--accent);
+}
+
+.navActive {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.navGroupHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subToggle .icon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s ease;
+}
+
+.subToggle[aria-expanded='true'] .icon {
+  transform: rotate(180deg);
+}
+
+.subnav {
+  display: none;
+  margin: 0 0 12px;
+  padding: 0 0 0 12px;
+  border-left: 2px solid var(--tint);
+  list-style: none;
+}
+
+.subnavOpen {
+  display: block;
+}
+
+.subLink,
+.subAll {
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  color: var(--ink-soft);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.subLink:hover,
+.subAll:hover {
+  color: var(--accent);
+}
+
+.subAll {
+  color: var(--taupe-text);
+  font-weight: 600;
+}
+
+/* Search */
+
+.searchRow {
+  display: none;
+}
+
+.searchRowOpen {
+  display: block;
+  box-sizing: border-box;
+  width: min(100%, 760px);
+  margin: 0 auto;
+  padding: 4px 16px 16px;
+  animation: drop 0.25s ease-out both;
+}
+
+.search {
+  position: relative;
+  display: flex;
+  min-height: 50px;
+  box-sizing: border-box;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 4px 4px 20px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.search:focus-within {
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px rgb(130 151 122 / 25%);
+}
+
+.search label {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.search input {
+  min-width: 0;
+  flex: 1;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  outline: none;
+}
+
+.search input::placeholder {
+  color: var(--muted);
+}
+
+/* Core's button carries its word; on a pill it reads as a short green button. */
+.search button {
+  min-height: 40px;
+  flex-shrink: 0;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search ul {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 8px);
+  right: 0;
+  left: 0;
+  margin: 0;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: 0 18px 40px rgb(23 63 50 / 14%);
+  list-style: none;
+}
+
+.search li {
+  border-radius: 10px;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.search li:hover,
+.search li[aria-selected='true'] {
+  background: var(--soft);
+}
+
+.search li:last-child {
+  padding: 10px 12px;
+  border-top: 1px solid var(--line);
+  border-radius: 0 0 10px 10px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.search li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.search li img {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: var(--soft);
+  object-fit: contain;
+}
+
+.search li span {
+  flex: 1;
+  font-weight: 500;
+}
+
+.search p {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 8px);
+  right: 0;
+  left: 0;
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: 0 18px 40px rgb(23 63 50 / 14%);
+  color: var(--muted);
+}
+
+/* Not display: none, so screen readers still announce "No products match" when the status fills. */
+.search p:empty {
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+/* Footer */
+
+.footer {
+  position: relative;
+  padding: 56px 16px 24px;
+  background: var(--footer-bg);
+  color: var(--footer-muted);
+  font-size: 14px;
+}
+
+.footerInner {
+  display: grid;
+  width: min(100%, 1240px);
+  gap: 36px 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0 auto;
+}
+
+.footerBrand {
+  grid-column: 1 / -1;
+}
+
+.footerLogo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--footer-ink);
+  font-family: var(--heading-font);
+  font-size: 22px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.footerMark {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  color: var(--gold);
+}
+
+.footerNote {
+  max-width: 36ch;
+  margin: 16px 0 0;
+  line-height: 1.7;
+}
+
+.social {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.socialLink {
+  display: flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--footer-line);
+  border-radius: 999px;
+  color: var(--footer-ink);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.socialLink:hover {
+  border-color: var(--gold);
+  background: rgb(197 161 90 / 14%);
+}
+
+.socialIcon {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentcolor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.footerCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.footerHeading {
+  margin: 0 0 10px;
+  color: var(--gold);
+  font-family: var(--body-font);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.footerLink {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  color: var(--footer-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footerLink:hover {
+  color: var(--footer-ink);
+}
+
+.footerCurrent .footerLink {
+  color: var(--footer-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 4px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-style: normal;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.contactName {
+  color: var(--footer-ink);
+  font-weight: 600;
+}
+
+.footerBase {
+  display: flex;
+  box-sizing: border-box;
+  width: min(100%, 1240px);
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin: 44px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--footer-line);
+  font-size: 12.5px;
+}
+
+.copyright {
+  margin: 0;
+  margin-right: auto;
+}
+
+.cookies {
+  display: block;
+  --df-sealed-color: var(--footer-ink);
+}
+
+.cookies::part(button) {
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid var(--footer-line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--footer-ink);
+}
+
+.powered {
+  display: block;
+  --df-sealed-muted: var(--footer-muted);
+}
+
+/* Focus */
+
+.menuToggle:focus-visible,
+.tool:focus-visible,
+.subToggle:focus-visible,
+.brand:focus-visible,
+.navLink:focus-visible,
+.subLink:focus-visible,
+.subAll:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.footerLink:focus-visible,
+.footerLogo:focus-visible,
+.socialLink:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+@keyframes drop {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (min-width: 600px) {
+  .toolWish {
+    display: inline-flex;
+  }
+
+  .brandName {
+    max-width: none;
+    font-size: 19px;
+    white-space: nowrap;
+  }
+
+  .footerInner {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1080px) {
+  .bar {
+    min-height: 78px;
+    gap: 24px;
+    padding: 10px 32px;
+  }
+
+  .menuToggle {
+    display: none;
+  }
+
+  .brand {
+    margin-right: 0;
+  }
+
+  .brandMark {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brandName {
+    max-width: 150px;
+    font-size: 19px;
+    white-space: normal;
+  }
+
+  .nav {
+    position: static;
+    display: block;
+    flex: 1;
+    max-height: none;
+    overflow: visible;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    animation: none;
+  }
+
+  .navList {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    padding: 0;
+  }
+
+  .navList > li {
+    position: relative;
+    border: 0;
+  }
+
+  .navLink {
+    min-height: 44px;
+    padding: 0 12px;
+    font-size: 14.5px;
+  }
+
+  /* A short gold rule under the hovered and the current link. */
+  .navLink::after {
+    position: absolute;
+    right: 12px;
+    bottom: 6px;
+    left: 12px;
+    height: 1.5px;
+    background: var(--gold);
+    content: '';
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+
+  .navLink:hover::after,
+  .navActive::after {
+    transform: scaleX(1);
+  }
+
+  .navGroupHead .navLink {
+    padding-right: 2px;
+  }
+
+  .navGroupHead .navLink::after {
+    right: 2px;
+  }
+
+  .subToggle {
+    min-width: 28px;
+  }
+
+  .subToggle .icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .subnav {
+    position: absolute;
+    z-index: 20;
+    top: 100%;
+    left: 0;
+    min-width: 230px;
+    margin: 0;
+    padding: 10px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--surface);
+    box-shadow: 0 18px 40px rgb(23 63 50 / 12%);
+  }
+
+  .navGroup:hover .subnav,
+  .subnavOpen {
+    display: block;
+    animation: drop 0.2s ease-out both;
+  }
+
+  .subLink,
+  .subAll {
+    padding: 0 12px;
+    border-radius: 8px;
+  }
+
+  .subLink:hover {
+    background: var(--soft);
+  }
+
+  .subAll {
+    margin-top: 6px;
+    border-top: 1px solid var(--line);
+    border-radius: 0;
+  }
+
+  .footer {
+    padding: 72px 32px 28px;
+  }
+
+  .footerInner {
+    gap: 40px;
+    grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 0.9fr)) minmax(0, 1.3fr);
+  }
+
+  .footerBrand {
+    grid-column: auto;
+  }
+}

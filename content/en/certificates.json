@@ -1,0 +1,101 @@
+{
+  "seo": {
+    "title": "Certificates & Registrations | Govind Madhav Herbal Tea",
+    "description": "Explore the official business registrations, trademark details, GST registration, FSSAI registration and recognition certificates of Govind Madhav Herbal Tea."
+  },
+  "hero": {
+    "eyebrow": "Our Credentials",
+    "title": "Our Certifications & Recognitions",
+    "lead": "Trust, transparency and recognition are an important part of our journey. Explore our official business registrations, certifications and recognitions."
+  },
+  "highlights": {
+    "label": "At a glance",
+    "recognition": "Business Recognition",
+    "msme": "MSME Registered",
+    "trademark": "Trademark Registered",
+    "gst": "GST Registered",
+    "fssai": "FSSAI Registered"
+  },
+  "gallery": {
+    "title": "Our Official Certificates & Registrations",
+    "lead": "Explore the documents that represent our business identity, registrations and recognition.",
+    "pending": "Certificate image coming soon"
+  },
+  "card": {
+    "issuer": "Issued by",
+    "details": "Certificate details",
+    "view": "View Certificate",
+    "download": "Open Full-Size Image",
+    "previewAlt": "{title}"
+  },
+  "viewer": {
+    "label": "Certificate viewer",
+    "close": "Close",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "fit": "Fit to screen",
+    "previous": "Previous certificate",
+    "next": "Next certificate",
+    "position": "{n} of {total}",
+    "download": "Open full-size image",
+    "hint": "Zoom in to read the fine print; scroll to move around the document."
+  },
+  "cta": {
+    "title": "Built on Trust. Inspired by Nature.",
+    "lead": "Discover the story, experience and commitment behind Govind Madhav Herbal Tea.",
+    "about": "About Our Company",
+    "products": "Explore Our Products"
+  },
+  "items": {
+    "recognition": {
+      "title": "Tea Brand to Look Forward 2023",
+      "category": "Brand Recognition",
+      "issuer": "Success Insights India",
+      "description": "Recognized by Success Insights India as a Tea Brand to Look Forward in 2023.",
+      "details": "Recognition: Tea Brand to Look Forward\nYear: 2023\nAwarded by: Success Insights India"
+    },
+    "msme": {
+      "title": "MSME Udyam Registration Certificate",
+      "category": "Government Registration",
+      "issuer": "Ministry of Micro, Small and Medium Enterprises, Government of India",
+      "description": "Registered under the Udyam scheme of the Ministry of MSME as a micro manufacturing enterprise.",
+      "details": "Udyam registration number: UDYAM-DL-06-0081696\nEnterprise type: Micro (classification year 2023-24)\nMajor activity: Manufacturing\nRegistered on: 24 April 2023"
+    },
+    "trademark": {
+      "title": "Trademark Registration Renewal",
+      "category": "Intellectual Property",
+      "issuer": "Trade Marks Registry, Government of India",
+      "description": "Our name and logo are a registered device trademark in Class 30, renewed and valid until 21 January 2031.",
+      "details": "Trademark type: Device mark (our name and logo)\nApplication number: 2087965\nClass: 30\nProprietor: Satish Chander Gosain\nApplication date: 21 January 2011\nValid until: 21 January 2031"
+    },
+    "register": {
+      "title": "Trademark E-Register Record",
+      "category": "Intellectual Property",
+      "issuer": "Trade Marks Registry, Government of India",
+      "description": "The official e-register record of our trademark, showing its registered status and the registered logo.",
+      "details": "Application number: 2087965\nRegistration certificate: No. 1142916, dated 26 December 2013\nStatus: Registered\nValid until: 21 January 2031"
+    },
+    "gst": {
+      "title": "GST Registration Certificate",
+      "category": "Tax Registration",
+      "issuer": "Government of India (Form GST REG-06)",
+      "description": "Registered for Goods and Services Tax as a regular taxpayer.",
+      "details": "GSTIN: 07AAHPG9824B1ZW\nLegal name: Satish Chander Gosain\nConstitution: Proprietorship\nRegistration type: Regular\nCertificate issued: 23 September 2017"
+    },
+    "fssai": {
+      "title": "FSSAI Registration Certificate",
+      "category": "Food Safety Registration",
+      "issuer": "Department of Food Safety, Government of Delhi",
+      "description": "Registered under the Food Safety and Standards Act, 2006.",
+      "details": "Registration number: 23321006001357\nKind of business: Retailer\nIssued on: 30 May 2026\nValid until: 29 May 2031"
+    }
+  },
+  "assets": {
+    "recognition": "pending",
+    "msme": "pending",
+    "trademark": "pending",
+    "register": "pending",
+    "gst": "pending",
+    "fssai": "pending"
+  }
+}

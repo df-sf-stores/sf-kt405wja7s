@@ -1,0 +1,161 @@
+{
+  "seo": {
+    "title": "Herbal Tea Recipes for Restaurants & Snack Corners | Govind Madhav Herbal Tea",
+    "description": "Hot and cold preparation methods for Govind Madhav Herbal Tea and Ginger Tea, for restaurants, cafés, snack corners, hotels and Govinda Restaurants."
+  },
+  "hero": {
+    "eyebrow": "For Restaurants, Cafés & Snack Corners",
+    "title": "Discover the Art of Herbal Tea Preparation",
+    "lead": "Bring the goodness of Govind Madhav Herbal Tea to your restaurant, café or snack corner. Explore simple and versatile preparation methods for refreshing hot and cold herbal beverages.",
+    "hot": "Explore Hot Tea Recipes",
+    "cold": "Explore Cold Tea Recipes",
+    "hotTag": "Served hot",
+    "coldTag": "Served cold"
+  },
+  "intro": {
+    "eyebrow": "Herbal Tea Recipes for Restaurants & Snack Corners",
+    "title": "Bring Herbal Wellness to Your Beverage Menu",
+    "quote": "Some of our ISKCON temples have added Govind Madhav Herbal Tea and Ginger Tea to the beverages list in Govinda Restaurants or Snack Corners. I request you can also add.",
+    "invite": "We warmly invite restaurants, cafés, snack corners, hotels and Govinda Restaurants to include Govind Madhav Herbal Tea and Ginger Tea in their beverage menus.",
+    "methods": "The four preparation methods below need only milk or water, the tea and, for cold drinks, ice.",
+    "hotCount": "2",
+    "hotLabel": "Hot recipes",
+    "coldCount": "2",
+    "coldLabel": "Cold recipes",
+    "teaCount": "16 g",
+    "teaLabel": "Tea in every recipe"
+  },
+  "hot": {
+    "eyebrow": "Served Warm",
+    "title": "Hot Herbal Tea Recipes",
+    "lead": "Discover different ways to prepare a warm and refreshing cup of Govind Madhav Herbal Tea or Ginger Tea."
+  },
+  "cold": {
+    "eyebrow": "Served Chilled",
+    "title": "Refreshing Cold Herbal Tea Recipes",
+    "lead": "Serve delicious and refreshing herbal beverages using Govind Madhav Herbal Tea or Ginger Tea."
+  },
+  "card": {
+    "hot": "Hot",
+    "cold": "Cold",
+    "ingredients": "Ingredients",
+    "method": "Preparation Method",
+    "or": "or",
+    "tip": "Tea strength",
+    "note": "Good to know"
+  },
+  "items": {
+    "hotMilk": {
+      "number": "Recipe 01",
+      "title": "Hot Tea Prepared in Milk",
+      "ingredients": "1 litre of pure milk.\n1 litre of mixture consisting of 50% milk and 50% water, or adjust milk and water as per taste.\n16 grams of Govind Madhav Herbal Tea or Ginger Tea.",
+      "steps": "Take 1 litre of pure milk.\nAlternatively, prepare a mixture of 50% milk and 50% water.\nAdjust the quantity of milk and water according to your preferred taste.\nAdd 16 grams of Govind Madhav Herbal Tea or Ginger Tea.\nBoil for 3 minutes.\nIf the preparation has less tea strength than desired, you can add more tea.\nYou can boil again. It will not lose its taste; rather, it will become tastier."
+    },
+    "hotWater": {
+      "number": "Recipe 02",
+      "title": "Hot Tea Without Milk",
+      "ingredients": "1 litre of water.\n16 grams of Govind Madhav Herbal Tea or Ginger Tea.",
+      "steps": "Take 1 litre of water.\nAdd 16 grams of Govind Madhav Herbal Tea or Ginger Tea.\nBoil for 3 minutes.\nIf the preparation has less tea strength than desired, you can add more tea.\nYou can boil again. It will not lose its taste; rather, it will become tastier.",
+      "note": "This preparation is suitable for customers who prefer a milk-free herbal beverage."
+    },
+    "coldShake": {
+      "number": "Recipe 03",
+      "title": "Cold Tea Shake Prepared in Milk",
+      "ingredients": "1 litre of pure milk.\n16 grams of Govind Madhav Herbal Tea or Ginger Tea.\nIce cubes.",
+      "steps": "Take 1 litre of pure milk.\nAdd 16 grams of Govind Madhav Herbal Tea or Ginger Tea.\nBoil for 3 minutes.\nAllow the preparation to cool.\nAdd ice and shake in a mixer blender jar.\nServe cold.",
+      "tip": "If the preparation has less tea strength than desired, you can add more tea. You can boil again without losing its taste."
+    },
+    "iced": {
+      "number": "Recipe 04",
+      "title": "Iced Cold Tea Without Milk",
+      "ingredients": "1/2 litre of water.\n16 grams of Govind Madhav Herbal Tea or Ginger Tea.\nCold water.\nIce cubes.",
+      "steps": "Take 1/2 litre of water.\nAdd 16 grams of Govind Madhav Herbal Tea or Ginger Tea.\nBoil for 3 minutes.\nCool the preparation.\nAdd 1/2 litre of cold water.\nAdd ice and serve.",
+      "tip": "If the preparation has less tea strength than desired, you can add more tea. You can boil again without losing its taste."
+    }
+  },
+  "menu": {
+    "eyebrow": "Serving Ideas",
+    "title": "Make Herbal Tea a Part of Your Beverage Menu",
+    "lead": "Four ways to serve Govind Madhav Herbal Tea and Ginger Tea, each prepared with one of the recipes on this page.",
+    "recipe": "See the recipe",
+    "items": {
+      "hotHerbal": {
+        "title": "Hot Herbal Tea",
+        "body": "Govind Madhav Herbal Tea boiled for 3 minutes in milk, a milk and water mixture, or water alone."
+      },
+      "hotGinger": {
+        "title": "Hot Ginger Tea",
+        "body": "Govind Madhav Ginger Tea, prepared hot in milk or in water with the same 16 grams to a litre."
+      },
+      "coldShake": {
+        "title": "Cold Herbal Tea Shake",
+        "body": "Boiled in pure milk, cooled, then shaken with ice in a mixer blender jar and served cold."
+      },
+      "iced": {
+        "title": "Iced Herbal Tea",
+        "body": "Boiled in 1/2 litre of water, cooled, topped with 1/2 litre of cold water and served over ice."
+      }
+    }
+  },
+  "why": {
+    "eyebrow": "Why Add Govind Madhav Herbal Tea to Your Menu?",
+    "title": "An Alternative Beverage Experience for Your Customers",
+    "items": {
+      "caffeine": {
+        "title": "Caffeine-free herbal infusions",
+        "body": "Made from herbs rather than tea leaves."
+      },
+      "tannin": {
+        "title": "Tannin-free formulation",
+        "body": "A herbal cup without tannin."
+      },
+      "leaves": {
+        "title": "No black or green tea leaves",
+        "body": "Herbal blends in place of black or green tea."
+      },
+      "varieties": {
+        "title": "Herbal tea and ginger tea varieties",
+        "body": "Govind Madhav Herbal Tea and Ginger Tea, both used in every recipe here."
+      },
+      "serving": {
+        "title": "Hot and cold serving options",
+        "body": "Serve it hot in milk or water, or cold as a shake or iced tea."
+      }
+    }
+  },
+  "cta": {
+    "eyebrow": "Restaurant Enquiries",
+    "title": "Interested in Serving Govind Madhav Herbal Tea?",
+    "lead": "Introduce Govind Madhav Herbal Tea and Ginger Tea to your restaurant, café or snack corner beverage menu.",
+    "contact": "Contact Us",
+    "products": "Explore Our Products"
+  },
+  "images": {
+    "ids": {
+      "hero": "pending",
+      "heroCold": "pending",
+      "intro": "pending",
+      "hotMilk": "pending",
+      "hotWater": "pending",
+      "coldShake": "pending",
+      "iced": "pending",
+      "menuHerbal": "pending",
+      "menuGinger": "pending",
+      "menuShake": "pending",
+      "menuIced": "pending"
+    },
+    "alt": {
+      "hero": "Hot Govind Madhav Herbal Tea in a glass cup with fresh herbs",
+      "heroCold": "Iced Govind Madhav Herbal Tea in a tall glass",
+      "intro": "Herbal tea served at a restaurant table",
+      "hotMilk": "Hot Govind Madhav Herbal Tea prepared in milk",
+      "hotWater": "Hot Govind Madhav Herbal Tea prepared without milk",
+      "coldShake": "Cold herbal tea shake prepared in milk",
+      "iced": "Iced herbal tea prepared without milk",
+      "menuHerbal": "A cup of hot Govind Madhav Herbal Tea beside its pack",
+      "menuGinger": "A cup of hot Govind Madhav Ginger Tea beside its pack",
+      "menuShake": "A glass of cold herbal tea shake",
+      "menuIced": "A glass of iced herbal tea"
+    }
+  }
+}

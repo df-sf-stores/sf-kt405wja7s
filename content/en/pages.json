@@ -58,39 +58,11 @@
     "lead": "The shop is closed for now. Please come back later."
   },
   "about": {
-    "eyebrow": "Our Story",
-    "title": "About {store}",
-    "lead": "Welcome to {store}. Here is a little about who we are and what we do.",
-    "story": {
-      "eyebrow": "Who we are",
-      "title": "A shop built on",
-      "accent": "care and quality",
-      "first": "We started {store} to bring together pieces we love and believe in. Every item in our shop is chosen with care, so you can shop with confidence.",
-      "second": "We are always adding to our collections, and we are glad to hear what you would like to see next. Thank you for shopping with us."
-    },
-    "promise": {
-      "eyebrow": "Our Promise",
-      "title": "More than just products",
-      "body": "We want every order to be a pleasure, from the moment you browse to the moment it arrives.",
-      "designs": {
-        "title": "Thoughtful Choices",
-        "body": "Pieces picked for their design and the way they are made."
-      },
-      "quality": {
-        "title": "Lasting Quality",
-        "body": "Made to be used, enjoyed and kept."
-      },
-      "service": {
-        "title": "Friendly Service",
-        "body": "Real people ready to help with your order."
-      }
-    },
     "visit": {
       "title": "Visit Our Store",
       "lead": "Come see the collection in person.",
       "whatsapp": "Chat on WhatsApp"
-    },
-    "closing": "Thank you for choosing {store}."
+    }
   },
   "contact": {
     "title": "Get in touch",

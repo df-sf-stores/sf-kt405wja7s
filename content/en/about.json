@@ -1,0 +1,247 @@
+{
+  "seo": {
+    "title": "About Us | Govind Madhav Herbal Tea",
+    "description": "The story of Govind Madhav Herbal Tea: founded in 2011 by Dr. Satish Gosain, inspired by Ayurveda, and crafted as caffeine-free herbal infusions."
+  },
+  "nav": {
+    "label": "On this page",
+    "company": "Our Company",
+    "story": "Our Journey",
+    "founder": "The Founder",
+    "infusions": "Our Infusions"
+  },
+  "hero": {
+    "eyebrow": "Our Story",
+    "title": "Rooted in Nature. Inspired by Tradition.",
+    "lead": "Discover the story behind Govind Madhav Herbal Tea, where a passion for herbal infusions, traditional wisdom and years of experience come together.",
+    "story": "Discover Our Story",
+    "teas": "Explore Our Herbal Teas",
+    "founded": "Since 2011"
+  },
+  "company": {
+    "eyebrow": "About Our Company",
+    "title": "A Vision for Natural Herbal Wellness",
+    "first": "Govind Madhav Herbal Tea was founded in 2011 with a vision to offer pure, natural and organic herbal teas that are entirely free from caffeine and tannins, promoting human health while safeguarding the environment.",
+    "second": "Our teas are crafted to support holistic well-being, catering to the growing demand for organic and herbal beverages.",
+    "factYear": "2011",
+    "factYearLabel": "Year founded",
+    "factCount": "7",
+    "factCountLabel": "Herbal infusions",
+    "factFree": "No caffeine",
+    "factFreeLabel": "No tea leaves, no tannin"
+  },
+  "story": {
+    "eyebrow": "The Story Behind the Brand",
+    "title": "How Our Journey Began",
+    "first": "Govind Madhav Herbal Tea was developed with a vision to bring natural herbal infusions to people looking for alternatives to conventional tea.",
+    "second": "Inspired by traditional herbal knowledge, Ayurveda and a personal interest in herbal beverages, the brand gradually developed a collection of carefully formulated herbal infusions.",
+    "third": "Through experimentation with different herbal combinations, Dr. Satish Gosain developed a range of herbal teas that bring together traditional inspiration and modern wellness principles.",
+    "timeline": {
+      "label": "Milestones",
+      "practiceYear": "1982",
+      "practiceTitle": "A life in medicine",
+      "practiceBody": "Dr. Satish Gosain begins running Dr. Bharti Nursing Home in Hari Nagar, New Delhi.",
+      "journeyYear": "1985",
+      "journeyTitle": "A new way of living",
+      "journeyBody": "He comes to Krishna consciousness and adopts a lifestyle free of intoxicants, and begins looking for alternatives to black tea.",
+      "foundedYear": "2011",
+      "foundedTitle": "Govind Madhav Herbal Tea is founded",
+      "foundedBody": "Years of experimenting with herbal combinations become a brand, with a vision of pure, natural, caffeine-free herbal teas.",
+      "todayYear": "Today",
+      "todayTitle": "Seven herbal infusions",
+      "todayBody": "A collection of seven blends, each a careful combination of herbs, roots and spices."
+    }
+  },
+  "founder": {
+    "eyebrow": "Meet the Founder",
+    "title": "Meet the Founder Behind the Vision",
+    "name": "Dr. Satish Gosain",
+    "qualifications": "M.B.B.S., D.N.B. (Internal Medicine)",
+    "college": "Graduate of Maulana Azad Medical College, Delhi University",
+    "first": "Dr. Satish Gosain has dedicated his professional life to medical practice, having worked in different capacities and served patients in various hospitals across Delhi.",
+    "second": "He currently runs Dr. Bharti Nursing Home in Hari Nagar, New Delhi, which he has been running since 1982, where he continues his medical practice.",
+    "third": "Alongside his medical career, he is a spiritual speaker who shares discourses on the Bhagavad Gita and Srimad Bhagavatam at ISKCON temples throughout India.",
+    "fourth": "His professional experience, personal interests and exploration of Ayurveda inspired the development of Govind Madhav Herbal Tea.",
+    "monogram": "SG",
+    "credentials": {
+      "title": "Credentials",
+      "degreeTitle": "Medical Qualifications",
+      "degreeBody": "M.B.B.S., D.N.B. (Internal Medicine)",
+      "collegeTitle": "Maulana Azad Medical College",
+      "collegeBody": "Delhi University",
+      "practiceTitle": "Medical Practice Since 1982",
+      "practiceBody": "Hospitals across Delhi, in different capacities",
+      "homeTitle": "Dr. Bharti Nursing Home",
+      "homeBody": "Hari Nagar, New Delhi",
+      "iskconTitle": "Spiritual Discourses at ISKCON",
+      "iskconBody": "Bhagavad Gita and Srimad Bhagavatam, at temples throughout India"
+    }
+  },
+  "brewing": {
+    "eyebrow": "Tea Brewing at My Home",
+    "title": "My Early Connection with Tea",
+    "first": "Growing up in Delhi, Dr. Satish Gosain enjoyed different types of teas and tisanes throughout his life, until he joined ISKCON.",
+    "second": "From his college days, he kept a variety of loose-leaf teas and herbal blends at home. He particularly enjoyed fruit blends, chai and flavoured decaffeinated teas, and liked to mix it up a little each day, brewing several different types of tea.",
+    "third": "His wife, Dr. Bharti Gosain, was also very fond of black tea.",
+    "fourth": "Over the years he developed a particular appreciation for properly brewed loose-leaf teas, their flavour and aroma, an experience he felt tea bags could not match.",
+    "quote": "By far, the most flavourful and satisfying cups of herbal tea are those that are properly brewed using quality loose teas. While tea bags are convenient, there is no comparison to the taste and aroma of loose teas.",
+    "quoteBy": "Dr. Satish Gosain",
+    "day": {
+      "label": "A day of tea",
+      "morning": "Morning",
+      "morningBody": "Black tea",
+      "noon": "Through the day",
+      "noonBody": "Green tea",
+      "evening": "Evening",
+      "eveningBody": "Herbal tea"
+    }
+  },
+  "journey": {
+    "eyebrow": "Spiritual Journey and Inspiration",
+    "title": "A Journey Guided by Values and Tradition",
+    "first": "Dr. Satish Gosain came to Krishna consciousness in 1985, where he was taught that austerity (tapah) is the third pillar of dharma, and adopted a lifestyle that emphasizes austerity and the avoidance of intoxicants of any kind.",
+    "second": "His personal beliefs encouraged him to explore natural alternatives to conventional beverages, and this journey led him to herbal infusions that aligned with his lifestyle and values.",
+    "third": "Inspired by Ayurveda and traditional herbal knowledge, he began experimenting with different herbal combinations to develop Govind Madhav Herbal Tea.",
+    "pillar": "Austerity (tapah), the third pillar of dharma"
+  },
+  "why": {
+    "eyebrow": "Why I Chose Herbal Tea",
+    "title": "Discovering a Natural Alternative to Conventional Tea",
+    "first": "Having enjoyed black and green tea for much of his life, Dr. Gosain set out to find a beverage he could enjoy every day without caffeine, one made from herbs rather than tea leaves.",
+    "second": "Drawing on his love of loose-leaf tea and proper brewing, he developed herbal infusions with a delicious taste and exotic flavour, which he came to see as a delightful, refreshing alternative to black tea, and a tea for all ages.",
+    "third": "In his own words, his search began with a wish for alternatives that would align with his values; over time, his herbal blends found friends far beyond the spiritual community.",
+    "conventional": {
+      "title": "Conventional Tea",
+      "first": "Traditional black and green tea",
+      "second": "Caffeine-containing beverages"
+    },
+    "ours": {
+      "title": "Govind Madhav Herbal Infusions",
+      "first": "No black or green tea leaves",
+      "second": "Caffeine-free",
+      "third": "Tannin-free",
+      "fourth": "No added sugar",
+      "fifth": "No artificial colourings",
+      "sixth": "No preservatives"
+    },
+    "note": "As described by our founder. Please see each product's label for its full list of ingredients."
+  },
+  "website": {
+    "eyebrow": "Why I Built the Herbal Tea Website",
+    "title": "Sharing Knowledge Beyond the Cup",
+    "first": "Dr. Satish Gosain developed an interest in sharing knowledge about tea, loose-leaf beverages and herbal infusions.",
+    "second": "With growing interest in natural and organic products, he wanted to create an online resource that would help people learn about tea and its different varieties.",
+    "third": "On the suggestion of a friend, he decided to create a website about tea, despite having no previous website-building expertise.",
+    "fourth": "His objective was to build an accessible herbal tea guide containing easy-to-find information on all aspects of loose-leaf tea and herbal beverages.",
+    "fifth": "This initiative helped bring his knowledge and interest in herbal infusions to a wider audience.",
+    "siteLabel": "The original herbal tea guide",
+    "site": "www.indianherbaltea.com",
+    "steps": {
+      "label": "How the guide began",
+      "ideaTitle": "A friend's suggestion",
+      "ideaBody": "Create a website to share what he had learned about tea.",
+      "learnTitle": "Starting from scratch",
+      "learnBody": "No website-building expertise, only a clear wish to help people learn.",
+      "guideTitle": "An online herbal tea guide",
+      "guideBody": "Easy-to-find information on all aspects of loose-leaf tea."
+    }
+  },
+  "infusions": {
+    "eyebrow": "Our Collection",
+    "title": "Seven Unique Herbal Infusions",
+    "lead": "Thoughtfully developed herbal combinations inspired by nature and traditional herbal knowledge.",
+    "explore": "Explore Product",
+    "all": "View the full collection",
+    "items": {
+      "herbal": {
+        "name": "Govind Madhav Herbal Tea",
+        "herbs": "20 herbs",
+        "match": "herbal"
+      },
+      "cough": {
+        "name": "Govind Madhav Cough Tea",
+        "herbs": "27 herbs",
+        "match": "cough"
+      },
+      "diabetic": {
+        "name": "Govind Madhav Diabetic Tea",
+        "herbs": "27 herbs",
+        "match": "diabetic"
+      },
+      "ginger": {
+        "name": "Govind Madhav Ginger Tea",
+        "herbs": "14 herbs",
+        "match": "ginger"
+      },
+      "tulsi": {
+        "name": "Govind Madhav Tulsi Tea",
+        "herbs": "16 herbs",
+        "match": "tulsi"
+      },
+      "weightLoss": {
+        "name": "Govind Madhav Weight Loss Tea",
+        "herbs": "24 herbs",
+        "match": "weight"
+      },
+      "masala": {
+        "name": "Govind Madhav Masala Tea",
+        "herbs": "12 herbs",
+        "match": "masala"
+      }
+    }
+  },
+  "values": {
+    "eyebrow": "Our Philosophy",
+    "title": "Tradition, Experience and Nature",
+    "natureTitle": "Natural Inspiration",
+    "natureBody": "A passion for herbal ingredients and natural beverage alternatives.",
+    "traditionTitle": "Traditional Knowledge",
+    "traditionBody": "Inspired by Ayurveda and the founder's personal exploration of traditional herbal practices.",
+    "craftTitle": "Thoughtful Formulation",
+    "craftBody": "Herbal combinations developed through experimentation and attention to flavour and ingredients."
+  },
+  "closing": {
+    "title": "Experience the Goodness of Herbal Infusions",
+    "first": "Discover Govind Madhav Herbal Tea and explore a collection inspired by nature, tradition, personal experience and a passion for herbal beverages.",
+    "second": "Find an herbal infusion that becomes part of your everyday tea experience.",
+    "collection": "Explore Our Collection",
+    "shop": "Shop Now"
+  },
+  "contact": {
+    "eyebrow": "Get in Touch",
+    "title": "Founder and Company Information",
+    "name": "Dr. Satish Gosain",
+    "qualifications": "M.B., B.S., D.N.B. (Internal Medicine)",
+    "clinic": "Dr Bharti Medical & Dental Centre",
+    "addressLabel": "Address",
+    "address": "B-29-30, Hari Nagar, New Delhi 110064",
+    "mobileLabel": "Mobile",
+    "mobile": "+91-97170-55006, +91-98913-86194",
+    "phoneLabel": "Phone",
+    "phone": "011-4561-5006",
+    "emailLabel": "Email",
+    "email": "govindmadhavtea@gmail.com",
+    "websiteLabel": "Website",
+    "website": "www.indianherbaltea.com"
+  },
+  "images": {
+    "ids": {
+      "hero": "pending",
+      "company": "pending",
+      "founder": "pending",
+      "brewing": "pending",
+      "journey": "pending",
+      "website": "pending",
+      "closing": "pending"
+    },
+    "alt": {
+      "hero": "A cup of Govind Madhav herbal tea with fresh herbs and spices",
+      "company": "Govind Madhav herbal tea blends and their herbal ingredients",
+      "founder": "Dr. Satish Gosain, founder of Govind Madhav Herbal Tea",
+      "brewing": "Loose-leaf herbal tea being brewed at home",
+      "journey": "Fresh herbs and botanical ingredients",
+      "website": "The original herbal tea guide website",
+      "closing": "A warm cup of herbal infusion"
+    }
+  }
+}

@@ -1,70 +1,146 @@
 {
-  "title": "Shop our collections",
+  "title": "Herbal teas and infusions inspired by Ayurveda",
   "hero": {
-    "region": "Featured collections",
-    "role": "carousel",
-    "previous": "Previous slide",
-    "next": "Next slide",
-    "pause": "Pause the slides",
-    "play": "Play the slides",
-    "goTo": "Go to slide {n}",
-    "first": "Our latest collection, shop now",
-    "second": "Shop the collection",
-    "third": "Explore more of the shop"
+    "eyebrow": "Herbal infusions · Inspired by Ayurveda",
+    "title": "Rediscover Wellness,",
+    "accent": "One Cup at a Time.",
+    "lead": "Experience the goodness of nature with {store}. Carefully developed herbal infusions inspired by Ayurveda and created to bring natural goodness into your everyday routine.",
+    "shop": "Shop Herbal Teas",
+    "story": "Discover Our Story",
+    "note": "Caffeine-free · Tannin-free · Enjoy with or without milk",
+    "badge": "Herbal infusion",
+    "badgeLabel": "Every cup"
   },
-  "newest": "New Arrivals",
-  "newestEmpty": "New arrivals are on their way. Check back soon.",
-  "featured": "Featured Products",
-  "viewAll": "View all products",
-  "promises": {
-    "title": "Why shop with us",
-    "craft": {
-      "title": "Chosen with Care",
-      "body": "Every piece is picked for its quality and finish"
+  "trust": {
+    "title": "What goes into every cup",
+    "herbs": {
+      "title": "Carefully Selected Herbs",
+      "body": "Herbal blends made from roots, leaves, seeds and spices chosen with care."
     },
-    "stage": {
-      "title": "For Every Occasion",
-      "body": "Something for everyday wear and special days alike"
+    "caffeine": {
+      "title": "Caffeine-Free Herbal Infusions",
+      "body": "A gentle alternative to black tea that you can enjoy any time of day."
     },
-    "secure": {
-      "title": "Secure Checkout",
-      "body": "Pay safely through trusted payment partners"
+    "ayurveda": {
+      "title": "Inspired by Ayurveda",
+      "body": "Herbal combinations drawn from India's traditional knowledge of herbs."
     },
-    "support": {
-      "title": "Here to Help",
-      "body": "Questions about an order? Get in touch with us"
+    "experience": {
+      "title": "Crafted with Experience",
+      "body": "Developed by a physician with decades of experience in medicine."
     }
   },
   "collections": {
-    "eyebrow": "Shop by Category",
-    "title": "Explore Our Collections",
-    "explore": "Explore"
+    "eyebrow": "Shop by Collection",
+    "title": "Explore Our Herbal Tea Collections",
+    "lead": "Find the perfect herbal infusion for your everyday wellness routine.",
+    "herbs": "{count}-herb infusion",
+    "fallback": "A herbal infusion from our range",
+    "explore": "Explore Collection",
+    "loading": "Loading the collections"
   },
-  "deals": {
-    "eyebrow": "Handpicked for you"
+  "products": {
+    "eyebrow": "Shop the Range",
+    "title": "Our Signature Herbal Teas",
+    "lead": "Discover herbal infusions thoughtfully developed for your lifestyle.",
+    "viewAll": "View All Products",
+    "empty": "Fresh stock of our herbal teas is on its way",
+    "emptyLead": "Explore our collections in the meantime, or check back soon.",
+    "emptyAction": "Browse the collections",
+    "loading": "Loading the teas"
   },
-  "spotlight": {
-    "eyebrow": "Featured Collection",
-    "body": "Discover the pieces in this collection, chosen for their quality and craft.",
-    "cta": "Shop all {name}"
+  "card": {
+    "from": "From",
+    "soldOut": "Sold out",
+    "inStock": "In stock",
+    "sizes": "Available in more than one size",
+    "single": "Herbal infusion",
+    "noPicture": "Picture coming soon",
+    "buy": "Choose & Add to Cart",
+    "buyLabel": "Choose options and add {name} to your cart",
+    "details": "View Details",
+    "unavailable": "Currently unavailable"
   },
-  "story": {
-    "eyebrow": "Our Story",
-    "title": "Made with care,",
-    "accent": "chosen for you.",
-    "lead": "We bring together pieces we love, chosen for their quality, their craft and the way they make you feel.",
-    "body": "Whether you are shopping for yourself or for someone special, every item in our collection is picked to look as good as it feels.",
-    "more": "Explore the collection"
+  "why": {
+    "eyebrow": "Why Choose {store}",
+    "title": "Nature's Goodness,",
+    "accent": "Thoughtfully Crafted.",
+    "lead": "{store} was born from a passion for providing pure, natural and organic herbal infusions that are free from caffeine and tannin.",
+    "combinations": {
+      "title": "Carefully developed herbal combinations",
+      "body": "Each blend is the result of patient experimentation with different herbs."
+    },
+    "ayurveda": {
+      "title": "Inspired by Ayurveda",
+      "body": "Rooted in the traditional Indian understanding of herbs and spices."
+    },
+    "natural": {
+      "title": "Natural herbal ingredients",
+      "body": "Herbs, roots and spices, with no tea leaves in the blend."
+    },
+    "alternative": {
+      "title": "A thoughtful alternative to black tea",
+      "body": "Enjoy it as you like your chai, with or without milk."
+    },
+    "action": "Shop Herbal Teas",
+    "caption": "Our herbal tea range"
+  },
+  "founder": {
+    "eyebrow": "Our Founder",
+    "title": "The Experience Behind Every Cup",
+    "name": "Meet Dr. Satish Gosain",
+    "credentials": "M.B., B.S., D.N.B. (Internal Medicine)",
+    "first": "Dr. Satish Gosain, M.B., B.S., D.N.B. (Internal Medicine), has worked in different capacities in hospitals in Delhi for over 51 years and currently runs Dr. Bharti Nursing Home in Hari Nagar, New Delhi.",
+    "second": "Alongside his medical practice, he has studied Ayurveda and developed Govind Madhav Herbal Teas through experimentation with different herbal combinations.",
+    "quote": "What started as a modest hobby and a personal need to replace black tea gradually developed into seven herbal tea and infusion varieties.",
+    "factYears": "51+",
+    "factYearsLabel": "Years in medicine in Delhi",
+    "factVarieties": "7",
+    "factVarietiesLabel": "Herbal tea and infusion varieties",
+    "monogram": "SG",
+    "signature": "Dr. Satish Gosain",
+    "role": "Founder",
+    "action": "Read Our Story"
   },
   "range": {
-    "eyebrow": "Explore the Range",
-    "title": "Find Exactly What You Need",
-    "shopAll": "Shop all {name}"
+    "eyebrow": "Our Herbal Tea Range",
+    "title": "A Blend for Every Moment",
+    "lead": "Each variety brings together its own careful combination of herbs, as listed on its pack.",
+    "herbs": "Herbs",
+    "shop": "Shop {name}"
   },
-  "signup": {
-    "eyebrow": "Join us",
-    "title": "Shop faster with an account",
-    "body": "Create an account for faster checkout, order tracking and saved addresses.",
-    "action": "Create Account"
+  "learn": {
+    "eyebrow": "The Herbal Journal",
+    "title": "Discover the World of Herbal Infusions",
+    "lead": "A little reading to go with your cup.",
+    "more": "Read More",
+    "less": "Show less",
+    "note": "For general interest only, not medical advice. Please consult your doctor about any health concern.",
+    "tisanes": {
+      "tag": "Basics",
+      "title": "Understanding Herbal Tea and Tisanes",
+      "intro": "Herbal teas, also called tisanes, are infusions of herbs, roots, flowers, seeds and spices rather than the leaves of the tea plant.",
+      "body": "Because they contain no tea leaves, herbal infusions are naturally free from caffeine and tannin. That makes them easy to enjoy in the morning, after a meal or in the evening, plain or with milk, much as you would drink your everyday chai."
+    },
+    "herbs": {
+      "tag": "Ingredients",
+      "title": "Exploring Traditional Herbs",
+      "intro": "Tulsi, ginger, cinnamon, cardamom and liquorice root have flavoured Indian kitchens for generations.",
+      "body": "Many of the herbs in our blends are familiar from Indian cooking and from Ayurveda's long tradition of herbal knowledge. Each of our teas lists its herbs on the pack, so you always know what goes into your cup."
+    },
+    "routine": {
+      "tag": "Ritual",
+      "title": "Making Herbal Infusions Part of Your Daily Routine",
+      "intro": "A warm cup is a simple way to pause. Use one spoon of tea for one cup and brew it the way you like.",
+      "body": "Bring water to the boil, add a spoonful of your chosen blend and let it simmer for a few minutes. Add milk and sweetener if you like, strain, and take a quiet moment for yourself. Swapping one cup of black tea a day is an easy place to start."
+    }
+  },
+  "connect": {
+    "eyebrow": "Stay Connected",
+    "title": "Stay Connected with Nature",
+    "lead": "Create a free account to keep your orders, saved addresses and favourite teas in one place, and check out faster next time.",
+    "action": "Create an Account",
+    "contact": "Contact Us",
+    "privacy": "We respect your privacy. Read our privacy policy."
   }
 }
