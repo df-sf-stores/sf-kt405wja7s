@@ -65,11 +65,45 @@
     }
   },
   "contact": {
-    "title": "Get in touch",
-    "lead": "Questions about an order or anything else? Write to us and we will reply.",
-    "email": "Email",
+    "seoTitle": "Contact Us | Govind Madhav Herbal Tea",
+    "seoDescription": "Get in touch with Govind Madhav Herbal Tea. Call or email us with any question about our herbal teas.",
+    "title": "Get in Touch",
+    "lead": "We'd love to hear from you. Have a question about our herbal teas? Send us a message and our team will get back to you.",
+    "infoTitle": "Talk to Us",
+    "infoLead": "Questions about a tea, an order or how to prepare it? Call or email us, or leave your details in the form.",
+    "brand": "Govind Madhav Herbal Tea",
     "phone": "Phone",
-    "visit": "Visit"
+    "email": "Email",
+    "website": "Website",
+    "websiteValue": "www.govindmadhavherbaltea.com",
+    "form": {
+      "title": "Send Us a Message",
+      "label": "Contact form",
+      "firstName": "First Name",
+      "firstNameHint": "Enter your first name",
+      "lastName": "Last Name",
+      "lastNameHint": "Enter your last name",
+      "phone": "Phone Number",
+      "phoneHint": "Enter your phone number",
+      "phoneCode": "Country code",
+      "message": "Your Message",
+      "messageHint": "Write your message here...",
+      "requiredNote": "All fields are required.",
+      "fix": "Please check the highlighted fields.",
+      "send": "Send Message",
+      "sending": "Sending…",
+      "sent": "Thank you, your message has been sent. We will get back to you soon.",
+      "failed": "Your message couldn't be sent. Please try again, or call or email us.",
+      "unavailableTitle": "Online messages can't be sent yet",
+      "unavailable": "Nothing has been sent. Please call or email us using the details beside this form; your message is still here so you can copy it.",
+      "errors": {
+        "required": "This field is required.",
+        "name": "Please enter a name using letters only.",
+        "phone": "Please enter a valid phone number, including the country code.",
+        "short": "Please write at least 10 characters.",
+        "long": "Please keep your message under 1,000 characters."
+      }
+    }
   },
   "content": {
     "loading": "Loading the page",
