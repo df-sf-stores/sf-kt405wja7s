@@ -51,7 +51,13 @@
     "faq": "FAQs",
     "certificates": "Certificates & Registrations",
     "recipes": "Herbal Tea Recipes",
+    "labReports": "Laboratory Test Reports",
+    "testimonials": "Customer Testimonials",
     "whatsapp": "Chat with us on WhatsApp",
     "rights": "© 2026 {store}. All rights reserved."
+  },
+  "brand": {
+    "logo": "pending",
+    "logoAlt": "{store} – Govind Madhav Herbal Tea logo"
   }
 }

@@ -1,8 +1,10 @@
 import type { ReactNode } from 'react'
 import { ConsentBanner, ConsentSettingsButton, Link, PoweredBy, PreviewBanner, useStorefront } from '@dripfunnel/storefront-core/theme'
-import { BrandMark } from './BrandMark'
+import { BrandLockup } from './BrandLockup'
 import { CertificatesFooterLink } from './interactive/CertificatesFooterLink'
+import { LabReportsFooterLink } from './interactive/LabReportsFooterLink'
 import { RecipesFooterLink } from './interactive/RecipesFooterLink'
+import { TestimonialsFooterLink } from './interactive/TestimonialsFooterLink'
 import { SiteHeader } from './interactive/SiteHeader'
 import layout from '../styles/layout.module.css'
 import styles from '../styles/site.module.css'
@@ -55,8 +57,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
         <div className={styles.footerInner}>
           <div className={styles.footerBrand}>
             <Link href="/" className={styles.footerLogo}>
-              <BrandMark className={styles.footerMark} />
-              <span>{store.name}</span>
+              <BrandLockup place="footer" />
             </Link>
             <p className={styles.footerNote}>{store.description || t('common.footer.note')}</p>
             {store.social.length ? (
@@ -94,6 +95,12 @@ export const Layout = ({ children }: { children: ReactNode }) => {
             <RecipesFooterLink className={styles.footerLink} currentClassName={styles.footerCurrent}>
               {t('common.footer.recipes')}
             </RecipesFooterLink>
+            <LabReportsFooterLink className={styles.footerLink} currentClassName={styles.footerCurrent}>
+              {t('common.footer.labReports')}
+            </LabReportsFooterLink>
+            <TestimonialsFooterLink className={styles.footerLink} currentClassName={styles.footerCurrent}>
+              {t('common.footer.testimonials')}
+            </TestimonialsFooterLink>
             <Link href="/contact/" className={styles.footerLink}>
               {t('common.nav.contact')}
             </Link>

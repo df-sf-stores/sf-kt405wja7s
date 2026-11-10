@@ -1,0 +1,123 @@
+{
+  "seo": {
+    "title": "Laboratory Test Reports | Govind Madhav Herbal Tea",
+    "description": "The Economy Testing & Research Laboratory (ETRL) test reports for six Govind Madhav herbal teas, issued 7 September 2022."
+  },
+  "hero": {
+    "eyebrow": "Quality & Transparency",
+    "title": "Laboratory Test Reports",
+    "lead": "Explore the laboratory test reports for our herbal tea collections. We believe in transparency and providing customers with access to product-related testing information.",
+    "browse": "View the Reports",
+    "issued": "Reports issued 7 September 2022"
+  },
+  "intro": {
+    "eyebrow": "About the Reports",
+    "title": "Quality Information You Can Explore",
+    "lead": "Explore the laboratory test reports associated with Govind Madhav Herbal Tea products. Each report presents the chemical parameters tested by Economy Testing & Research Laboratory (ETRL).",
+    "body": "Each one-page report lists the energy value, fats, cholesterol, sodium, potassium, carbohydrate, dietary fibre, sugar, protein, vitamins A and C, calcium and iron measured in the tea, per 1 g serving, with the method reference for each test.",
+    "note": "As each report states, its results relate only to the sample tested. Samples were received on 3 September 2022 and the reports were issued on 7 September 2022.",
+    "labLabel": "Laboratory",
+    "lab": "ETRL",
+    "countLabel": "Product reports",
+    "count": "6",
+    "servingLabel": "Serving size tested",
+    "serving": "1.0 g",
+    "paramsLabel": "Parameters per report",
+    "params": "15"
+  },
+  "gallery": {
+    "eyebrow": "Report Gallery",
+    "title": "Our Product Laboratory Reports",
+    "lead": "Select a product to view its corresponding laboratory test report.",
+    "pending": "Report image coming soon"
+  },
+  "card": {
+    "lab": "Laboratory",
+    "labName": "ETRL",
+    "reportNo": "Report No.",
+    "issued": "Report issue date",
+    "view": "View Report",
+    "full": "View Full Report"
+  },
+  "viewer": {
+    "close": "Close report",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "fit": "Fit to screen",
+    "previous": "Previous report",
+    "next": "Next report",
+    "position": "Report {n} of {total}",
+    "hint": "Zoom in to read the details; scroll or use the arrow keys to move around the page.",
+    "issued": "Issued {date}"
+  },
+  "cta": {
+    "eyebrow": "Questions About a Report?",
+    "title": "We're Happy to Help",
+    "lead": "If you would like to know more about a laboratory report or any of our herbal teas, get in touch with us.",
+    "contact": "Contact Us",
+    "products": "Explore Our Products"
+  },
+  "product": {
+    "title": "Laboratory Test Report",
+    "lead": "Read this tea's laboratory test report from Economy Testing & Research Laboratory (ETRL), issued 7 September 2022.",
+    "link": "View {product} Laboratory Report"
+  },
+  "items": {
+    "tulsi": {
+      "product": "Govind Madhav Tulsi Tea",
+      "short": "Tulsi Tea",
+      "reportNo": "ETRL/F/2022090303/207",
+      "issued": "07.09.2022",
+      "viewLabel": "View the Govind Madhav Tulsi Tea laboratory report",
+      "alt": "Govind Madhav Tulsi Tea laboratory test report by ETRL"
+    },
+    "ginger": {
+      "product": "Govind Madhav Ginger Tea",
+      "short": "Ginger Tea",
+      "reportNo": "ETRL/F/2022090302/207",
+      "issued": "07.09.2022",
+      "viewLabel": "View the Govind Madhav Ginger Tea laboratory report",
+      "alt": "Govind Madhav Ginger Tea laboratory test report by ETRL"
+    },
+    "diabetic": {
+      "product": "Govind Madhav Diabetic Tea",
+      "short": "Diabetic Tea",
+      "reportNo": "ETRL/F/2022090304/207",
+      "issued": "07.09.2022",
+      "viewLabel": "View the Govind Madhav Diabetic Tea laboratory report",
+      "alt": "Govind Madhav Diabetic Tea laboratory test report by ETRL"
+    },
+    "cough": {
+      "product": "Govind Madhav Cough Tea",
+      "short": "Cough Tea",
+      "reportNo": "ETRL/F/2022090301/207",
+      "issued": "07.09.2022",
+      "viewLabel": "View the Govind Madhav Cough Tea laboratory report",
+      "alt": "Govind Madhav Cough Tea laboratory test report by ETRL"
+    },
+    "herbal": {
+      "product": "Govind Madhav Herbal Tea",
+      "short": "Herbal Tea",
+      "reportNo": "ETRL/F/2022090305/207",
+      "issued": "07.09.2022",
+      "viewLabel": "View the Govind Madhav Herbal Tea laboratory report",
+      "alt": "Govind Madhav Herbal Tea laboratory test report by ETRL"
+    },
+    "weightLoss": {
+      "product": "Govind Madhav Weight Loss Tea",
+      "short": "Weight Loss Tea",
+      "reportNo": "ETRL/F/2022090306/207",
+      "issued": "07.09.2022",
+      "viewLabel": "View the Govind Madhav Weight Loss Tea laboratory report",
+      "alt": "Govind Madhav Weight Loss Tea laboratory test report by ETRL"
+    }
+  },
+  "assets": {
+    "tulsi": "pending",
+    "ginger": "pending",
+    "diabetic": "pending",
+    "cough": "pending",
+    "herbal": "pending",
+    "weightLoss": "pending"
+  }
+}

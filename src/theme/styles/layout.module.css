@@ -1,25 +1,45 @@
 .shell {
+  /* Brand tokens: the one definition of the Govind Madhav palette, from the original red-and-green logo. */
+  --gm-primary: #174b36;
+  --gm-primary-rgb: 23 75 54;
+  --gm-primary-soft: #23614a;
+  --gm-primary-dark: #0e3124;
+  --gm-primary-dark-rgb: 14 49 36;
+  --gm-red: #c62828;
+  --gm-red-rgb: 198 40 40;
+  --gm-red-hover: #a82020;
+  --gm-leaf: #009040;
+  --gm-ivory: #faf8f1;
+  --gm-ivory-rgb: 250 248 241;
+  --gm-sage: #82977a;
+  --gm-sage-rgb: 130 151 122;
+  --gm-gold: #c5a15a;
+  --gm-gold-rgb: 197 161 90;
+  --gm-gold-hover: #d4b373;
+  --gm-gold-text: #7d5f22;
+  --gm-ink: #292d29;
+
   /* Govind Madhav palette: forest green, sage, warm ivory and muted gold. */
-  --bg: #faf8f1;
+  --bg: var(--gm-ivory);
   --surface: #fff;
   --soft: #f3f0e6;
   --tint: #e6ebe0;
-  --ink: #292d29;
+  --ink: var(--gm-ink);
   --ink-soft: #3c413b;
   /* #777d74 is the brand's soft grey; this shade of it keeps small text above 4.5:1 on ivory. */
   --muted: #646a61;
   --line: #e4e0d3;
-  --accent: #173f32;
-  --accent-ink: #faf8f1;
-  --sage: #82977a;
-  --gold: #c5a15a;
-  --taupe: #c5a15a;
-  --taupe-ink: #173f32;
+  --accent: var(--gm-primary);
+  --accent-ink: var(--gm-ivory);
+  --sage: var(--gm-sage);
+  --gold: var(--gm-gold);
+  --taupe: var(--gm-gold);
+  --taupe-ink: var(--gm-primary);
   /* Gold dark enough to read as text on the page background. */
-  --taupe-text: #7d5f22;
-  --deep: #0f2c23;
+  --taupe-text: var(--gm-gold-text);
+  --deep: var(--gm-primary-dark);
   --danger: #9a3412;
-  --focus: #1f5c47;
+  --focus: var(--gm-primary-soft);
   --radius: 10px;
   --button-radius: 999px;
   --heading-font: 'Playfair Display', georgia, serif;
@@ -30,12 +50,12 @@
   --body-font: 'Inter', system-ui, -apple-system, 'Segoe UI', roboto, sans-serif;
   --header-bg: var(--bg);
   --header-ink: var(--accent);
-  --header-hover: rgb(23 63 50 / 8%);
-  --nav-bg: rgb(250 248 241 / 94%);
-  --footer-bg: #173f32;
-  --footer-ink: #faf8f1;
-  --footer-muted: rgb(250 248 241 / 78%);
-  --footer-line: rgb(197 161 90 / 28%);
+  --header-hover: rgb(var(--gm-primary-rgb) / 8%);
+  --nav-bg: rgb(var(--gm-ivory-rgb) / 94%);
+  --footer-bg: var(--gm-primary);
+  --footer-ink: var(--gm-ivory);
+  --footer-muted: rgb(var(--gm-ivory-rgb) / 78%);
+  --footer-line: rgb(var(--gm-gold-rgb) / 28%);
   --picture: linear-gradient(160deg, #f3f0e6, #e3e7da);
   --picture-alt: linear-gradient(160deg, #e6ebe0, #d6dfcf);
   --df-sealed-font: var(--body-font);

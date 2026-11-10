@@ -1,12 +1,12 @@
 /* About Us: the brand's story in editorial sections on forest green, warm ivory and muted gold. */
 
 .page {
-  --forest: #173f32;
-  --forest-deep: #254d3d;
-  --ivory: #faf8f1;
-  --about-gold: #c5a15a;
-  --gold-text: #7d5f22;
-  --charcoal: #292d29;
+  --forest: var(--gm-primary);
+  --forest-deep: var(--gm-primary-soft);
+  --ivory: var(--gm-ivory);
+  --about-gold: var(--gm-gold);
+  --gold-text: var(--gm-gold-text);
+  --charcoal: var(--gm-ink);
   --soft-line: #e4e0d3;
 
   overflow-x: clip;
@@ -127,19 +127,19 @@
 }
 
 .buttonGold:hover {
-  background: #d4b373;
+  background: var(--gm-gold-hover);
   transform: translateY(-1px);
 }
 
 .buttonGhost {
-  border: 1px solid rgb(250 248 241 / 55%);
+  border: 1px solid rgb(var(--gm-ivory-rgb) / 55%);
   background: transparent;
   color: var(--ivory);
 }
 
 .buttonGhost:hover {
   border-color: var(--ivory);
-  background: rgb(250 248 241 / 10%);
+  background: rgb(var(--gm-ivory-rgb) / 10%);
 }
 
 .buttonOutline {
@@ -213,9 +213,9 @@
   width: min(100%, 440px);
   margin: 0 auto;
   aspect-ratio: 1;
-  border: 1px solid rgb(197 161 90 / 50%);
+  border: 1px solid rgb(var(--gm-gold-rgb) / 50%);
   border-radius: 50%;
-  outline: 10px solid rgb(197 161 90 / 12%);
+  outline: 10px solid rgb(var(--gm-gold-rgb) / 12%);
 }
 
 /* A place with no picture yet: a fine-line cup on soft green */
@@ -241,7 +241,7 @@
   position: relative;
   overflow: hidden;
   padding: 56px 16px 72px;
-  background: radial-gradient(110% 90% at 15% 0%, var(--forest-deep) 0%, var(--forest) 55%, #0f2c23 100%);
+  background: radial-gradient(110% 90% at 15% 0%, var(--forest-deep) 0%, var(--forest) 55%, var(--gm-primary-dark) 100%);
   color: var(--ivory);
 }
 
@@ -251,7 +251,7 @@
   left: -10px;
   width: 150px;
   height: 200px;
-  color: rgb(197 161 90 / 30%);
+  color: rgb(var(--gm-gold-rgb) / 30%);
   transform: rotate(-14deg);
 }
 
@@ -286,7 +286,7 @@
 .heroLead {
   max-width: 540px;
   margin: 22px 0 0;
-  color: rgb(250 248 241 / 85%);
+  color: rgb(var(--gm-ivory-rgb) / 85%);
   font-size: 1.08rem;
   line-height: 1.75;
 }
@@ -308,9 +308,9 @@
 .heroArch {
   overflow: hidden;
   aspect-ratio: 0.8;
-  border: 1px solid rgb(197 161 90 / 60%);
+  border: 1px solid rgb(var(--gm-gold-rgb) / 60%);
   border-radius: 240px 240px 14px 14px;
-  background: rgb(250 248 241 / 8%);
+  background: rgb(var(--gm-ivory-rgb) / 8%);
   box-shadow: 0 30px 60px rgb(0 0 0 / 28%);
 }
 
@@ -328,7 +328,7 @@
   border: 1px solid var(--about-gold);
   border-radius: 50%;
   background: var(--ivory);
-  box-shadow: 0 10px 24px rgb(0 0 0 / 22%), inset 0 0 0 5px var(--ivory), inset 0 0 0 6px rgb(197 161 90 / 60%);
+  box-shadow: 0 10px 24px rgb(0 0 0 / 22%), inset 0 0 0 5px var(--ivory), inset 0 0 0 6px rgb(var(--gm-gold-rgb) / 60%);
   color: var(--forest);
   font-family: var(--heading-font);
   font-size: 1rem;
@@ -395,7 +395,7 @@
   bottom: 6px;
   left: 6px;
   width: 1px;
-  background: linear-gradient(180deg, var(--about-gold), rgb(197 161 90 / 25%));
+  background: linear-gradient(180deg, var(--about-gold), rgb(var(--gm-gold-rgb) / 25%));
   content: '';
 }
 
@@ -412,7 +412,7 @@
   border-color: var(--about-gold);
   background: var(--forest);
   color: var(--ivory);
-  box-shadow: 0 16px 36px rgb(23 63 50 / 22%);
+  box-shadow: 0 16px 36px rgb(var(--gm-primary-rgb) / 22%);
 }
 
 .milestoneDot {
@@ -428,7 +428,7 @@
 
 .milestoneKey .milestoneDot {
   background: var(--about-gold);
-  box-shadow: 0 0 0 5px rgb(197 161 90 / 25%);
+  box-shadow: 0 0 0 5px rgb(var(--gm-gold-rgb) / 25%);
 }
 
 .milestoneYear {
@@ -463,7 +463,7 @@
 }
 
 .milestoneKey .milestoneBody {
-  color: rgb(250 248 241 / 82%);
+  color: rgb(var(--gm-ivory-rgb) / 82%);
 }
 
 /* 4. Founder */
@@ -490,7 +490,7 @@
   position: relative;
   overflow: hidden;
   aspect-ratio: 0.8;
-  border: 1px solid rgb(197 161 90 / 60%);
+  border: 1px solid rgb(var(--gm-gold-rgb) / 60%);
   border-radius: calc(var(--radius) + 6px);
   background: var(--forest-deep);
 }
@@ -506,7 +506,7 @@
   justify-content: center;
   border: 1px solid var(--about-gold);
   border-radius: 50%;
-  background: rgb(23 63 50 / 85%);
+  background: rgb(var(--gm-primary-rgb) / 85%);
   color: var(--about-gold);
   font-family: var(--heading-font);
   font-size: 1.05rem;
@@ -553,16 +553,16 @@
 
 .bodyLight {
   margin: 0 0 16px;
-  color: rgb(250 248 241 / 82%);
+  color: rgb(var(--gm-ivory-rgb) / 82%);
   line-height: 1.8;
 }
 
 .credentials {
   margin-top: 30px;
   padding: 22px;
-  border: 1px solid rgb(197 161 90 / 40%);
+  border: 1px solid rgb(var(--gm-gold-rgb) / 40%);
   border-radius: calc(var(--radius) + 4px);
-  background: rgb(250 248 241 / 5%);
+  background: rgb(var(--gm-ivory-rgb) / 5%);
 }
 
 .credentialsTitle {
@@ -597,7 +597,7 @@
 
 .credential span span {
   display: block;
-  color: rgb(250 248 241 / 72%);
+  color: rgb(var(--gm-ivory-rgb) / 72%);
   font-size: 0.88rem;
   line-height: 1.5;
 }
@@ -658,7 +658,7 @@
   border-left: 3px solid var(--about-gold);
   border-radius: var(--radius);
   background: var(--forest);
-  box-shadow: 0 18px 40px rgb(23 63 50 / 25%);
+  box-shadow: 0 18px 40px rgb(var(--gm-primary-rgb) / 25%);
   color: var(--ivory);
 }
 
@@ -692,7 +692,7 @@
   right: -20px;
   width: 160px;
   height: 210px;
-  color: rgb(130 151 122 / 35%);
+  color: rgb(var(--gm-sage-rgb) / 35%);
   transform: rotate(170deg);
 }
 
@@ -700,7 +700,7 @@
   margin: 0 0 18px;
   padding: 12px 16px;
   border-left: 2px solid var(--about-gold);
-  background: rgb(197 161 90 / 10%);
+  background: rgb(var(--gm-gold-rgb) / 10%);
   color: var(--forest);
   font-family: var(--heading-font);
   font-style: italic;
@@ -730,7 +730,7 @@
   border: 1px solid var(--about-gold);
   background: var(--forest);
   color: var(--ivory);
-  box-shadow: 0 20px 44px rgb(23 63 50 / 22%);
+  box-shadow: 0 20px 44px rgb(var(--gm-primary-rgb) / 22%);
 }
 
 .compareTitle,
@@ -809,7 +809,7 @@
   border: 1px solid var(--soft-line);
   border-radius: calc(var(--radius) + 4px);
   background: var(--surface);
-  box-shadow: 0 22px 48px rgb(23 63 50 / 14%);
+  box-shadow: 0 22px 48px rgb(var(--gm-primary-rgb) / 14%);
 }
 
 .browserBar {
@@ -927,7 +927,7 @@
 }
 
 .infusion:hover {
-  box-shadow: 0 18px 38px rgb(23 63 50 / 14%);
+  box-shadow: 0 18px 38px rgb(var(--gm-primary-rgb) / 14%);
   transform: translateY(-3px);
 }
 
@@ -1044,9 +1044,9 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
-  border: 1px solid rgb(197 161 90 / 55%);
+  border: 1px solid rgb(var(--gm-gold-rgb) / 55%);
   border-radius: 50%;
-  background: rgb(197 161 90 / 10%);
+  background: rgb(var(--gm-gold-rgb) / 10%);
 }
 
 .valueIcon svg {
@@ -1092,7 +1092,7 @@
 .closingPicture::after {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgb(23 63 50 / 50%), rgb(15 44 35 / 85%));
+  background: linear-gradient(180deg, rgb(var(--gm-primary-rgb) / 50%), rgb(var(--gm-primary-dark-rgb) / 85%));
   content: '';
 }
 
@@ -1112,7 +1112,7 @@
 
 .closingText {
   margin: 18px 0 0;
-  color: rgb(250 248 241 / 85%);
+  color: rgb(var(--gm-ivory-rgb) / 85%);
   font-size: 1.05rem;
   line-height: 1.75;
 }
@@ -1133,7 +1133,7 @@
   border-top: 3px solid var(--about-gold);
   border-radius: calc(var(--radius) + 4px);
   background: var(--surface);
-  box-shadow: 0 16px 40px rgb(23 63 50 / 8%);
+  box-shadow: 0 16px 40px rgb(var(--gm-primary-rgb) / 8%);
 }
 
 .contactName {
@@ -1319,7 +1319,7 @@
     display: block;
     width: auto;
     height: 1px;
-    background: linear-gradient(90deg, rgb(197 161 90 / 25%), var(--about-gold), rgb(197 161 90 / 25%));
+    background: linear-gradient(90deg, rgb(var(--gm-gold-rgb) / 25%), var(--about-gold), rgb(var(--gm-gold-rgb) / 25%));
   }
 
   .milestoneDot {

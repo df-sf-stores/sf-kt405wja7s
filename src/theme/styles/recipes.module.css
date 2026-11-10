@@ -1,13 +1,13 @@
 /* Herbal Tea Recipes: an editorial recipe page on forest green, warm ivory, sage and muted gold. */
 
 .page {
-  --forest: #173f32;
-  --forest-deep: #254d3d;
-  --sage: #82977a;
-  --ivory: #faf8f1;
-  --recipe-gold: #c5a15a;
-  --gold-text: #7d5f22;
-  --charcoal: #292d29;
+  --forest: var(--gm-primary);
+  --forest-deep: var(--gm-primary-soft);
+  --sage: var(--gm-sage);
+  --ivory: var(--gm-ivory);
+  --recipe-gold: var(--gm-gold);
+  --gold-text: var(--gm-gold-text);
+  --charcoal: var(--gm-ink);
   --ink-soft: #4a5049;
   --soft-line: #e4e0d3;
   --cool: #eef2ec;
@@ -128,19 +128,19 @@
 }
 
 .buttonGold:hover {
-  background: #d4b373;
+  background: var(--gm-gold-hover);
   transform: translateY(-1px);
 }
 
 .buttonGhost {
-  border: 1px solid rgb(250 248 241 / 55%);
+  border: 1px solid rgb(var(--gm-ivory-rgb) / 55%);
   background: transparent;
   color: var(--ivory);
 }
 
 .buttonGhost:hover {
   border-color: var(--ivory);
-  background: rgb(250 248 241 / 10%);
+  background: rgb(var(--gm-ivory-rgb) / 10%);
 }
 
 .buttonGold:focus-visible,
@@ -220,7 +220,7 @@
   position: relative;
   overflow: hidden;
   padding: 56px 16px 72px;
-  background: radial-gradient(110% 90% at 15% 0%, var(--forest-deep) 0%, var(--forest) 55%, #0f2c23 100%);
+  background: radial-gradient(110% 90% at 15% 0%, var(--forest-deep) 0%, var(--forest) 55%, var(--gm-primary-dark) 100%);
   color: var(--ivory);
 }
 
@@ -229,7 +229,7 @@
   position: absolute;
   width: 150px;
   height: 200px;
-  color: rgb(197 161 90 / 28%);
+  color: rgb(var(--gm-gold-rgb) / 28%);
 }
 
 .heroSprig {
@@ -241,7 +241,7 @@
 .heroSprigRight {
   top: -30px;
   right: -20px;
-  color: rgb(130 151 122 / 35%);
+  color: rgb(var(--gm-sage-rgb) / 35%);
   transform: rotate(160deg);
 }
 
@@ -282,7 +282,7 @@
 .heroLead {
   max-width: 560px;
   margin: 22px 0 0;
-  color: rgb(250 248 241 / 86%);
+  color: rgb(var(--gm-ivory-rgb) / 86%);
   font-size: 1.08rem;
   line-height: 1.75;
 }
@@ -312,7 +312,7 @@
 .heroHot {
   width: 78%;
   aspect-ratio: 0.8;
-  border: 1px solid rgb(197 161 90 / 55%);
+  border: 1px solid rgb(var(--gm-gold-rgb) / 55%);
   border-radius: 999px 999px var(--radius) var(--radius);
 }
 
@@ -324,7 +324,7 @@
   aspect-ratio: 0.75;
   border: 6px solid var(--forest);
   border-radius: calc(var(--radius) + 10px);
-  box-shadow: 0 18px 40px rgb(8 24 18 / 35%);
+  box-shadow: 0 18px 40px rgb(var(--gm-primary-dark-rgb) / 35%);
 }
 
 .heroTag {
@@ -336,7 +336,7 @@
   gap: 6px;
   padding: 6px 12px;
   border-radius: 999px;
-  background: rgb(250 248 241 / 92%);
+  background: rgb(var(--gm-ivory-rgb) / 92%);
   color: var(--forest);
   font-size: 0.75rem;
   font-weight: 600;
@@ -507,7 +507,7 @@
 .or {
   justify-self: start;
   padding: 1px 10px;
-  border: 1px solid rgb(197 161 90 / 60%);
+  border: 1px solid rgb(var(--gm-gold-rgb) / 60%);
   border-radius: 999px;
   color: var(--gold-text);
   font-size: 0.72rem;
@@ -603,13 +603,13 @@
   border: 1px solid var(--soft-line);
   border-radius: calc(var(--radius) + 8px);
   background: #fff;
-  box-shadow: 0 1px 2px rgb(23 63 50 / 5%);
+  box-shadow: 0 1px 2px rgb(var(--gm-primary-rgb) / 5%);
   transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .feature:hover,
 .card:hover {
-  box-shadow: 0 18px 40px rgb(23 63 50 / 10%);
+  box-shadow: 0 18px 40px rgb(var(--gm-primary-rgb) / 10%);
   transform: translateY(-3px);
 }
 
@@ -634,7 +634,7 @@
   border: 1px solid #dde5de;
   border-radius: calc(var(--radius) + 8px);
   background: #fff;
-  box-shadow: 0 1px 2px rgb(23 63 50 / 5%);
+  box-shadow: 0 1px 2px rgb(var(--gm-primary-rgb) / 5%);
   transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
@@ -666,7 +666,7 @@
 }
 
 .serving:hover {
-  box-shadow: 0 16px 34px rgb(23 63 50 / 10%);
+  box-shadow: 0 16px 34px rgb(var(--gm-primary-rgb) / 10%);
   transform: translateY(-3px);
 }
 
@@ -722,7 +722,7 @@
 
 .servingLink:hover {
   color: var(--gold-text);
-  text-decoration-color: var(--forest);
+  text-decoration-color: var(--gm-red);
 }
 
 /* 6. Why add it to the menu */
@@ -756,7 +756,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 14px;
-  border: 1px solid rgb(197 161 90 / 55%);
+  border: 1px solid rgb(var(--gm-gold-rgb) / 55%);
   border-radius: 50%;
   background: var(--ivory);
   color: var(--forest);
@@ -788,7 +788,7 @@
   position: relative;
   overflow: hidden;
   padding: 80px 16px;
-  background: radial-gradient(120% 110% at 85% 0%, var(--forest-deep) 0%, var(--forest) 60%, #0f2c23 100%);
+  background: radial-gradient(120% 110% at 85% 0%, var(--forest-deep) 0%, var(--forest) 60%, var(--gm-primary-dark) 100%);
   color: var(--ivory);
 }
 
@@ -798,7 +798,7 @@
   bottom: -24px;
   width: 160px;
   height: 210px;
-  color: rgb(197 161 90 / 26%);
+  color: rgb(var(--gm-gold-rgb) / 26%);
   transform: rotate(12deg);
 }
 
@@ -812,7 +812,7 @@
 .ctaLead {
   max-width: 560px;
   margin: 18px auto 0;
-  color: rgb(250 248 241 / 86%);
+  color: rgb(var(--gm-ivory-rgb) / 86%);
   font-size: 1.06rem;
   line-height: 1.7;
 }
@@ -830,7 +830,7 @@
   gap: 8px 24px;
   justify-content: center;
   margin: 28px 0 0;
-  color: rgb(250 248 241 / 78%);
+  color: rgb(var(--gm-ivory-rgb) / 78%);
   font-size: 0.95rem;
 }
 

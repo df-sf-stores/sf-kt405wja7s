@@ -1,17 +1,17 @@
 /* Shop All: a premium product listing on warm ivory, with a filter sidebar, forest-green actions and muted gold details. */
 
 .page {
-  --forest: #173f32;
-  --forest-deep: #254d3d;
-  --sage: #82977a;
-  --ivory: #faf8f1;
-  --shop-gold: #c5a15a;
-  --gold-text: #7d5f22;
-  --charcoal: #292d29;
+  --forest: var(--gm-primary);
+  --forest-deep: var(--gm-primary-soft);
+  --sage: var(--gm-sage);
+  --ivory: var(--gm-ivory);
+  --shop-gold: var(--gm-gold);
+  --gold-text: var(--gm-gold-text);
+  --charcoal: var(--gm-ink);
   --soft-ink: #5b6159;
   --border: #e8e2d6;
-  --card-shadow: 0 1px 2px rgb(23 63 50 / 6%), 0 4px 14px rgb(23 63 50 / 5%);
-  --card-shadow-hover: 0 14px 34px rgb(23 63 50 / 12%);
+  --card-shadow: 0 1px 2px rgb(var(--gm-primary-rgb) / 6%), 0 4px 14px rgb(var(--gm-primary-rgb) / 5%);
+  --card-shadow-hover: 0 14px 34px rgb(var(--gm-primary-rgb) / 12%);
   --corner: 10px;
 
   overflow-x: clip;
@@ -379,7 +379,7 @@
   border: 2px solid var(--forest);
   border-radius: 50%;
   background: #fff;
-  box-shadow: 0 1px 4px rgb(23 63 50 / 25%);
+  box-shadow: 0 1px 4px rgb(var(--gm-primary-rgb) / 25%);
   cursor: grab;
   transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
@@ -394,7 +394,7 @@
 
 .thumb:hover,
 .thumbActive {
-  box-shadow: 0 0 0 6px rgb(130 151 122 / 25%);
+  box-shadow: 0 0 0 6px rgb(var(--gm-sage-rgb) / 25%);
 }
 
 .thumbActive {

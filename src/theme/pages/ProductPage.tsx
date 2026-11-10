@@ -1,5 +1,8 @@
 import { Breadcrumbs, LegalNotices, Link, Price, RichText, useProduct, useStorefront } from '@dripfunnel/storefront-core/theme'
 import { BuyButtons } from '../components/interactive/BuyButtons'
+import { ProductRecipeLink } from '../components/herbalrecipes/HerbalRecipesSections'
+import { ProductLabReport } from '../components/labreports/LaboratoryReportsSections'
+import { ProductTestimonialsLink } from '../components/testimonials/TestimonialsSections'
 import { Gallery } from '../components/interactive/Gallery'
 import { Options } from '../components/interactive/Options'
 import { Retry } from '../components/interactive/Retry'
@@ -102,6 +105,9 @@ export const ProductPage = () => {
                   ) : null}
                 </details>
               ) : null}
+              <ProductRecipeLink href={product.href} className={styles.section} titleClassName={styles.sectionTitle} />
+              <ProductLabReport href={product.href} className={styles.section} titleClassName={styles.sectionTitle} />
+              <ProductTestimonialsLink href={product.href} className={styles.section} titleClassName={styles.sectionTitle} />
               {product.faqs.length ? (
                 <details className={styles.section}>
                   <summary className={styles.summary}>{t('shop.product.questions')}</summary>

@@ -29,6 +29,9 @@
     "/contact": "ContactPage",
     "/help": "FaqPage",
     "/certificates": "CertificatesPage",
-    "/herbal-tea-recipes": "HerbalTeaRecipesPage"
+    "/herbal-tea-recipes": "HerbalTeaRecipesPage",
+    "/herbal-tea-recipes/restaurants": "RestaurantRecipesPage",
+    "/laboratory-test-reports": "LaboratoryReportsPage",
+    "/testimonials": "TestimonialsPage"
   }
 }

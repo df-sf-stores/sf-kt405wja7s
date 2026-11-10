@@ -1,32 +1,35 @@
-import { useCollections, useHead, useStorefront } from '@dripfunnel/storefront-core/theme'
+import { useHead, useProductCards, useStorefront, type ProductCard } from '@dripfunnel/storefront-core/theme'
 import { Layout } from '../components/Layout'
-import type { TeaPhotos } from '../components/recipes/RecipeArt'
-import { RecipeHero, RecipeIntroduction } from '../components/recipes/RecipeIntro'
-import { ColdTeaRecipes, HotTeaRecipes } from '../components/recipes/RecipeLists'
-import { RecipeBenefits, RestaurantEnquiryCTA, RestaurantMenuSection } from '../components/recipes/RestaurantSections'
-import styles from '../styles/recipes.module.css'
+import { productHrefOf, productSlugs, teas, type TeaKey } from '../components/herbalRecipes'
+import { HerbalRecipesHero, RecipeCollection, RecipeIntroduction, RestaurantRecipesLink } from '../components/herbalrecipes/HerbalRecipesSections'
+import { RecipeDetail } from '../components/interactive/RecipeDetail'
+import styles from '../styles/herbalrecipes.module.css'
 
 /**
- * /herbal-tea-recipes/: the client's four hot and cold preparation methods for Govind Madhav Herbal Tea and Ginger Tea,
- * for restaurants, cafés, snack corners and Govinda Restaurants. Pictures are the client's Storefront › Assets files once
- * their ids are in content/en/recipes.json; until then the store's Herbal Tea and Ginger Tea collection photographs stand in.
+ * /herbal-tea-recipes/: how to prepare each of the six teas four ways, from the client's six recipe documents. Pack
+ * photographs and shop links come from the store's own products; a product that isn't on sale shows its recipe only.
+ * The larger-batch restaurant recipes are on /herbal-tea-recipes/restaurants/.
  */
 export const HerbalTeaRecipesPage = () => {
   const { t } = useStorefront()
-  useHead({ title: t('recipes.seo.title'), description: t('recipes.seo.description') })
-  const { collections } = useCollections({ first: 20 })
-  const photoOf = (href: string) => collections.find((c) => c.href === href)?.image ?? null
-  const photos: TeaPhotos = { herbal: photoOf('/collections/herbal-tea/'), ginger: photoOf('/collections/ginger-tea/') }
+  useHead({ title: t('herbalrecipes.seo.title'), description: t('herbalrecipes.seo.description') })
+  const { cards: found } = useProductCards(productSlugs)
+  const cards = new Map(teas.flatMap((tea): [TeaKey, ProductCard][] => {
+    const card = found.find((c) => c.href === productHrefOf(tea))
+    return card ? [[tea, card]] : []
+  }))
   return (
     <Layout>
       <div className={styles.page}>
-        <RecipeHero photos={photos} />
-        <RecipeIntroduction photos={photos} />
-        <HotTeaRecipes photos={photos} />
-        <ColdTeaRecipes photos={photos} />
-        <RestaurantMenuSection photos={photos} />
-        <RecipeBenefits />
-        <RestaurantEnquiryCTA />
+        <HerbalRecipesHero cards={cards} />
+        <RecipeIntroduction />
+        <RecipeCollection cards={cards} />
+        <div className={styles.details} aria-label={t('herbalrecipes.collection.title')}>
+          {teas.map((tea, i) => (
+            <RecipeDetail key={tea} tea={tea} card={cards.get(tea)} flip={i % 2 === 1} />
+          ))}
+        </div>
+        <RestaurantRecipesLink />
       </div>
     </Layout>
   )

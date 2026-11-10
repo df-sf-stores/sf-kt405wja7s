@@ -1,12 +1,15 @@
-/** The brand's mark: a cup with a rising tulsi leaf, drawn in line so it takes the colour of the text around it. */
-export const BrandMark = ({ className }: { className?: string }) => (
+/**
+ * The brand's mark: a cup with a rising tulsi leaf, drawn in line so it takes the colour of the text around it.
+ * `leafClassName` lets the leaf take the logo's own green while the cup keeps the text colour.
+ */
+export const BrandMark = ({ className, leafClassName }: { className?: string; leafClassName?: string }) => (
   <svg className={className} viewBox="0 0 40 40" aria-hidden="true" focusable="false">
     <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" strokeWidth="1.2" opacity="0.45" />
     <path d="M11 21h16v2.5a8 8 0 01-16 0z" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
     <path d="M27 22.5h1.5a2.5 2.5 0 010 5H26" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
     <path d="M10 33.5h20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-    <path d="M19 18.5c-3.5-1-5-4.6-3.2-8.8 4 .6 6 4 3.2 8.8z" fill="currentColor" opacity="0.9" />
-    <path d="M20.5 18.5c1.4-3.6 4.4-5 7.5-4.4-.4 3.2-3.4 5-7.5 4.4z" fill="currentColor" opacity="0.6" />
+    <path className={leafClassName} d="M19 18.5c-3.5-1-5-4.6-3.2-8.8 4 .6 6 4 3.2 8.8z" fill="currentColor" opacity="0.9" />
+    <path className={leafClassName} d="M20.5 18.5c1.4-3.6 4.4-5 7.5-4.4-.4 3.2-3.4 5-7.5 4.4z" fill="currentColor" opacity="0.6" />
   </svg>
 )
 

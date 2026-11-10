@@ -1,0 +1,211 @@
+{
+  "seo": {
+    "title": "Herbal Tea Recipes | Govind Madhav Herbal Tea",
+    "description": "Explore hot and iced preparation recipes for Govind Madhav Herbal Tea, including Tulsi, Ginger, Herbal, Cough, Diabetic and Weight Loss Tea."
+  },
+  "hero": {
+    "eyebrow": "Brew • Sip • Enjoy",
+    "title": "Discover the Art of Brewing Herbal Tea",
+    "lead": "Explore delicious ways to prepare your favourite Govind Madhav Herbal Tea. From comforting hot cups to refreshing iced creations, find a preparation style for every moment.",
+    "explore": "Explore Recipes",
+    "shop": "Shop Herbal Teas"
+  },
+  "intro": {
+    "eyebrow": "Four Ways to Prepare",
+    "title": "Six Herbal Blends. Endless Ways to Enjoy.",
+    "lead": "Every cup can be enjoyed your way. Explore the preparation instructions for our six herbal tea varieties and discover both warm and refreshing ways to serve them."
+  },
+  "methods": {
+    "hotMilk": {
+      "label": "Hot with Milk",
+      "tab": "Hot with Milk",
+      "title": "Hot Tea with Milk",
+      "body": "Boiled in full cream milk for 2 minutes, strained and served hot."
+    },
+    "hotWater": {
+      "label": "Hot without Milk",
+      "tab": "Hot without Milk",
+      "title": "Hot Tea without Milk",
+      "body": "Boiled in water for 2 minutes with a few drops of lemon juice, strained and served hot."
+    },
+    "icedShake": {
+      "label": "Iced Milkshake",
+      "tab": "Iced Milkshake",
+      "title": "Ice Cold Tea Milkshake",
+      "body": "Boiled in full cream milk, cooled, then shaken in a blender mixer with ice."
+    },
+    "icedWater": {
+      "label": "Iced without Milk",
+      "tab": "Iced without Milk",
+      "title": "Ice Cold Tea without Milk",
+      "body": "Boiled in water, strained into an ice-filled glass and served ice cold."
+    }
+  },
+  "collection": {
+    "eyebrow": "The Recipes",
+    "title": "Our Herbal Tea Recipes",
+    "lead": "Choose your favourite blend and explore its preparation instructions.",
+    "methods": "Preparation types",
+    "view": "View Recipe",
+    "shop": "Shop Product"
+  },
+  "detail": {
+    "serving": "Serves",
+    "servingValue": "1 cup",
+    "tabs": "Preparation method",
+    "items": "What you need",
+    "steps": "Method",
+    "notes": "Notes from Govind Madhav",
+    "shopTitle": "Brew it at home",
+    "shop": "Shop This Tea",
+    "back": "Back to all recipes"
+  },
+  "restaurants": {
+    "eyebrow": "For Restaurants & Snack Corners",
+    "title": "Serving Herbal Tea at Your Restaurant?",
+    "lead": "See our larger-batch hot and cold recipes for restaurants, cafés, snack corners and Govinda Restaurants.",
+    "link": "View Restaurant Recipes"
+  },
+  "product": {
+    "title": "How to Prepare",
+    "lead": "Hot with milk, hot without milk, as an iced milkshake or iced without milk: step-by-step preparation for 1 cup."
+  },
+  "items": {
+    "weightLoss": {
+      "name": "Govind Madhav Weight Loss Tea",
+      "short": "Weight Loss Tea",
+      "heading": "Weight Loss Tea – Preparation Guide",
+      "intro": "Four ways to prepare it, hot or iced, with milk or water. Sweeten with 1 or 2 sugar-free tablets.",
+      "viewLabel": "View the Weight Loss Tea recipe",
+      "shopLabel": "Shop Govind Madhav Weight Loss Tea",
+      "alt": "Govind Madhav Weight Loss Tea pack",
+      "notes": "To make the tea: take 1 cup of full cream milk.\nThis tea can also be refrigerated for days.\nThis tea with milk or without milk can also be boiled again.\nIt will not lose its taste.\nThe herbs release more juice over time.\nAdd 1 or 2 sugar-free tablets to make it tasty."
+    },
+    "tulsi": {
+      "name": "Govind Madhav Tulsi Tea",
+      "short": "Tulsi Tea",
+      "heading": "Tulsi Tea – Preparation Guide",
+      "intro": "Four ways to prepare it, hot or iced, with milk or water. Sweeten with sugar, honey or sugar-free tablets.",
+      "viewLabel": "View the Tulsi Tea recipe",
+      "shopLabel": "Shop Govind Madhav Tulsi Tea",
+      "alt": "Govind Madhav Tulsi Tea pack",
+      "notes": "To make the tea: you can take 1/2 cup of full cream milk and 1/2 cup of water.\nThis tea can also be refrigerated for days.\nThis tea with milk or without milk can also be boiled again.\nIt will not lose its taste.\nThe herbs release more juice over time.\nAdd sugar or honey or 1 or 2 sugar-free tablets to make it tasty."
+    },
+    "herbal": {
+      "name": "Govind Madhav Herbal Tea",
+      "short": "Herbal Tea",
+      "heading": "Herbal Tea – Preparation Guide",
+      "intro": "Four ways to prepare it, hot or iced, with milk or water. Sweeten with sugar, honey or sugar-free tablets.",
+      "viewLabel": "View the Herbal Tea recipe",
+      "shopLabel": "Shop Govind Madhav Herbal Tea",
+      "alt": "Govind Madhav Herbal Tea pack",
+      "notes": "To make the tea: you can take 1/2 cup of full cream milk and 1/2 cup of water.\nThis tea can also be refrigerated for days.\nThis tea with milk or without milk can also be boiled again.\nIt will not lose its taste.\nThe herbs release more juice over time.\nAdd sugar or honey or 1 or 2 sugar-free tablets to make it tasty."
+    },
+    "ginger": {
+      "name": "Govind Madhav Ginger Tea",
+      "short": "Ginger Tea",
+      "heading": "Ginger Tea – Preparation Guide",
+      "intro": "Four ways to prepare it, hot or iced, with milk or water. Sweeten with sugar, honey or sugar-free tablets.",
+      "viewLabel": "View the Ginger Tea recipe",
+      "shopLabel": "Shop Govind Madhav Ginger Tea",
+      "alt": "Govind Madhav Ginger Tea pack",
+      "notes": "To make the tea: you can take 1/2 cup full cream milk and 1/2 cup water.\nThis tea can also be refrigerated for days.\nThis tea with milk or without milk can also be boiled again.\nIt will not lose its taste.\nThe herbs release more juice over time.\nAdd sugar or honey or 1 or 2 sugar-free tablets to make it tasty."
+    },
+    "diabetic": {
+      "name": "Govind Madhav Diabetic Tea",
+      "short": "Diabetic Tea",
+      "heading": "Diabetic Tea – Preparation Guide",
+      "intro": "Four ways to prepare it, hot or iced, with milk or water. Sweeten with 1 or 2 sugar-free tablets.",
+      "viewLabel": "View the Diabetic Tea recipe",
+      "shopLabel": "Shop Govind Madhav Diabetic Tea",
+      "alt": "Govind Madhav Diabetic Tea pack",
+      "notes": "To make the tea: take 1 cup of full cream milk.\nThis tea can also be refrigerated for days.\nThis tea with milk or without milk can also be boiled again.\nIt will not lose its taste.\nThe herbs release more juice over time.\nAdd 1 or 2 sugar-free tablets to make it tasty."
+    },
+    "cough": {
+      "name": "Govind Madhav Cough Tea",
+      "short": "Cough Tea",
+      "heading": "Cough Tea – Preparation Guide",
+      "intro": "Four ways to prepare it, hot or iced, with milk or water. Sweeten with sugar, honey or sugar-free tablets.",
+      "viewLabel": "View the Cough Tea recipe",
+      "shopLabel": "Shop Govind Madhav Cough Tea",
+      "alt": "Govind Madhav Cough Tea pack",
+      "notes": "To make the tea: you can take 1/2 cup full cream milk and 1/2 cup water.\nThis tea can also be refrigerated for days.\nThis tea with milk or without milk can also be boiled again.\nIt will not lose its taste.\nThe herbs release more juice over time.\nAdd sugar or honey or 1 or 2 sugar-free tablets to make it tasty."
+    }
+  },
+  "steps": {
+    "weightLoss": {
+      "hotMilk": "Boil 1 cup of full cream milk.\nAdd 1 spoon of tea (spoon provided in the pack).\nA pinch of grated ginger can be added.\nBoil for 2 minutes.\nStrain and serve hot.\nAdd 1 or 2 sugar-free tablets to mask the bitter taste.",
+      "hotWater": "Boil 1 cup of water.\nAdd 1 spoon of tea (spoon provided in the pack).\nA pinch of grated ginger can be added.\nBoil for 2 minutes.\nAdd a few drops of lemon juice.\nStrain and serve hot.\nAdd 1 or 2 sugar-free tablets to mask the bitter taste.",
+      "icedShake": "Boil 1 cup of full cream milk.\nAdd 1 spoon of tea (spoon provided in the pack).\nA pinch of grated ginger can be added.\nBoil for 2 minutes.\nStrain and cool.\nShake in a blender mixer with ice added.\nServe as an ice-cold shake.\nAdd 1 or 2 sugar-free tablets to mask the bitter taste.",
+      "icedWater": "Boil 1 cup of water.\nAdd 1 spoon of tea (spoon provided in the pack).\nA pinch of grated ginger can be added.\nBoil for 2 minutes.\nStrain and add to an ice-filled glass to serve ice cold.\nAdd 1 or 2 sugar-free tablets to mask the bitter taste."
+    },
+    "tulsi": {
+      "hotMilk": "Boil 1 cup of full cream milk.\nAdd 1 spoon of tea (spoon provided in the pack).\nA pinch of grated ginger can be added.\nBoil for 2 minutes.\nStrain and serve hot.\nAdd sugar or honey or 1 or 2 sugar-free tablets to make it tasty.",
+      "hotWater": "Boil 1 cup of water.\nAdd 1 spoon of tea (spoon provided in the pack).\nA pinch of grated ginger can be added.\nBoil for 2 minutes.\nAdd a few drops of lemon juice.\nStrain and serve hot.\nAdd sugar or honey or 1 or 2 sugar-free tablets to make it tasty.",
+      "icedShake": "Boil 1 cup of full cream milk.\nAdd 1 spoon of tea (spoon provided in the pack).\nA pinch of grated ginger can be added.\nBoil for 2 minutes.\nStrain and cool.\nShake in a blender mixer with ice added.\nServe as an ice-cold shake.\nAdd sugar or honey or 1 or 2 sugar-free tablets to make it tasty.",
+      "icedWater": "Boil 1 cup of water.\nAdd 1 spoon of tea (spoon provided in the pack).\nA pinch of grated ginger can be added.\nBoil for 2 minutes.\nStrain and add to an ice-filled glass to serve ice cold.\nAdd sugar or honey or 1 or 2 sugar-free tablets to make it tasty."
+    },
+    "herbal": {
+      "hotMilk": "Boil 1 cup of full cream milk.\nAdd 1 spoon of tea (spoon provided in the pack).\nA pinch of grated ginger can be added.\nBoil for 2 minutes.\nStrain and serve hot.\nAdd sugar or honey or 1 or 2 sugar-free tablets to make it tasty.",
+      "hotWater": "Boil 1 cup of water.\nAdd 1 spoon of tea (spoon provided in the pack).\nA pinch of grated ginger can be added.\nBoil for 2 minutes.\nAdd a few drops of lemon juice.\nStrain and serve hot.\nAdd sugar or honey or 1 or 2 sugar-free tablets to make it tasty.",
+      "icedShake": "Boil 1 cup of full cream milk.\nAdd 1 spoon of tea (spoon provided in the pack).\nA pinch of grated ginger can be added.\nBoil for 2 minutes.\nStrain and cool.\nShake in a blender mixer with ice added.\nServe as an ice-cold shake.\nAdd sugar or honey or 1 or 2 sugar-free tablets to make it tasty.",
+      "icedWater": "Boil 1 cup of water.\nAdd 1 spoon of tea (spoon provided in the pack).\nA pinch of grated ginger can be added.\nBoil for 2 minutes.\nStrain and add to an ice-filled glass to serve ice cold.\nAdd sugar or honey or 1 or 2 sugar-free tablets to make it tasty."
+    },
+    "ginger": {
+      "hotMilk": "Boil 1 cup of full cream milk.\nAdd 1 spoon of tea (spoon provided in the pack).\nBoil for 2 minutes.\nStrain and serve hot.\nAdd sugar or honey or 1 or 2 sugar-free tablets to make it tasty.",
+      "hotWater": "Boil 1 cup of water.\nAdd 1 spoon of tea (spoon provided in the pack).\nBoil for 2 minutes.\nAdd a few drops of lemon juice.\nStrain and serve hot.\nAdd sugar or honey or 1 or 2 sugar-free tablets to make it tasty.",
+      "icedShake": "Boil 1 cup of full cream milk.\nAdd 1 spoon of tea (spoon provided in the pack).\nBoil for 2 minutes.\nStrain and cool.\nShake in a blender mixer with ice added.\nServe as an ice-cold shake.\nAdd sugar or honey or 1 or 2 sugar-free tablets to make it tasty.",
+      "icedWater": "Boil 1 cup of water.\nAdd 1 spoon of tea (spoon provided in the pack).\nBoil for 2 minutes.\nStrain and add to an ice-filled glass to serve ice cold.\nAdd sugar or honey or 1 or 2 sugar-free tablets to make it tasty."
+    },
+    "diabetic": {
+      "hotMilk": "Boil 1 cup of full cream milk.\nAdd 1 spoon of tea (spoon provided in the pack).\nA pinch of grated ginger can be added.\nBoil for 2 minutes.\nStrain and serve hot.\nAdd 1 or 2 sugar-free tablets to mask the bitter taste.",
+      "hotWater": "Boil 1 cup of water.\nAdd 1 spoon of tea (spoon provided in the pack).\nA pinch of grated ginger can be added.\nBoil for 2 minutes.\nAdd a few drops of lemon juice.\nStrain and serve hot.\nAdd 1 or 2 sugar-free tablets to mask the bitter taste.",
+      "icedShake": "Boil 1 cup of full cream milk.\nAdd 1 spoon of tea (spoon provided in the pack).\nA pinch of grated ginger can be added.\nBoil for 2 minutes.\nStrain and cool.\nShake in a blender mixer with ice added.\nServe as an ice-cold shake.\nAdd 1 or 2 sugar-free tablets to mask the bitter taste.",
+      "icedWater": "Boil 1 cup of water.\nAdd 1 spoon of tea (spoon provided in the pack).\nA pinch of grated ginger can be added.\nBoil for 2 minutes.\nStrain and add to an ice-filled glass to serve ice cold.\nAdd 1 or 2 sugar-free tablets to mask the bitter taste."
+    },
+    "cough": {
+      "hotMilk": "Boil 1 cup of full cream milk.\nAdd 1 spoon of tea (spoon provided in the pack).\nA pinch of grated ginger can be added.\nBoil for 2 minutes.\nStrain and serve hot.\nAdd sugar or honey or 1 or 2 sugar-free tablets to make it tasty.",
+      "hotWater": "Boil 1 cup of water.\nAdd 1 spoon of tea (spoon provided in the pack).\nA pinch of grated ginger can be added.\nBoil for 2 minutes.\nAdd a few drops of lemon juice.\nStrain and serve hot.\nAdd sugar or honey or 1 or 2 sugar-free tablets to make it tasty.",
+      "icedShake": "Boil 1 cup of full cream milk.\nAdd 1 spoon of tea (spoon provided in the pack).\nA pinch of grated ginger can be added.\nBoil for 2 minutes.\nStrain and cool.\nShake in a blender mixer with ice added.\nServe as an ice-cold shake.\nAdd sugar or honey or 1 or 2 sugar-free tablets to make it tasty.",
+      "icedWater": "Boil 1 cup of water.\nAdd 1 spoon of tea (spoon provided in the pack).\nA pinch of grated ginger can be added.\nBoil for 2 minutes.\nStrain and add to an ice-filled glass to serve ice cold.\nAdd sugar or honey or 1 or 2 sugar-free tablets to make it tasty."
+    }
+  },
+  "needs": {
+    "weightLoss": {
+      "hotMilk": "1 cup of full cream milk\n1 spoon of tea (spoon provided in the pack)\nA pinch of grated ginger (optional)\n1 or 2 sugar-free tablets",
+      "hotWater": "1 cup of water\n1 spoon of tea (spoon provided in the pack)\nA pinch of grated ginger (optional)\nA few drops of lemon juice\n1 or 2 sugar-free tablets",
+      "icedShake": "1 cup of full cream milk\n1 spoon of tea (spoon provided in the pack)\nA pinch of grated ginger (optional)\nIce\n1 or 2 sugar-free tablets",
+      "icedWater": "1 cup of water\n1 spoon of tea (spoon provided in the pack)\nA pinch of grated ginger (optional)\nAn ice-filled glass\n1 or 2 sugar-free tablets"
+    },
+    "tulsi": {
+      "hotMilk": "1 cup of full cream milk\n1 spoon of tea (spoon provided in the pack)\nA pinch of grated ginger (optional)\nSugar, honey or 1 or 2 sugar-free tablets",
+      "hotWater": "1 cup of water\n1 spoon of tea (spoon provided in the pack)\nA pinch of grated ginger (optional)\nA few drops of lemon juice\nSugar, honey or 1 or 2 sugar-free tablets",
+      "icedShake": "1 cup of full cream milk\n1 spoon of tea (spoon provided in the pack)\nA pinch of grated ginger (optional)\nIce\nSugar, honey or 1 or 2 sugar-free tablets",
+      "icedWater": "1 cup of water\n1 spoon of tea (spoon provided in the pack)\nA pinch of grated ginger (optional)\nAn ice-filled glass\nSugar, honey or 1 or 2 sugar-free tablets"
+    },
+    "herbal": {
+      "hotMilk": "1 cup of full cream milk\n1 spoon of tea (spoon provided in the pack)\nA pinch of grated ginger (optional)\nSugar, honey or 1 or 2 sugar-free tablets",
+      "hotWater": "1 cup of water\n1 spoon of tea (spoon provided in the pack)\nA pinch of grated ginger (optional)\nA few drops of lemon juice\nSugar, honey or 1 or 2 sugar-free tablets",
+      "icedShake": "1 cup of full cream milk\n1 spoon of tea (spoon provided in the pack)\nA pinch of grated ginger (optional)\nIce\nSugar, honey or 1 or 2 sugar-free tablets",
+      "icedWater": "1 cup of water\n1 spoon of tea (spoon provided in the pack)\nA pinch of grated ginger (optional)\nAn ice-filled glass\nSugar, honey or 1 or 2 sugar-free tablets"
+    },
+    "ginger": {
+      "hotMilk": "1 cup of full cream milk\n1 spoon of tea (spoon provided in the pack)\nSugar, honey or 1 or 2 sugar-free tablets",
+      "hotWater": "1 cup of water\n1 spoon of tea (spoon provided in the pack)\nA few drops of lemon juice\nSugar, honey or 1 or 2 sugar-free tablets",
+      "icedShake": "1 cup of full cream milk\n1 spoon of tea (spoon provided in the pack)\nIce\nSugar, honey or 1 or 2 sugar-free tablets",
+      "icedWater": "1 cup of water\n1 spoon of tea (spoon provided in the pack)\nAn ice-filled glass\nSugar, honey or 1 or 2 sugar-free tablets"
+    },
+    "diabetic": {
+      "hotMilk": "1 cup of full cream milk\n1 spoon of tea (spoon provided in the pack)\nA pinch of grated ginger (optional)\n1 or 2 sugar-free tablets",
+      "hotWater": "1 cup of water\n1 spoon of tea (spoon provided in the pack)\nA pinch of grated ginger (optional)\nA few drops of lemon juice\n1 or 2 sugar-free tablets",
+      "icedShake": "1 cup of full cream milk\n1 spoon of tea (spoon provided in the pack)\nA pinch of grated ginger (optional)\nIce\n1 or 2 sugar-free tablets",
+      "icedWater": "1 cup of water\n1 spoon of tea (spoon provided in the pack)\nA pinch of grated ginger (optional)\nAn ice-filled glass\n1 or 2 sugar-free tablets"
+    },
+    "cough": {
+      "hotMilk": "1 cup of full cream milk\n1 spoon of tea (spoon provided in the pack)\nA pinch of grated ginger (optional)\nSugar, honey or 1 or 2 sugar-free tablets",
+      "hotWater": "1 cup of water\n1 spoon of tea (spoon provided in the pack)\nA pinch of grated ginger (optional)\nA few drops of lemon juice\nSugar, honey or 1 or 2 sugar-free tablets",
+      "icedShake": "1 cup of full cream milk\n1 spoon of tea (spoon provided in the pack)\nA pinch of grated ginger (optional)\nIce\nSugar, honey or 1 or 2 sugar-free tablets",
+      "icedWater": "1 cup of water\n1 spoon of tea (spoon provided in the pack)\nA pinch of grated ginger (optional)\nAn ice-filled glass\nSugar, honey or 1 or 2 sugar-free tablets"
+    }
+  }
+}

@@ -2,7 +2,7 @@
 
 import { useRef, useState, type KeyboardEvent, type ReactNode } from 'react'
 import { Link, navigate, SearchField, useCart, useCollections, useLocation, useStorefront, useWishlist } from '@dripfunnel/storefront-core/theme'
-import { BrandMark } from '../BrandMark'
+import { BrandLockup } from '../BrandLockup'
 import styles from '../../styles/site.module.css'
 
 // The theme rules allow no URL encoding, so the characters that would break the query are dropped instead.
@@ -16,7 +16,7 @@ const Icon = ({ children }: { children: ReactNode }) => (
 
 /** The sticky header: brand, the main links with the collections under "Our Collections", search, account, wishlist and cart. */
 export const SiteHeader = () => {
-  const { store, t } = useStorefront()
+  const { t } = useStorefront()
   const { path } = useLocation()
   const { collections: fetched, status } = useCollections({ first: 20 })
   const collections = status === 'ready' ? fetched : []
@@ -54,8 +54,7 @@ export const SiteHeader = () => {
           <span className={styles.hidden}>{menuOpen ? t('common.nav.close') : t('common.nav.menu')}</span>
         </button>
         <Link href="/" className={styles.brand}>
-          <BrandMark className={styles.brandMark} />
-          <span className={styles.brandName}>{store.name}</span>
+          <BrandLockup place="header" />
         </Link>
         <nav id="site-nav" className={menuOpen ? `${styles.nav} ${styles.navOpen}` : styles.nav} aria-label={t('common.nav.label')}>
           <ul className={styles.navList}>

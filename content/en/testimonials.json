@@ -1,0 +1,259 @@
+{
+  "seo": {
+    "title": "Customer Testimonials | Govind Madhav Herbal Tea",
+    "description": "Read customer experiences and testimonials for Govind Madhav Herbal Tea collections, including Tulsi, Ginger, Herbal, Diabetic and Weight Loss Tea."
+  },
+  "hero": {
+    "eyebrow": "Real Experiences • Customer Stories",
+    "title": "What Our Customers Say",
+    "lead": "Discover experiences shared by customers of Govind Madhav Herbal Tea. Explore stories across our herbal tea collections in English and Hindi.",
+    "browse": "Read the Stories"
+  },
+  "featured": {
+    "eyebrow": "In Their Words",
+    "title": "Stories Shared by Our Customers",
+    "previous": "Previous story",
+    "next": "Next story",
+    "position": "Story {n} of {total}"
+  },
+  "explore": {
+    "eyebrow": "All Testimonials",
+    "title": "Explore Customer Experiences",
+    "products": "Show testimonials for",
+    "all": "All Testimonials",
+    "language": "Language",
+    "english": "English",
+    "hindi": "हिंदी",
+    "count": "{count, plural, one {# testimonial} other {# testimonials}}"
+  },
+  "card": {
+    "more": "Read More",
+    "less": "Read Less",
+    "moreFor": "Read the full testimonial from {name}",
+    "source": "Shared with Govind Madhav Herbal Tea"
+  },
+  "modal": {
+    "close": "Close"
+  },
+  "products": {
+    "herbal": "Herbal Tea",
+    "tulsi": "Tulsi Tea",
+    "ginger": "Ginger Tea",
+    "weightLoss": "Weight Loss Tea",
+    "diabetic": "Diabetic Tea",
+    "cough": "Cough Tea"
+  },
+  "productsHi": {
+    "herbal": "हर्बल चाय",
+    "tulsi": "तुलसी चाय",
+    "ginger": "अदरक की चाय",
+    "weightLoss": "वजन घटाने वाली चाय",
+    "diabetic": "मधुमेह चाय",
+    "cough": "खांसी की चाय"
+  },
+  "disclaimer": {
+    "title": "Please note",
+    "text": "These testimonials reflect individual customer experiences and opinions. They are not medical advice or evidence of guaranteed health outcomes. Individual experiences may vary.",
+    "medicine": "Please do not change or stop any prescribed medication without speaking to your doctor."
+  },
+  "cta": {
+    "title": "Find Your Favourite Blend",
+    "lead": "Explore the full range of Govind Madhav herbal teas, or read how to prepare each one.",
+    "shop": "Shop Herbal Teas",
+    "recipes": "Herbal Tea Recipes"
+  },
+  "product": {
+    "title": "Customer Testimonials",
+    "lead": "Read what customers have shared about this tea, in English and Hindi.",
+    "links": {
+      "herbal": "Read Herbal Tea testimonials",
+      "tulsi": "Read Tulsi Tea testimonials",
+      "ginger": "Read Ginger Tea testimonials",
+      "weightLoss": "Read Weight Loss Tea testimonials",
+      "diabetic": "Read Diabetic Tea testimonials",
+      "cough": "Read Cough Tea testimonials"
+    }
+  },
+  "items": {
+    "ginger_pradeep": {
+      "en": {
+        "name": "Pradeep Goel (Prem Kantha Das)",
+        "place": "Pitampura, New Delhi, India",
+        "text": "This tea has a soft calming effect, the stress is relieved nicely. It gives a feeling of well being. It is nice to see products made in harmony with nature. I have also inspired our congregational members to try it."
+      },
+      "hi": {
+        "name": "प्रदीप गोयल (प्रेम कांथा दास)",
+        "place": "पीतमपुरा, नई दिल्ली, भारत",
+        "text": "इस चाय का हल्का शांत प्रभाव है, तनाव से अच्छी तरह से राहत मिलती है। यह अच्छी सेहत का एहसास कराता है। प्रकृति के साथ सामंजस्य में बने उत्पादों को देखना अच्छा लगता है। मैंने अपने मंडली के सदस्यों को भी इसे आज़माने के लिए प्रेरित किया है।"
+      }
+    },
+    "herbal_hema": {
+      "en": {
+        "name": "Hema Lavanya Das (Horvath Johann)",
+        "place": "Sree Mayapur, near Krishna Nagar",
+        "text": "After I checked out the ingredients on your website, I decided to take it as a daily supplement to preserve my health and therefore I ordered Govind Madhav Herbal Tea. The taste is excellent with pure honey. I will recommend it to everyone to take it daily in order to keep good health. I take the tea for my own good health, now everyday, as a nutritional supplement. I am 56 years in this body, in good health and trying my best to remain healthy as long as possible. Since your tea is in the natural food supplement category I like it very much. I intend to give the tea as a gift to my friends as an inspiration for a healthy life style.\nI can testify after a couple of months of using Govind Madhav Herbal tea. That it is in deed worth every paisa I paid for it. I even found a different way of using it. Now Mix every day one tea spoon full of the powder into my morning muesli. It gives muesli a wonderful taste and is very healthy on top of it. This is not an advertisement, just my honest observation. I'm not in any way involved in the marketing of this tea and was not asked by anyone to write this testimony."
+      },
+      "hi": {
+        "name": "हेमा लावण्या दास (होर्वाथ जोहान)",
+        "place": "श्री मायापुर, कृष्णा नगर के पास",
+        "text": "जब मैंने आपकी वेबसाइट पर सामग्री की जाँच की, तो मैंने अपने स्वास्थ्य को बनाए रखने के लिए इसे दैनिक पूरक के रूप में लेने का फैसला किया और इसलिए मैंने गोविंद माधव हर्बल चाय का ऑर्डर दिया। शुद्ध शहद के साथ इसका स्वाद बहुत बढ़िया है। मैं इसे हर किसी को अच्छे स्वास्थ्य को बनाए रखने के लिए इसे दैनिक रूप से लेने की सलाह दूँगी। मैं अपने अच्छे स्वास्थ्य के लिए, अब हर रोज़, पोषण संबंधी पूरक के रूप में चाय लेती हूँ। मैं इस शरीर में 56 साल से हूँ, अच्छे स्वास्थ्य में हूँ और यथासंभव लंबे समय तक स्वस्थ रहने की पूरी कोशिश कर रही हूँ। चूँकि आपकी चाय प्राकृतिक खाद्य पूरक श्रेणी में है, इसलिए मुझे यह बहुत पसंद है। मैं अपने दोस्तों को स्वस्थ जीवन शैली के लिए प्रेरणा के रूप में चाय उपहार के रूप में देने का इरादा रखती हूँ।\nगोविंद माधव हर्बल चाय का उपयोग करने के कुछ महीनों के बाद मैं यह प्रमाणित कर सकती हूँ। कि यह वास्तव में मेरे द्वारा इसके लिए चुकाए गए हर पैसे के लायक है। मैंने इसे उपयोग करने का एक अलग तरीका भी खोज लिया है। अब मैं हर दिन सुबह की मूसली में एक चम्मच पाउडर मिलाती हूँ। यह मूसली को एक बेहतरीन स्वाद देता है और इसके अलावा यह बहुत सेहतमंद भी है। यह कोई विज्ञापन नहीं है, बस मेरा ईमानदार अवलोकन है। मैं किसी भी तरह से इस चाय के विपणन में शामिल नहीं हूं और किसी ने भी मुझे यह गवाही लिखने के लिए नहीं कहा था।"
+      }
+    },
+    "herbal_subuddhi": {
+      "en": {
+        "name": "Subuddhi Krishna Das (JPS)",
+        "place": "ISKCON of Tallahassee, Florida, USA",
+        "text": "I tried the samples of Govind Madhav Herbal tea and we liked it. I was busy starting a vegetarian restaurant and a boutqiue for the temple here in Florida. I would like to place a small order for our shop. We have tried these out in our restaurant here as \"Sampler\" and people like it. Now we are ready to market them for you in North America. Please send me about 10 kgs. I want to introduce this to our customers in restaurant and also in the boutique."
+      },
+      "hi": {
+        "name": "सुबुद्धि कृष्ण दास (जेपीएस)",
+        "place": "इस्कॉन ऑफ तल्लाहासी, फ्लोरिडा, यूएसए",
+        "text": "मैंने गोविंद माधव हर्बल चाय के नमूने आजमाए और हमें यह पसंद आया। मैं फ्लोरिडा में एक शाकाहारी रेस्तरां और मंदिर के लिए एक बुटीक शुरू करने में व्यस्त था। मैं अपनी दुकान के लिए एक छोटा सा ऑर्डर देना चाहता हूँ। हमने इन्हें यहाँ अपने रेस्तरां में \"सैंपलर\" के रूप में आजमाया है और लोगों को यह पसंद आया। अब हम इन्हें उत्तरी अमेरिका में आपके लिए बेचने के लिए तैयार हैं। कृपया मुझे लगभग 10 किलोग्राम भेजें। मैं इसे अपने ग्राहकों को रेस्तरां और बुटीक में भी पेश करना चाहता हूँ।"
+      }
+    },
+    "herbal_srinjaya": {
+      "en": {
+        "name": "Srinjaya Das",
+        "place": "Mauritius",
+        "text": "Acknowledged receipt with thanks the samples that I received with HG Ragunath Prabhu. The tea is very good."
+      },
+      "hi": {
+        "name": "श्रींजय दास",
+        "place": "मॉरीशस",
+        "text": "एचजी रघुनाथ प्रभु के साथ मुझे जो नमूने मिले, उन्हें धन्यवाद के साथ स्वीकार किया। चाय बहुत अच्छी है।"
+      }
+    },
+    "herbal_daamodara": {
+      "en": {
+        "name": "Daamodara Dhananjaya Daasa",
+        "place": "ISKCON Ahmedabad",
+        "text": "The taste is great and it seems to be very nourishing. My father, who was not able to leave regular tea, could leave it easily at the age of 70 with the help of this herbal tea. I have also inspired our congregational members to try it."
+      },
+      "hi": {
+        "name": "दामोदर धनंजय दास",
+        "place": "इस्कॉन अहमदाबाद",
+        "text": "इसका स्वाद बहुत बढ़िया है और यह बहुत पौष्टिक लगता है। मेरे पिता, जो नियमित चाय नहीं छोड़ पाते थे, इस हर्बल चाय की मदद से 70 साल की उम्र में इसे आसानी से छोड़ सकते हैं। मैंने अपने मंडली के सदस्यों को भी इसे आज़माने के लिए प्रेरित किया है ।"
+      }
+    },
+    "herbal_sarveshvar": {
+      "en": {
+        "name": "Sarveshvar Das",
+        "place": "Leader, IYF Noida",
+        "text": "Govind Madhav Herbal Tea was so nourishing, relishing, rejuvenating and satisfying in Delhi's Cold weather. It is hard to put my experience in words. Generally there are 3 things people see in a cup of Tea ... Color, Fragrance and Taste. Govind Madhav Herbal Tea is at its best in all these 3 parameters. Please make everyone in our community to be aware of this useful drink which is sooooo relishing."
+      },
+      "hi": {
+        "name": "सर्वेश्वर दास",
+        "place": "लीडर, IYF नोएडा",
+        "text": "गोविंद माधव हर्बल चाय दिल्ली के ठंडे मौसम में बहुत पौष्टिक, स्वादिष्ट, तरोताजा करने वाली और संतोषजनक थी। मेरे अनुभव को शब्दों में बयां करना मुश्किल है। आम तौर पर लोग एक कप चाय में 3 चीजें देखते हैं... रंग, खुशबू और स्वाद। गोविंद माधव हर्बल चाय इन तीनों मापदंडों में सबसे बेहतर है। कृपया हमारे समुदाय के सभी लोगों को इस उपयोगी पेय के बारे में जागरूक करें जो बहुत ही स्वादिष्ट है।"
+      }
+    },
+    "herbal_samrath": {
+      "en": {
+        "name": "Samrath Singh Kang",
+        "place": "Jaipur",
+        "text": "I have been using Govind Madhav Herbal Tea for some days. The taste and flavor are refreshing. Please accept my thanks for the same."
+      },
+      "hi": {
+        "name": "समराथ सिंह कांग",
+        "place": "जयपुर",
+        "text": "मैं कुछ दिनों से गोविंद माधव हर्बल चाय का उपयोग कर रहा हूं। इसका स्वाद और सुगंध ताज़ा है। कृपया इसके लिए मेरा धन्यवाद स्वीकार करें।"
+      }
+    },
+    "herbal_ekta": {
+      "en": {
+        "name": "Ekta Sharma",
+        "place": "Faridabad",
+        "text": "I had Govind Madhav Herbal tea at a devotee's place and found it very nice. Could you please tell me from where I can procure it?"
+      },
+      "hi": {
+        "name": "एकता शर्मा",
+        "place": "फरीदाबाद",
+        "text": "मैंने एक भक्त के घर गोविंद माधव हर्बल चाय पी और उसे बहुत अच्छा पाया। क्या आप कृपया मुझे बता सकते हैं कि मैं इसे कहां से खरीद सकता हूं?"
+      }
+    },
+    "herbal_ganga": {
+      "en": {
+        "name": "Ganga Devi Dasi",
+        "place": "Belarus",
+        "text": "I have finally received your tea. I like it very much and my non-devotee friends too. So what are you charging for your tea?"
+      },
+      "hi": {
+        "name": "गंगा देवी दासी",
+        "place": "बेलारूस",
+        "text": "मुझे आखिरकार आपकी चाय मिल गई है। मुझे यह बहुत पसंद है और मेरे गैर-भक्त दोस्तों को भी। तो आप अपनी चाय के लिए क्या चार्ज कर रहे हैं?"
+      }
+    },
+    "herbal_rasikanand": {
+      "en": {
+        "name": "Rasikanand Das",
+        "place": "Bhubaneshwara, Odissa, India",
+        "text": "Thank you for sending the tea. I tried it out along with my family and friends. It is nice and I'm sure healthy."
+      },
+      "hi": {
+        "name": "रसिकानंद दास",
+        "place": "भुवनेश्वर, ओडिशा, भारत",
+        "text": "चाय भेजने के लिए धन्यवाद। मैंने इसे अपने परिवार और दोस्तों के साथ आजमाया। यह अच्छी है और मुझे यकीन है कि यह स्वास्थ्यवर्धक है।"
+      }
+    },
+    "tulsi_ramesh": {
+      "en": {
+        "name": "Ramesh",
+        "place": "Vishnu Garden",
+        "text": "I have been using Govind Madhav Tulsi Tea for some days. The taste and flavor are refreshing. Please accept my thanks for the same."
+      },
+      "hi": {
+        "name": "रमेश",
+        "place": "विष्णु गार्डन",
+        "text": "मैं कुछ दिनों से गोविंद माधव तुलसी चाय का उपयोग कर रहा हूं। इसका स्वाद और सुगंध ताजगी देने वाला है। कृपया इसके लिए मेरा धन्यवाद स्वीकार करें।"
+      }
+    },
+    "tulsi_rajesh": {
+      "en": {
+        "name": "Rajesh Kataria",
+        "place": "Inderpuri, New Delhi",
+        "text": "This tea has a soft calming effect, the stress is relieved nicely. It gives a feeling of well being. It is nice to see products made in harmony with nature."
+      },
+      "hi": {
+        "name": "राजेश कटारिया",
+        "place": "इंद्रपुरी, नई दिल्ली",
+        "text": "इस चाय का एक नरम शांत प्रभाव है, तनाव से अच्छी तरह से राहत मिलती है। यह अच्छी सेहत का एहसास कराता है। प्रकृति के साथ सामंजस्य में बने उत्पादों को देखना अच्छा लगता है।"
+      }
+    },
+    "tulsi_ekta": {
+      "en": {
+        "name": "Ekta Guliyani",
+        "place": "Hari Nagar, New Delhi",
+        "text": "I had Govind Madhav Tulsi tea at a friend's place and found it very nice."
+      },
+      "hi": {
+        "name": "एकता गुलियानी",
+        "place": "हरि नगर, नई दिल्ली",
+        "text": "मैंने एक दोस्त के घर गोविंद माधव तुलसी चाय पी और मुझे वह बहुत अच्छी लगी।"
+      }
+    },
+    "weightLoss_raghubir": {
+      "en": {
+        "name": "Raghubir Singh",
+        "place": "Shyam Nagar, Delhi",
+        "text": "The tea is very good."
+      },
+      "hi": {
+        "name": "रघुबीर सिंह",
+        "place": "श्याम नगर, दिल्ली",
+        "text": "चाय बहुत अच्छी है।"
+      }
+    },
+    "weightLoss_anup": {
+      "en": {
+        "name": "Anup Singh",
+        "place": "Rajouri Garden, Delhi",
+        "text": "I have been using Govind Madhav Weight Loss Tea for some days. The benefits are refreshing. Please accept my thanks for the same."
+      },
+      "hi": {
+        "name": "अनूप सिंह",
+        "place": "राजौरी गार्डन, दिल्ली",
+        "text": "मैं कुछ दिनों से गोविंद माधव वजन घटाने वाली चाय का उपयोग कर रहा हूँ। इसके लाभ ताज़गी देने वाले हैं। कृपया इसके लिए मेरा धन्यवाद स्वीकार करें।"
+      }
+    }
+  }
+}
