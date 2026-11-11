@@ -8,12 +8,10 @@
     "submenu": "Submenu: {item}",
     "home": "Home",
     "shopAll": "Shop All",
-    "collections": "Our Collections",
     "story": "Our Story",
-    "benefits": "Benefits",
+    "recipes": "Herbal Tea Recipes",
     "about": "Our Story",
-    "contact": "Contact Us",
-    "allCollections": "All herbal teas"
+    "contact": "Contact Us"
   },
   "tools": {
     "search": "Search",

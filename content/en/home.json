@@ -30,28 +30,6 @@
       "body": "Developed by a physician with decades of experience in medicine."
     }
   },
-  "products": {
-    "eyebrow": "Shop the Range",
-    "title": "Our Signature Herbal Teas",
-    "lead": "Discover herbal infusions thoughtfully developed for your lifestyle.",
-    "viewAll": "View All Products",
-    "empty": "Fresh stock of our herbal teas is on its way",
-    "emptyLead": "Explore our collections in the meantime, or check back soon.",
-    "emptyAction": "Browse the collections",
-    "loading": "Loading the teas"
-  },
-  "card": {
-    "from": "From",
-    "soldOut": "Sold out",
-    "inStock": "In stock",
-    "sizes": "Available in more than one size",
-    "single": "Herbal infusion",
-    "noPicture": "Picture coming soon",
-    "buy": "Choose & Add to Cart",
-    "buyLabel": "Choose options and add {name} to your cart",
-    "details": "View Details",
-    "unavailable": "Currently unavailable"
-  },
   "why": {
     "eyebrow": "Why Choose {store}",
     "title": "Nature's Goodness,",
@@ -76,62 +54,62 @@
     "action": "Shop Herbal Teas",
     "caption": "Our herbal tea range"
   },
-  "founder": {
-    "eyebrow": "Our Founder",
-    "title": "The Experience Behind Every Cup",
-    "name": "Meet Dr. Satish Gosain",
-    "credentials": "M.B., B.S., D.N.B. (Internal Medicine)",
-    "first": "Dr. Satish Gosain, M.B., B.S., D.N.B. (Internal Medicine), has worked in different capacities in hospitals in Delhi for over 51 years and currently runs Dr. Bharti Nursing Home in Hari Nagar, New Delhi.",
-    "second": "Alongside his medical practice, he has studied Ayurveda and developed Govind Madhav Herbal Teas through experimentation with different herbal combinations.",
-    "quote": "What started as a modest hobby and a personal need to replace black tea gradually developed into seven herbal tea and infusion varieties.",
-    "factYears": "51+",
-    "factYearsLabel": "Years in medicine in Delhi",
-    "factVarieties": "7",
-    "factVarietiesLabel": "Herbal tea and infusion varieties",
-    "monogram": "SG",
-    "signature": "Dr. Satish Gosain",
-    "role": "Founder",
-    "action": "Read Our Story"
+  "story": {
+    "practiceLabel": "In medical practice since",
+    "picture": "Govind Madhav herbal tea packs"
+  },
+  "collections": {
+    "eyebrow": "Our Collections",
+    "title": "Explore Our Herbal Tea Collections",
+    "lead": "Find the perfect herbal infusion for your everyday wellness routine.",
+    "herbs": "{count}-herb infusion",
+    "fallback": "A herbal infusion from our range",
+    "explore": "Explore Collection",
+    "loading": "Loading the collections"
+  },
+  "products": {
+    "eyebrow": "Shop the Range",
+    "title": "Our Signature Herbal Teas",
+    "lead": "Discover herbal infusions thoughtfully developed for your lifestyle.",
+    "viewAll": "View All Products",
+    "empty": "Fresh stock of our herbal teas is on its way",
+    "emptyLead": "Explore our collections in the meantime, or check back soon.",
+    "emptyAction": "Browse the collections",
+    "loading": "Loading the teas"
+  },
+  "card": {
+    "from": "From",
+    "soldOut": "Sold out",
+    "inStock": "In stock",
+    "sizes": "Available in more than one size",
+    "single": "Herbal infusion",
+    "noPicture": "Picture coming soon",
+    "buy": "Choose & Add to Cart",
+    "buyLabel": "Choose options and add {name} to your cart",
+    "details": "View Details",
+    "unavailable": "Currently unavailable"
+  },
+  "certificates": {
+    "eyebrow": "Certificates & Registrations",
+    "view": "View {title}",
+    "all": "View All Certificates"
+  },
+  "recipes": {
+    "eyebrow": "Herbal Tea Recipes",
+    "shown": "Shown for {tea}. Every blend has its own recipe.",
+    "hot": "Hot",
+    "iced": "Iced",
+    "all": "View All Recipes"
+  },
+  "labs": {
+    "eyebrow": "Laboratory Test Reports",
+    "all": "View All Test Reports"
+  },
+  "reviews": {
+    "eyebrow": "Customer Testimonials",
+    "all": "Read All Reviews"
   },
   "range": {
-    "eyebrow": "Our Herbal Tea Range",
-    "title": "A Blend for Every Moment",
-    "lead": "Each variety brings together its own careful combination of herbs, as listed on its pack.",
-    "herbs": "Herbs",
-    "shop": "Shop {name}"
-  },
-  "learn": {
-    "eyebrow": "The Herbal Journal",
-    "title": "Discover the World of Herbal Infusions",
-    "lead": "A little reading to go with your cup.",
-    "more": "Read More",
-    "less": "Show less",
-    "note": "For general interest only, not medical advice. Please consult your doctor about any health concern.",
-    "tisanes": {
-      "tag": "Basics",
-      "title": "Understanding Herbal Tea and Tisanes",
-      "intro": "Herbal teas, also called tisanes, are infusions of herbs, roots, flowers, seeds and spices rather than the leaves of the tea plant.",
-      "body": "Because they contain no tea leaves, herbal infusions are naturally free from caffeine and tannin. That makes them easy to enjoy in the morning, after a meal or in the evening, plain or with milk, much as you would drink your everyday chai."
-    },
-    "herbs": {
-      "tag": "Ingredients",
-      "title": "Exploring Traditional Herbs",
-      "intro": "Tulsi, ginger, cinnamon, cardamom and liquorice root have flavoured Indian kitchens for generations.",
-      "body": "Many of the herbs in our blends are familiar from Indian cooking and from Ayurveda's long tradition of herbal knowledge. Each of our teas lists its herbs on the pack, so you always know what goes into your cup."
-    },
-    "routine": {
-      "tag": "Ritual",
-      "title": "Making Herbal Infusions Part of Your Daily Routine",
-      "intro": "A warm cup is a simple way to pause. Use one spoon of tea for one cup and brew it the way you like.",
-      "body": "Bring water to the boil, add a spoonful of your chosen blend and let it simmer for a few minutes. Add milk and sweetener if you like, strain, and take a quiet moment for yourself. Swapping one cup of black tea a day is an easy place to start."
-    }
-  },
-  "connect": {
-    "eyebrow": "Stay Connected",
-    "title": "Stay Connected with Nature",
-    "lead": "Create a free account to keep your orders, saved addresses and favourite teas in one place, and check out faster next time.",
-    "action": "Create an Account",
-    "contact": "Contact Us",
-    "privacy": "We respect your privacy. Read our privacy policy."
+    "herbs": "Herbs"
   }
 }

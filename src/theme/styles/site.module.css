@@ -74,8 +74,7 @@
 }
 
 .menuToggle,
-.tool,
-.subToggle {
+.tool {
   position: relative;
   display: inline-flex;
   min-width: 44px;
@@ -200,54 +199,6 @@
 
 .navActive {
   color: var(--accent);
-  font-weight: 600;
-}
-
-.navGroupHead {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.subToggle .icon {
-  width: 18px;
-  height: 18px;
-  transition: transform 0.2s ease;
-}
-
-.subToggle[aria-expanded='true'] .icon {
-  transform: rotate(180deg);
-}
-
-.subnav {
-  display: none;
-  margin: 0 0 12px;
-  padding: 0 0 0 12px;
-  border-left: 2px solid var(--tint);
-  list-style: none;
-}
-
-.subnavOpen {
-  display: block;
-}
-
-.subLink,
-.subAll {
-  display: flex;
-  min-height: 40px;
-  align-items: center;
-  color: var(--ink-soft);
-  font-size: 14px;
-  text-decoration: none;
-}
-
-.subLink:hover,
-.subAll:hover {
-  color: var(--accent);
-}
-
-.subAll {
-  color: var(--taupe-text);
   font-weight: 600;
 }
 
@@ -596,11 +547,8 @@
 
 .menuToggle:focus-visible,
 .tool:focus-visible,
-.subToggle:focus-visible,
 .brand:focus-visible,
-.navLink:focus-visible,
-.subLink:focus-visible,
-.subAll:focus-visible {
+.navLink:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 2px;
 }
@@ -694,6 +642,7 @@
     min-height: 44px;
     padding: 0 12px;
     font-size: 14.5px;
+    white-space: nowrap;
   }
 
   /* A short rule in the logo's red under the hovered and the current link. */
@@ -713,59 +662,6 @@
   .navLink:hover::after,
   .navActive::after {
     transform: scaleX(1);
-  }
-
-  .navGroupHead .navLink {
-    padding-right: 2px;
-  }
-
-  .navGroupHead .navLink::after {
-    right: 2px;
-  }
-
-  .subToggle {
-    min-width: 28px;
-  }
-
-  .subToggle .icon {
-    width: 15px;
-    height: 15px;
-  }
-
-  .subnav {
-    position: absolute;
-    z-index: 20;
-    top: 100%;
-    left: 0;
-    min-width: 230px;
-    margin: 0;
-    padding: 10px;
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    background: var(--surface);
-    box-shadow: 0 18px 40px rgb(var(--gm-primary-rgb) / 12%);
-  }
-
-  .navGroup:hover .subnav,
-  .subnavOpen {
-    display: block;
-    animation: drop 0.2s ease-out both;
-  }
-
-  .subLink,
-  .subAll {
-    padding: 0 12px;
-    border-radius: 8px;
-  }
-
-  .subLink:hover {
-    background: var(--soft);
-  }
-
-  .subAll {
-    margin-top: 6px;
-    border-top: 1px solid var(--line);
-    border-radius: 0;
   }
 
   .footer {

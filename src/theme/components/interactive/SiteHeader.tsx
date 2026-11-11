@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useState, type KeyboardEvent, type ReactNode } from 'react'
-import { Link, navigate, SearchField, useCart, useCollections, useLocation, useStorefront, useWishlist } from '@dripfunnel/storefront-core/theme'
+import { Link, navigate, SearchField, useCart, useLocation, useStorefront, useWishlist } from '@dripfunnel/storefront-core/theme'
 import { BrandLockup } from '../BrandLockup'
 import styles from '../../styles/site.module.css'
 
@@ -14,24 +14,19 @@ const Icon = ({ children }: { children: ReactNode }) => (
   </svg>
 )
 
-/** The sticky header: brand, the main links with the collections under "Our Collections", search, account, wishlist and cart. */
+/** The sticky header: brand, the main links (Home, Shop All, Our Story, Herbal Tea Recipes, Contact Us), search, account, wishlist and cart. */
 export const SiteHeader = () => {
   const { t } = useStorefront()
   const { path } = useLocation()
-  const { collections: fetched, status } = useCollections({ first: 20 })
-  const collections = status === 'ready' ? fetched : []
   const { count } = useCart()
   const { count: wished } = useWishlist()
   const [menuOpen, setMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
-  const [subOpen, setSubOpen] = useState(false)
   const menuToggle = useRef<HTMLButtonElement>(null)
   const searchToggle = useRef<HTMLButtonElement>(null)
-  const leaving = useRef<ReturnType<typeof setTimeout>>(undefined)
 
   const here = (href: string) => (href === '/' ? path === '/' : path.startsWith(href))
   const linkClass = (href: string) => (here(href) ? `${styles.navLink} ${styles.navActive}` : styles.navLink)
-  const inCollections = path.startsWith('/collections/') && path !== '/collections/all/'
 
   const escape = (event: KeyboardEvent<HTMLElement>) => {
     if (event.key !== 'Escape') return
@@ -41,7 +36,7 @@ export const SiteHeader = () => {
     } else if (menuOpen) {
       setMenuOpen(false)
       menuToggle.current?.focus()
-    } else if (subOpen) setSubOpen(false)
+    }
   }
 
   return (
@@ -64,41 +59,9 @@ export const SiteHeader = () => {
               </Link>
             </li>
             <li>
-              <Link href="/collections/all/" className={linkClass('/collections/all/')}>
+              <Link href="/collections/all/" className={linkClass('/collections/')}>
                 {t('common.nav.shopAll')}
               </Link>
-            </li>
-            <li
-              className={styles.navGroup}
-              onFocus={() => clearTimeout(leaving.current)}
-              onBlur={() => {
-                leaving.current = setTimeout(() => setSubOpen(false), 0)
-              }}
-            >
-              <span className={styles.navGroupHead}>
-                <Link href="/#collections" className={inCollections ? `${styles.navLink} ${styles.navActive}` : styles.navLink}>
-                  {t('common.nav.collections')}
-                </Link>
-                <button type="button" className={styles.subToggle} aria-expanded={subOpen} aria-label={t('common.nav.submenu', { item: t('common.nav.collections') })} onClick={() => setSubOpen(!subOpen)}>
-                  <Icon>
-                    <path d="M6 9l6 6 6-6" />
-                  </Icon>
-                </button>
-              </span>
-              <ul className={subOpen ? `${styles.subnav} ${styles.subnavOpen}` : styles.subnav}>
-                {collections.map((c) => (
-                  <li key={c.id}>
-                    <Link href={c.href} className={here(c.href) ? `${styles.subLink} ${styles.navActive}` : styles.subLink}>
-                      {c.name}
-                    </Link>
-                  </li>
-                ))}
-                <li>
-                  <Link href="/collections/all/" className={styles.subAll}>
-                    {t('common.nav.allCollections')}
-                  </Link>
-                </li>
-              </ul>
             </li>
             <li>
               <Link href="/about/" className={linkClass('/about/')}>
@@ -106,8 +69,8 @@ export const SiteHeader = () => {
               </Link>
             </li>
             <li>
-              <Link href="/#benefits" className={styles.navLink}>
-                {t('common.nav.benefits')}
+              <Link href="/herbal-tea-recipes/" className={linkClass('/herbal-tea-recipes/')}>
+                {t('common.nav.recipes')}
               </Link>
             </li>
             <li>

@@ -3,9 +3,16 @@ import { Image, Link, useCollections, useProducts, useStorefront, type Collectio
 import { Layout } from '../components/Layout'
 import { BrandMark, Sprig } from '../components/BrandMark'
 import { TeaCard } from '../components/TeaCard'
+import { HomeCertificates } from '../components/interactive/HomeCertificates'
+import { HomeLabReports } from '../components/interactive/HomeLabReports'
+import { TestimonialCard } from '../components/interactive/TestimonialsExplorer'
+import { MethodIcon } from '../components/herbalrecipes/HerbalRecipesSections'
+import { isIced, linesOf, methods } from '../components/herbalRecipes'
+import { featured, testimonials } from '../components/testimonials'
 import { cx } from '../components/cx'
 import { slugOf } from '../components/slugOf'
 import styles from '../styles/landing.module.css'
+import home from '../styles/homesections.module.css'
 
 /**
  * How many herbs each blend holds, as printed on its pack ("27 herbs infusion / tisane"), by its collection's address.
@@ -23,6 +30,9 @@ const herbCounts = new Map<string, number>([
 /** The range in the order the brand tells it, then any collection added since. */
 const rangeOrder = ['herbal-tea', 'cough-tea', 'diabetic-tea', 'ginger-tea', 'weight-loss-tea', 'tulsi-tea']
 
+/** A collection's place in the brand's order; one added since comes after. */
+const rank = (slug: string) => (rangeOrder.includes(slug) ? rangeOrder.indexOf(slug) : rangeOrder.length)
+
 const Icon = ({ className, children }: { className?: string; children: ReactNode }) => (
   <svg className={className ?? styles.lineIcon} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
     {children}
@@ -35,10 +45,15 @@ const ArrowIcon = () => (
   </Icon>
 )
 
-const SectionHead = ({ eyebrow, title, lead, align = 'center' }: { eyebrow: string; title: string; lead?: string; align?: 'center' | 'start' }) => (
+/** The headings the sections name themselves by (aria-labelledby). */
+type HeadId = 'collections-title' | 'recipes-title' | 'reviews-title'
+
+const SectionHead = ({ id, eyebrow, title, lead, align = 'center' }: { id?: HeadId; eyebrow: string; title: string; lead?: string; align?: 'center' | 'start' }) => (
   <div className={align === 'center' ? styles.head : cx(styles.head, styles.headStart)}>
     <p className={styles.eyebrow}>{eyebrow}</p>
-    <h2 className={styles.title}>{title}</h2>
+    <h2 id={id} className={styles.title}>
+      {title}
+    </h2>
     {lead ? <p className={styles.lead}>{lead}</p> : null}
   </div>
 )
@@ -156,8 +171,7 @@ const Products = () => {
   const { status, products } = useProducts({ sort: 'best-selling', first: 6 })
   const none = status !== 'loading' && !products.length
   return (
-    // Carries the #collections anchor the header and footer link to, now that the home page lists the teas themselves.
-    <section id="collections" className={cx(styles.section, styles.productsBand, styles.anchor)}>
+    <section className={cx(styles.section, styles.productsBand)}>
       <div className={styles.headRow}>
         <SectionHead eyebrow={t('home.products.eyebrow')} title={t('home.products.title')} lead={t('home.products.lead')} align="start" />
         {none ? null : (
@@ -261,42 +275,56 @@ const Why = ({ find }: { find: (slug: string) => CollectionCard | undefined }) =
   )
 }
 
-const Founder = () => {
+/** Our Story: the brand, its founder and what inspired the blends, in the About page's own words, beside the packs. */
+const OurStory = ({ find }: { find: (slug: string) => CollectionCard | undefined }) => {
   const { t } = useStorefront()
   return (
-    <section className={styles.founder} aria-labelledby="founder-title">
+    <section id="our-story" className={cx(styles.founder, styles.anchor)} aria-labelledby="story-title">
       <div className={styles.founderInner}>
-        <div className={cx(styles.founderCard, styles.reveal)}>
-          <Sprig className={styles.founderSprig} />
-          <span className={styles.monogram} aria-hidden="true">
-            {t('home.founder.monogram')}
-          </span>
-          <p className={styles.founderCardName}>{t('home.founder.signature')}</p>
-          <p className={styles.founderCardRole}>{t('home.founder.credentials')}</p>
-          <dl className={styles.facts}>
-            <div className={styles.fact}>
-              <dt className={styles.factLabel}>{t('home.founder.factYearsLabel')}</dt>
-              <dd className={styles.factValue}>{t('home.founder.factYears')}</dd>
+        <figure className={cx(home.storyArt, styles.reveal)}>
+          <span className={home.storyGround} aria-hidden="true" />
+          <Sprig className={home.storySprig} />
+          <Pack collection={find('herbal-tea')} className={home.storyMain} />
+          <Pack collection={find('tulsi-tea')} small className={home.storyLeft} />
+          <Pack collection={find('ginger-tea')} small className={home.storyRight} />
+          <figcaption className={home.storyBadge}>
+            <BrandMark className={home.storyBadgeMark} />
+            {t('about.hero.founded')}
+          </figcaption>
+        </figure>
+        <div className={styles.founderCopy}>
+          <p className={styles.eyebrow}>{t('about.hero.eyebrow')}</p>
+          <h2 id="story-title" className={styles.title}>
+            {t('about.hero.title')}
+          </h2>
+          <p className={styles.body}>{t('about.company.first')}</p>
+          <div className={home.founderRow}>
+            <span className={home.founderMonogram} aria-hidden="true">
+              {t('about.founder.monogram')}
+            </span>
+            <p className={home.founderWho}>
+              <span className={home.founderWhoName}>{t('about.founder.name')}</span>
+              <span className={home.founderWhoRole}>{t('about.founder.qualifications')}</span>
+            </p>
+          </div>
+          <p className={styles.body}>{t('about.founder.second')}</p>
+          <p className={styles.body}>{t('about.journey.third')}</p>
+          <dl className={home.storyFacts}>
+            <div className={home.storyFact}>
+              <dt>{t('about.company.factYearLabel')}</dt>
+              <dd>{t('about.company.factYear')}</dd>
             </div>
-            <div className={styles.fact}>
-              <dt className={styles.factLabel}>{t('home.founder.factVarietiesLabel')}</dt>
-              <dd className={styles.factValue}>{t('home.founder.factVarieties')}</dd>
+            <div className={home.storyFact}>
+              <dt>{t('home.story.practiceLabel')}</dt>
+              <dd>{t('about.story.timeline.practiceYear')}</dd>
+            </div>
+            <div className={home.storyFact}>
+              <dt>{t('about.company.factCountLabel')}</dt>
+              <dd>{t('about.company.factCount')}</dd>
             </div>
           </dl>
-        </div>
-        <div className={styles.founderCopy}>
-          <p className={styles.eyebrow}>{t('home.founder.eyebrow')}</p>
-          <h2 id="founder-title" className={styles.title}>
-            {t('home.founder.title')}
-          </h2>
-          <p className={styles.founderName}>{t('home.founder.name')}</p>
-          <p className={styles.body}>{t('home.founder.first')}</p>
-          <p className={styles.body}>{t('home.founder.second')}</p>
-          <blockquote className={styles.quote}>
-            <p>{t('home.founder.quote')}</p>
-          </blockquote>
-          <Link href="/about/" className={styles.ghost}>
-            {t('home.founder.action')}
+          <Link href="/about/" className={styles.button}>
+            {t('about.hero.story')}
             <ArrowIcon />
           </Link>
         </div>
@@ -305,145 +333,107 @@ const Founder = () => {
   )
 }
 
-const Range = ({ collections }: { collections: CollectionCard[] }) => {
+/** Every collection with its pack, its description (or its herb count), and the way into it; the header links here. */
+const Collections = ({ collections, pending }: { collections: CollectionCard[]; pending: boolean }) => {
   const { t } = useStorefront()
-  const counted = collections.filter((c) => herbCounts.has(slugOf(c)))
-  const ordered = [...counted].sort((a, b) => rangeOrder.indexOf(slugOf(a)) - rangeOrder.indexOf(slugOf(b)))
-  if (!ordered.length) return null
+  const ordered = [...collections].sort((a, b) => rank(slugOf(a)) - rank(slugOf(b)))
+  if (!pending && !ordered.length) return null
   return (
-    <section className={styles.range}>
-      <div className={styles.rangeInner}>
-        <SectionHead eyebrow={t('home.range.eyebrow')} title={t('home.range.title')} lead={t('home.range.lead')} />
-        <ol className={styles.rangeList}>
-          {ordered.map((c, index) => (
-            <li key={c.id} className={styles.reveal}>
-              <Link href={c.href} className={styles.rangeItem}>
-                <span className={styles.rangeIndex}>{String(index + 1).padStart(2, '0')}</span>
-                <span className={styles.rangeThumb}>{c.image ? <Image image={c.image} alt="" ratio={1} sizes="88px" className={styles.packImage} /> : null}</span>
-                <span className={styles.rangeText}>
-                  <span className={styles.rangeName}>{c.name}</span>
-                  <span className={styles.rangeShop}>
-                    {t('home.range.shop', { name: c.name })}
-                    <ArrowIcon />
-                  </span>
-                </span>
-                <span className={styles.rangeCount}>
-                  <span className={styles.rangeNumber}>{herbCounts.get(slugOf(c))}</span>
-                  <span className={styles.rangeLabel}>{t('home.range.herbs')}</span>
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ol>
-      </div>
+    <section id="collections" className={cx(styles.section, styles.anchor)} aria-labelledby="collections-title">
+      <SectionHead id="collections-title" eyebrow={t('home.collections.eyebrow')} title={t('home.collections.title')} lead={t('home.collections.lead')} />
+      <ul className={home.collectionGrid} aria-busy={pending} aria-label={pending ? t('home.collections.loading') : undefined}>
+        {pending
+          ? [0, 1, 2, 3, 4, 5].map((i) => (
+              <li key={i}>
+                <span className={home.collectionSkeleton} />
+              </li>
+            ))
+          : ordered.map((c) => {
+              const herbs = herbCounts.get(slugOf(c))
+              return (
+                <li key={c.id} className={styles.reveal}>
+                  <Link href={c.href} className={home.collection}>
+                    <span className={home.collectionPicture}>
+                      {c.image ? <Image image={c.image} alt="" ratio={1} sizes="(min-width: 1080px) 380px, (min-width: 700px) 45vw, 50vw" className={home.collectionImage} /> : null}
+                    </span>
+                    <span className={home.collectionText}>
+                      <span className={home.collectionName}>{c.name}</span>
+                      <span className={home.collectionDesc}>{c.description || (herbs ? t('home.collections.herbs', { count: herbs }) : t('home.collections.fallback'))}</span>
+                      <span className={home.collectionMore}>
+                        {t('home.collections.explore')}
+                        <ArrowIcon />
+                      </span>
+                    </span>
+                  </Link>
+                </li>
+              )
+            })}
+      </ul>
     </section>
   )
 }
 
-const Learn = () => {
+/** The four ways to prepare a cup, with what goes into each, as the client's recipe for Herbal Tea gives them. */
+const Recipes = ({ find }: { find: (slug: string) => CollectionCard | undefined }) => {
   const { t } = useStorefront()
-  const articles: { key: string; tag: string; title: string; intro: string; body: string; art: ReactNode }[] = [
-    {
-      key: 'tisanes',
-      tag: t('home.learn.tisanes.tag'),
-      title: t('home.learn.tisanes.title'),
-      intro: t('home.learn.tisanes.intro'),
-      body: t('home.learn.tisanes.body'),
-      art: (
-        <>
-          <path d="M30 58h52v10a26 26 0 01-52 0z" />
-          <path d="M82 62h6a8 8 0 010 16h-8" />
-          <path d="M24 98h70" />
-          <path d="M46 48c-4-5 4-9 0-14M58 48c-4-5 4-9 0-14M70 48c-4-5 4-9 0-14" />
-        </>
-      ),
-    },
-    {
-      key: 'herbs',
-      tag: t('home.learn.herbs.tag'),
-      title: t('home.learn.herbs.title'),
-      intro: t('home.learn.herbs.intro'),
-      body: t('home.learn.herbs.body'),
-      art: (
-        <>
-          <path d="M60 102V40" />
-          <path d="M60 70c-14-2-22-12-22-26 14 2 22 12 22 26z" />
-          <path d="M60 58c12-2 20-11 20-24-12 2-20 11-20 24z" />
-          <path d="M60 86c10 0 18-7 20-17-10 0-18 7-20 17z" />
-          <circle cx="32" cy="92" r="5" />
-          <circle cx="88" cy="94" r="4" />
-          <path d="M84 30l8-8M28 34l-6-6" />
-        </>
-      ),
-    },
-    {
-      key: 'routine',
-      tag: t('home.learn.routine.tag'),
-      title: t('home.learn.routine.title'),
-      intro: t('home.learn.routine.intro'),
-      body: t('home.learn.routine.body'),
-      art: (
-        <>
-          <circle cx="60" cy="62" r="34" />
-          <path d="M60 40v22l14 9" />
-          <path d="M60 22v6M60 96v6M20 62h6M94 62h6" />
-        </>
-      ),
-    },
-  ]
+  const tea = find('herbal-tea')
   return (
-    <section className={styles.section}>
-      <SectionHead eyebrow={t('home.learn.eyebrow')} title={t('home.learn.title')} lead={t('home.learn.lead')} />
-      <ul className={styles.learnGrid}>
-        {articles.map((a) => (
-          <li key={a.key} className={cx(styles.article, styles.reveal)}>
-            <span className={styles.articleArt}>
-              <svg className={styles.articleSvg} viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-                {a.art}
-              </svg>
-            </span>
-            <div className={styles.articleBody}>
-              <span className={styles.articleTag}>{a.tag}</span>
-              <h3 className={styles.articleTitle}>{a.title}</h3>
-              <p className={styles.articleIntro}>{a.intro}</p>
-              <details className={styles.articleMore}>
-                <summary className={styles.articleSummary}>
-                  <span className={styles.articleOpen}>{t('home.learn.more')}</span>
-                  <span className={styles.articleClose}>{t('home.learn.less')}</span>
-                  <ArrowIcon />
-                </summary>
-                <p className={styles.articleText}>{a.body}</p>
-              </details>
+    <section className={cx(styles.section, home.recipesBand)} aria-labelledby="recipes-title">
+      <SectionHead id="recipes-title" eyebrow={t('home.recipes.eyebrow')} title={t('herbalrecipes.hero.title')} lead={t('herbalrecipes.product.lead')} />
+      <p className={home.recipesShown}>{t('home.recipes.shown', { tea: t('herbalrecipes.items.herbal.short') })}</p>
+      <ul className={home.recipeGrid}>
+        {methods.map((method) => (
+          <li key={method} className={cx(home.recipe, styles.reveal)}>
+            <div className={isIced(method) ? cx(home.recipeArt, home.recipeArtIced) : home.recipeArt}>
+              {tea?.image ? <Image image={tea.image} alt={t('herbalrecipes.items.herbal.alt')} ratio={1} sizes="(min-width: 1080px) 160px, 30vw" className={home.recipePack} /> : null}
+              <span className={home.recipeBadge}>
+                <MethodIcon method={method} className={home.recipeIcon} />
+                {isIced(method) ? t('home.recipes.iced') : t('home.recipes.hot')}
+              </span>
+            </div>
+            <div className={home.recipeBody}>
+              <h3 className={home.recipeTitle}>{t(`herbalrecipes.methods.${method}.title` as const)}</h3>
+              <p className={home.recipeText}>{t(`herbalrecipes.methods.${method}.body` as const)}</p>
+              <p className={home.recipeLabel}>{t('herbalrecipes.detail.items')}</p>
+              <ul className={home.recipeNeeds}>
+                {linesOf(t(`herbalrecipes.needs.herbal.${method}` as const)).map((line) => (
+                  <li key={line}>{line}</li>
+                ))}
+              </ul>
+              <p className={home.recipeServes}>
+                {t('herbalrecipes.detail.serving')} <strong>{t('herbalrecipes.detail.servingValue')}</strong>
+              </p>
             </div>
           </li>
         ))}
       </ul>
-      <p className={styles.disclaimer}>{t('home.learn.note')}</p>
+      <div className={styles.center}>
+        <Link href="/herbal-tea-recipes/" className={styles.button}>
+          {t('home.recipes.all')}
+          <ArrowIcon />
+        </Link>
+      </div>
     </section>
   )
 }
 
-const Connect = () => {
+/** Three of the published customer stories, word for word as the client supplied them, with the page's own note. */
+const Testimonials = () => {
   const { t } = useStorefront()
+  const shown = featured.slice(0, 3).flatMap((id) => testimonials.filter((x) => x.id === id))
   return (
-    <section className={styles.connect}>
-      <div className={cx(styles.connectInner, styles.reveal)}>
-        <Sprig className={styles.connectSprig} />
-        <Sprig className={styles.connectSprigAlt} />
-        <p className={styles.eyebrow}>{t('home.connect.eyebrow')}</p>
-        <h2 className={styles.title}>{t('home.connect.title')}</h2>
-        <p className={styles.lead}>{t('home.connect.lead')}</p>
-        <div className={cx(styles.actions, styles.actionsCenter)}>
-          <Link href="/register/" className={styles.button}>
-            {t('home.connect.action')}
-            <ArrowIcon />
-          </Link>
-          <Link href="/contact/" className={styles.ghost}>
-            {t('home.connect.contact')}
-          </Link>
-        </div>
-        <Link href="/policies/privacy/" className={styles.privacy}>
-          {t('home.connect.privacy')}
+    <section className={cx(styles.section, home.reviewsBand)} aria-labelledby="reviews-title">
+      <SectionHead id="reviews-title" eyebrow={t('home.reviews.eyebrow')} title={t('testimonials.hero.title')} lead={t('testimonials.hero.lead')} />
+      <div className={home.reviewGrid}>
+        {shown.map((item) => (
+          <TestimonialCard key={item.id} item={item} lang="en" />
+        ))}
+      </div>
+      <p className={home.reviewNote}>{t('testimonials.disclaimer.text')}</p>
+      <div className={styles.center}>
+        <Link href="/testimonials/" className={styles.button}>
+          {t('home.reviews.all')}
+          <ArrowIcon />
         </Link>
       </div>
     </section>
@@ -452,18 +442,20 @@ const Connect = () => {
 
 export const HomePage = () => {
   // `first: 20` matches the header's request, so both share one answer.
-  const { collections } = useCollections({ first: 20 })
+  const { collections, status } = useCollections({ first: 20 })
   const find = (slug: string) => collections.find((c) => slugOf(c) === slug) ?? collections[rangeOrder.indexOf(slug)] ?? collections[0]
   return (
     <Layout>
       <Hero find={find} />
       <Trust />
-      <Products />
       <Why find={find} />
-      <Founder />
-      <Range collections={collections} />
-      <Learn />
-      <Connect />
+      <OurStory find={find} />
+      <Collections collections={collections} pending={status === 'loading'} />
+      <Products />
+      <HomeCertificates />
+      <Recipes find={find} />
+      <HomeLabReports />
+      <Testimonials />
     </Layout>
   )
 }
