@@ -151,48 +151,13 @@ const Trust = () => {
   )
 }
 
-const Collections = ({ collections, pending }: { collections: CollectionCard[]; pending: boolean }) => {
-  const { t } = useStorefront()
-  if (!pending && !collections.length) return null
-  return (
-    <section id="collections" className={cx(styles.section, styles.anchor)}>
-      <SectionHead eyebrow={t('home.collections.eyebrow')} title={t('home.collections.title')} lead={t('home.collections.lead')} />
-      <ul className={styles.collectionGrid} aria-busy={pending} aria-label={pending ? t('home.collections.loading') : undefined}>
-        {pending
-          ? [0, 1, 2, 3, 4, 5].map((i) => (
-              <li key={i}>
-                <span className={styles.collectionSkeleton} />
-              </li>
-            ))
-          : collections.map((c) => {
-              const herbs = herbCounts.get(slugOf(c))
-              return (
-                <li key={c.id} className={styles.reveal}>
-                  <Link href={c.href} className={styles.collection}>
-                    <span className={styles.collectionPicture}>{c.image ? <Image image={c.image} alt="" ratio={1} sizes="(min-width: 1080px) 380px, (min-width: 700px) 45vw, 50vw" className={styles.collectionImage} /> : null}</span>
-                    <span className={styles.collectionText}>
-                      <span className={styles.collectionName}>{c.name}</span>
-                      <span className={styles.collectionDesc}>{c.description || (herbs ? t('home.collections.herbs', { count: herbs }) : t('home.collections.fallback'))}</span>
-                      <span className={styles.collectionMore}>
-                        {t('home.collections.explore')}
-                        <ArrowIcon />
-                      </span>
-                    </span>
-                  </Link>
-                </li>
-              )
-            })}
-      </ul>
-    </section>
-  )
-}
-
 const Products = () => {
   const { t } = useStorefront()
-  const { status, products } = useProducts({ sort: 'best-selling', first: 8 })
+  const { status, products } = useProducts({ sort: 'best-selling', first: 6 })
   const none = status !== 'loading' && !products.length
   return (
-    <section className={cx(styles.section, styles.productsBand)}>
+    // Carries the #collections anchor the header and footer link to, now that the home page lists the teas themselves.
+    <section id="collections" className={cx(styles.section, styles.productsBand, styles.anchor)}>
       <div className={styles.headRow}>
         <SectionHead eyebrow={t('home.products.eyebrow')} title={t('home.products.title')} lead={t('home.products.lead')} align="start" />
         {none ? null : (
@@ -217,7 +182,7 @@ const Products = () => {
           <Sprig className={styles.emptySprig} />
           <p className={styles.emptyTitle}>{t('home.products.empty')}</p>
           <p className={styles.emptyLead}>{t('home.products.emptyLead')}</p>
-          <Link href="/#collections" className={styles.ghost}>
+          <Link href="/collections/all/" className={styles.ghost}>
             {t('home.products.emptyAction')}
           </Link>
         </div>
@@ -487,13 +452,12 @@ const Connect = () => {
 
 export const HomePage = () => {
   // `first: 20` matches the header's request, so both share one answer.
-  const { collections, status } = useCollections({ first: 20 })
+  const { collections } = useCollections({ first: 20 })
   const find = (slug: string) => collections.find((c) => slugOf(c) === slug) ?? collections[rangeOrder.indexOf(slug)] ?? collections[0]
   return (
     <Layout>
       <Hero find={find} />
       <Trust />
-      <Collections collections={collections} pending={status === 'loading'} />
       <Products />
       <Why find={find} />
       <Founder />

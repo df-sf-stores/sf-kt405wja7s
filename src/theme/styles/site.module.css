@@ -557,18 +557,34 @@
   margin-right: auto;
 }
 
-.cookies {
-  display: block;
-  --df-sealed-color: var(--footer-ink);
+/* "Powered by DripFunnel": the logo (once uploaded) and the words, quiet beside the copyright. */
+.credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--footer-muted, var(--muted));
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  white-space: nowrap;
+  transition: color 0.2s ease;
 }
 
-.cookies::part(button) {
-  min-height: 40px;
-  padding: 0 16px;
-  border: 1px solid var(--footer-line);
-  border-radius: 999px;
-  background: transparent;
-  color: var(--footer-ink);
+.credit:hover {
+  color: var(--footer-ink, var(--ink));
+}
+
+.creditLogo {
+  display: block;
+  width: auto;
+  height: 18px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.credit:hover .creditLogo {
+  opacity: 1;
 }
 
 .powered {

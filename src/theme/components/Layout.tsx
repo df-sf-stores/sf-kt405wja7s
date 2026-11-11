@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
-import { ConsentBanner, ConsentSettingsButton, Link, PoweredBy, PreviewBanner, useStorefront } from '@dripfunnel/storefront-core/theme'
+import { ConsentBanner, Link, PoweredBy, PreviewBanner, useStorefront } from '@dripfunnel/storefront-core/theme'
 import { BrandLockup } from './BrandLockup'
+import { DripFunnelCredit } from './DripFunnelCredit'
 import { CertificatesFooterLink } from './interactive/CertificatesFooterLink'
 import { LabReportsFooterLink } from './interactive/LabReportsFooterLink'
 import { RecipesFooterLink } from './interactive/RecipesFooterLink'
@@ -137,7 +138,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
         </div>
         <div className={styles.footerBase}>
           <p className={styles.copyright}>{t('common.footer.rights', { store: store.name })}</p>
-          <ConsentSettingsButton t={t} className={styles.cookies} />
+          <DripFunnelCredit />
           <PoweredBy brand={poweredBy} t={t} className={styles.powered} />
         </div>
       </footer>

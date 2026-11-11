@@ -30,15 +30,6 @@
       "body": "Developed by a physician with decades of experience in medicine."
     }
   },
-  "collections": {
-    "eyebrow": "Shop by Collection",
-    "title": "Explore Our Herbal Tea Collections",
-    "lead": "Find the perfect herbal infusion for your everyday wellness routine.",
-    "herbs": "{count}-herb infusion",
-    "fallback": "A herbal infusion from our range",
-    "explore": "Explore Collection",
-    "loading": "Loading the collections"
-  },
   "products": {
     "eyebrow": "Shop the Range",
     "title": "Our Signature Herbal Teas",

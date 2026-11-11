@@ -493,17 +493,9 @@
 }
 
 /* Checkout's footer is light, unlike the main footer, so its sealed pieces keep the page's ink from .shell. */
-.cookies {
-  display: block;
-}
-
-.cookies::part(button) {
-  min-height: 40px;
-  padding: 0 14px;
-  border: 1px solid var(--line);
-  border-radius: var(--button-radius);
-  background: transparent;
-  color: var(--ink);
+/* The checkout footer is light: the credit takes the page's muted ink, at the right. */
+.credit {
+  margin-left: auto;
 }
 
 .powered {

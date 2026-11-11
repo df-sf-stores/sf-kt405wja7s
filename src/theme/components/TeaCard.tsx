@@ -45,7 +45,7 @@ export const TeaCard = ({ product }: { product: ProductCard }) => {
                 <path d="M5.5 8h13l-1 12h-11z" />
                 <path d="M9 8V6.5a3 3 0 016 0V8" />
               </svg>
-              <span aria-hidden="true">{t('home.card.buy')}</span>
+              <span className={styles.cardBuyText} aria-hidden="true">{t('home.card.buy')}</span>
               <span className={styles.hidden}>{t('home.card.buyLabel', { name: product.name })}</span>
             </Link>
           ) : (
