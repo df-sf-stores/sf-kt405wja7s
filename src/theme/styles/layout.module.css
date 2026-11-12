@@ -64,11 +64,18 @@
   --df-sealed-surface: var(--surface);
   --df-sealed-radius: var(--radius);
 
+  /* Pinned to the page's edges rather than pulled out by a -8px margin: the browser's 8px body margin (which theme CSS
+     can't name, storefront ARCHITECTURE §3.4) is there on the live site but reset to 0 in local dev, and a fixed -8px
+     made the page 8px wider and taller than the window wherever it was 0. Absolute against the page itself, the shell
+     ignores the body's margin either way and spans exactly the window's width, scrollbar excluded. */
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
   display: flex;
+  box-sizing: border-box;
   min-height: 100vh;
   flex-direction: column;
-  /* Cancels the browser's 8px body margin, which theme CSS can't name (storefront ARCHITECTURE §3.4). */
-  margin: -8px;
   background: var(--bg);
   color: var(--ink);
   font-family: var(--body-font);

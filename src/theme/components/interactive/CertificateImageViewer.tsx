@@ -1,18 +1,20 @@
 'use client'
 
 import { useEffect, useRef, useState, type KeyboardEvent } from 'react'
-import { Link, MerchantImage, useStorefront } from '@dripfunnel/storefront-core/theme'
+import { Link, useStorefront } from '@dripfunnel/storefront-core/theme'
 import { fileOf } from '../certificates'
+import { Picture, type ViewerPicture } from '../themeMedia'
 import styles from '../../styles/certificates.module.css'
 
-export type ViewerItem = { asset: string; title: string }
+export type ViewerItem = ViewerPicture & { title: string }
 
 /** Fit to the screen first, then three steps up; the bigger steps scroll inside the viewer. */
 const zooms = [styles.zoomFit, styles.zoom150, styles.zoom200, styles.zoom300] as const
 
 /**
  * A large viewer for one certificate at a time, with previous and next across the gallery, zoom, fit to screen and the
- * original file. Arrow keys move between certificates, Escape closes, focus starts on Close and stays inside while open.
+ * original file (for an uploaded picture). Arrow keys move between certificates; Escape or a click on the backdrop closes;
+ * focus starts on Close and stays inside while open, and the page behind holds still.
  */
 export const CertificateImageViewer = ({ items, index, onIndex, onClose }: { items: ViewerItem[]; index: number; onIndex: (index: number) => void; onClose: () => void }) => {
   const { t } = useStorefront()
@@ -39,9 +41,9 @@ export const CertificateImageViewer = ({ items, index, onIndex, onClose }: { ite
   /** This certificate's place in the gallery, counted from the items themselves. */
   const n = items.slice(0, index + 1).length
   return (
-    <div className={styles.backdrop} onKeyDown={keys}>
+    <div className={styles.backdrop} onKeyDown={keys} onClick={(event) => event.target === event.currentTarget && onClose()}>
       <div className={styles.viewer} role="dialog" aria-modal="true" aria-labelledby="certificate-viewer-title">
-        <span tabIndex={0} className={styles.sentinel} onFocus={() => last.current?.focus()} />
+        <span tabIndex={0} className={styles.sentinel} onFocus={() => (last.current ?? first.current)?.focus()} />
         <div className={styles.viewerBar}>
           <div className={styles.viewerHeading}>
             <h2 id="certificate-viewer-title" className={styles.viewerTitle}>
@@ -79,8 +81,8 @@ export const CertificateImageViewer = ({ items, index, onIndex, onClose }: { ite
             </button>
           ) : null}
           <div className={styles.viewerScroll} tabIndex={0} aria-label={t('certificates.viewer.hint')}>
-            <div key={item.asset} className={`${styles.viewerSheet} ${zooms[zoom]}`}>
-              <MerchantImage asset={item.asset} alt={item.title} ratio={0.75} sizes="(min-width: 1200px) 1200px, 100vw" className={styles.viewerImage} />
+            <div key={item.asset ?? item.file} className={`${styles.viewerSheet} ${zooms[zoom]}`}>
+              <Picture picture={item} alt={item.title} uploadRatio={0.75} sizes="(min-width: 1200px) 1200px, 100vw" className={styles.viewerImage} />
             </div>
           </div>
           {total > 1 ? (
@@ -93,9 +95,11 @@ export const CertificateImageViewer = ({ items, index, onIndex, onClose }: { ite
         </div>
         <div className={styles.viewerFoot}>
           <p className={styles.viewerHint}>{t('certificates.viewer.hint')}</p>
-          <Link ref={last} href={fileOf(item.asset)} className={styles.viewerDownload}>
-            {t('certificates.viewer.download')}
-          </Link>
+          {item.asset ? (
+            <Link ref={last} href={fileOf(item.asset)} className={styles.viewerDownload}>
+              {t('certificates.viewer.download')}
+            </Link>
+          ) : null}
         </div>
         <span tabIndex={0} className={styles.sentinel} onFocus={() => first.current?.focus()} />
       </div>

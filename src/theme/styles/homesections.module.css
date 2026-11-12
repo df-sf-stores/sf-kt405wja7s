@@ -284,13 +284,14 @@
 
 .certificateMat {
   display: flex;
-  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  /* A fixed, portrait box (most certificates are upright); overflow keeps a tall original from stretching it. */
+  aspect-ratio: 4 / 5;
   align-items: center;
   justify-content: center;
   padding: 12px;
-  background:
-    radial-gradient(circle at 50% 0%, rgb(var(--gm-gold-rgb) / 14%), transparent 60%),
-    var(--soft);
+  border-bottom: 1px solid var(--line);
+  background: #fbf9f2;
 }
 
 .certificateButton {
@@ -308,7 +309,7 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  box-shadow: 0 8px 20px rgb(var(--gm-primary-rgb) / 12%);
+  filter: drop-shadow(0 6px 12px rgb(var(--gm-primary-rgb) / 12%));
   transition: transform 0.4s ease;
 }
 
@@ -674,11 +675,13 @@
 
 .reportMat {
   display: flex;
-  aspect-ratio: 1.15;
+  overflow: hidden;
+  /* A fixed box the shape of an A4 report page, so every card is the same height and each page shows whole. */
+  aspect-ratio: 3 / 4;
   align-items: center;
   justify-content: center;
   padding: 10px;
-  background: var(--soft);
+  background: #fbf9f2;
 }
 
 .reportButton {
@@ -696,6 +699,12 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgb(var(--gm-primary-rgb) / 14%));
+  transition: transform 0.4s ease;
+}
+
+.reportButton:hover .reportImage {
+  transform: scale(1.04);
 }
 
 .reportBody {
@@ -854,7 +863,8 @@
   .certificateImage,
   .recipe,
   .recipePack,
-  .report {
+  .report,
+  .reportImage {
     transition: none;
   }
 
@@ -864,7 +874,8 @@
   .certificateButton:hover .certificateImage,
   .recipe:hover,
   .recipe:hover .recipePack,
-  .report:hover {
+  .report:hover,
+  .reportButton:hover .reportImage {
     transform: none;
   }
 }

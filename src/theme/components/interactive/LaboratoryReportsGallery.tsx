@@ -2,23 +2,26 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { useLocation, useStorefront } from '@dripfunnel/storefront-core/theme'
-import { uploaded } from '../assets'
 import { reportFromQuery, reports } from '../labReports'
+import { reportPicture } from '../themeMedia'
 import { LaboratoryReportCard } from './LaboratoryReportCard'
 import { LaboratoryReportViewer, type ReportViewerItem } from './LaboratoryReportViewer'
 import styles from '../../styles/labreports.module.css'
 
 /**
- * The six report cards and the viewer they open, which steps through every report whose image is in. A product page
+ * The six report cards and the viewer they open, which steps through all six. A product page
  * links here with `?report={key}`, which opens that product's report as the page loads.
  */
 export const LaboratoryReportsGallery = () => {
   const { t } = useStorefront()
   const { query } = useLocation()
-  const cards = reports.map((key) => ({ key, asset: uploaded(t(`labreports.assets.${key}` as const)) }))
-  const items: ReportViewerItem[] = cards.flatMap((c) =>
-    c.asset ? [{ key: c.key, asset: c.asset, title: t(`labreports.items.${c.key}.product` as const), issued: t(`labreports.items.${c.key}.issued` as const) }] : [],
-  )
+  const cards = reports.map((key) => ({ key, picture: reportPicture(key, t(`labreports.assets.${key}` as const)) }))
+  const items: ReportViewerItem[] = cards.map(({ key, picture }) => ({
+    ...picture,
+    key,
+    title: t(`labreports.items.${key}.product` as const),
+    issued: t(`labreports.items.${key}.issued` as const),
+  }))
   const [open, setOpen] = useState<{ index: number; full: boolean } | null>(null)
   const returnTo = useRef<() => void>(undefined)
 
@@ -43,14 +46,14 @@ export const LaboratoryReportsGallery = () => {
         <p className={styles.headLead}>{t('labreports.gallery.lead')}</p>
       </div>
       <div className={styles.grid}>
-        {cards.map((c) => (
+        {cards.map((c, index) => (
           <LaboratoryReportCard
             key={c.key}
             kind={c.key}
-            asset={c.asset}
+            picture={c.picture}
             onView={(full, returnFocus) => {
               returnTo.current = returnFocus
-              setOpen({ index: items.findIndex((i) => i.key === c.key), full })
+              setOpen({ index, full })
             }}
           />
         ))}

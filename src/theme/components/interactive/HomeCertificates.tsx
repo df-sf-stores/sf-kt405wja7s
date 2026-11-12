@@ -1,33 +1,26 @@
 'use client'
 
 import { useRef, useState } from 'react'
-import { Link, MerchantImage, useStorefront } from '@dripfunnel/storefront-core/theme'
-import { uploaded } from '../assets'
+import { Link, useStorefront } from '@dripfunnel/storefront-core/theme'
 import { CertificateIcon } from '../CertificateIcon'
 import { cx } from '../cx'
 import { certificates, iconOf, type CertificateKey } from '../certificates'
+import { certificatePicture, Picture, type ViewerPicture } from '../themeMedia'
 import { CertificateImageViewer, type ViewerItem } from './CertificateImageViewer'
 import styles from '../../styles/landing.module.css'
 import home from '../../styles/homesections.module.css'
 
-/** One certificate in brief: its picture (which opens the viewer) or the page's "coming soon", its kind, name and description. */
-const Card = ({ kind, asset, onView }: { kind: CertificateKey; asset: string | null; onView: (returnFocus: () => void) => void }) => {
+/** One certificate in brief: its picture, whole on a light mat (which opens the viewer), its kind, name and description. */
+const Card = ({ kind, picture, onView }: { kind: CertificateKey; picture: ViewerPicture; onView: (returnFocus: () => void) => void }) => {
   const { t } = useStorefront()
   const button = useRef<HTMLButtonElement>(null)
   const title = t(`certificates.items.${kind}.title` as const)
   return (
     <li className={cx(home.certificate, styles.reveal)}>
       <div className={home.certificateMat}>
-        {asset ? (
-          <button ref={button} type="button" className={home.certificateButton} onClick={() => onView(() => button.current?.focus())} aria-label={t('home.certificates.view', { title })}>
-            <MerchantImage asset={asset} alt={t('certificates.card.previewAlt', { title })} ratio={0.75} sizes="(min-width: 1080px) 200px, (min-width: 700px) 30vw, 45vw" className={home.certificateImage} />
-          </button>
-        ) : (
-          <div className={home.certificateEmpty}>
-            <CertificateIcon kind={iconOf(kind)} className={home.certificateEmptyIcon} />
-            <span>{t('certificates.gallery.pending')}</span>
-          </div>
-        )}
+        <button ref={button} type="button" className={home.certificateButton} onClick={() => onView(() => button.current?.focus())} aria-label={t('home.certificates.view', { title })}>
+          <Picture picture={picture} alt={t('certificates.card.previewAlt', { title })} uploadRatio={0.75} sizes="(min-width: 1280px) 220px, (min-width: 900px) 30vw, (min-width: 700px) 45vw, 50vw" className={home.certificateImage} />
+        </button>
       </div>
       <div className={home.certificateBody}>
         <p className={home.certificateKind}>
@@ -42,13 +35,13 @@ const Card = ({ kind, asset, onView }: { kind: CertificateKey; asset: string | n
 }
 
 /**
- * Certificates & Registrations on the home page: the six certificates the /certificates/ page shows, in brief, opening
- * the same viewer; a certificate whose picture id is still "pending" says so rather than showing an empty frame.
+ * Certificates & Registrations on the home page: the six certificates the /certificates/ page shows, in brief, each with
+ * its picture (see certificatePicture), opening the same viewer.
  */
 export const HomeCertificates = () => {
   const { t } = useStorefront()
-  const cards = certificates.map((key) => ({ key, asset: uploaded(t(`certificates.assets.${key}` as const)), title: t(`certificates.items.${key}.title` as const) }))
-  const items: ViewerItem[] = cards.flatMap((c) => (c.asset ? [{ asset: c.asset, title: c.title }] : []))
+  const cards = certificates.map((key) => ({ key, picture: certificatePicture(key, t(`certificates.assets.${key}` as const)) }))
+  const items: ViewerItem[] = cards.map((c) => ({ ...c.picture, title: t(`certificates.items.${c.key}.title` as const) }))
   const [open, setOpen] = useState<number | null>(null)
   const returnTo = useRef<() => void>(undefined)
   const close = () => {
@@ -65,14 +58,14 @@ export const HomeCertificates = () => {
         <p className={styles.lead}>{t('certificates.gallery.lead')}</p>
       </div>
       <ul className={home.certificateGrid}>
-        {cards.map((c) => (
+        {cards.map((c, index) => (
           <Card
             key={c.key}
             kind={c.key}
-            asset={c.asset}
+            picture={c.picture}
             onView={(returnFocus) => {
               returnTo.current = returnFocus
-              setOpen(items.findIndex((i) => i.asset === c.asset))
+              setOpen(index)
             }}
           />
         ))}
@@ -85,7 +78,7 @@ export const HomeCertificates = () => {
           </svg>
         </Link>
       </div>
-      {open !== null && open >= 0 ? <CertificateImageViewer items={items} index={open} onIndex={setOpen} onClose={close} /> : null}
+      {open !== null ? <CertificateImageViewer items={items} index={open} onIndex={setOpen} onClose={close} /> : null}
     </section>
   )
 }

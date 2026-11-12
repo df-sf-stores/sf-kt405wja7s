@@ -508,34 +508,45 @@
   margin-right: auto;
 }
 
-/* "Powered by DripFunnel": the logo (once uploaded) and the words, quiet beside the copyright. */
+/* "Powered by" and the DripFunnel logo, one link to DripFunnel's site, at the right of the copyright line and centred
+   on it. No chip: a faint light halo keeps the logo's blue letters readable on the dark green footer. A footer on a
+   light ground (checkout) sets --credit-ink for the words. */
 .credit {
   display: inline-flex;
+  flex-shrink: 0;
   align-items: center;
-  gap: 8px;
-  margin: 0;
-  color: var(--footer-muted, var(--muted));
-  font-size: 12.5px;
-  letter-spacing: 0.02em;
-  line-height: 1.4;
-  white-space: nowrap;
-  transition: color 0.2s ease;
+  gap: 10px;
+  min-height: 44px;
+  margin: 0 0 0 auto;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
 .credit:hover {
-  color: var(--footer-ink, var(--ink));
+  opacity: 0.85;
+}
+
+.credit:focus-visible {
+  border-radius: 4px;
+  outline: 2px solid var(--footer-ink, currentColor);
+  outline-offset: 4px;
+}
+
+.creditLabel {
+  color: var(--credit-ink, rgb(var(--gm-ivory-rgb) / 85%));
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .creditLogo {
   display: block;
-  width: auto;
-  height: 18px;
-  opacity: 0.85;
-  transition: opacity 0.2s ease;
-}
-
-.credit:hover .creditLogo {
-  opacity: 1;
+  width: 110px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 1px rgb(255 255 255 / 85%)) drop-shadow(0 0 4px rgb(255 255 255 / 30%));
 }
 
 .powered {

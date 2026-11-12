@@ -1,19 +1,21 @@
-import { MerchantImage, useStorefront } from '@dripfunnel/storefront-core/theme'
-import { uploaded } from './assets'
+import { Link, ThemeImage, useStorefront } from '@dripfunnel/storefront-core/theme'
 import styles from '../styles/site.module.css'
 
+/** The logo file's own shape (845 × 143), so the box keeps it and nothing is cropped. */
+const LOGO_RATIO = 845 / 143
+
 /**
- * "Powered by DripFunnel" at the foot of every page, with the DripFunnel logo from Storefront › Assets once its id is
- * written in content/en/common.json `footer.credit.logo`; until then, the words alone. It is not a link: a theme may
- * not write another site's address (code/url-in-code), so the words carry the credit.
+ * "Powered by" and the DripFunnel logo, side by side at the foot of every page, the whole of it one link to DripFunnel's
+ * site. The logo is the theme's own src/theme/media/dripfunnel.png with "DripFunnel" as its alt text, so the link reads
+ * "Powered by DripFunnel". The address lives in content/en/common.json because a theme writes none in its code
+ * (code/url-in-code); core's <Link> renders it.
  */
 export const DripFunnelCredit = ({ className }: { className?: string }) => {
   const { t } = useStorefront()
-  const logo = uploaded(t('common.footer.credit.logo'))
   return (
-    <p className={className ? `${styles.credit} ${className}` : styles.credit}>
-      {logo ? <MerchantImage asset={logo} alt="" ratio={4} sizes="96px" className={styles.creditLogo} /> : null}
-      <span>{t('common.footer.credit.text')}</span>
-    </p>
+    <Link href={t('common.footer.credit.href')} className={className ? `${styles.credit} ${className}` : styles.credit}>
+      <span className={styles.creditLabel}>{t('common.footer.credit.label')}</span>
+      <ThemeImage src="dripfunnel.png" alt={t('common.footer.credit.logoAlt')} ratio={LOGO_RATIO} sizes="110px" className={styles.creditLogo} />
+    </Link>
   )
 }

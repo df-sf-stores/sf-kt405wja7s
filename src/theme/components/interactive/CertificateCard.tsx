@@ -1,9 +1,10 @@
 'use client'
 
 import { useRef } from 'react'
-import { Link, MerchantImage, useStorefront } from '@dripfunnel/storefront-core/theme'
+import { Link, useStorefront } from '@dripfunnel/storefront-core/theme'
 import { CertificateIcon } from '../CertificateIcon'
 import { fileOf, iconOf, type CertificateKey } from '../certificates'
+import { Picture, type ViewerPicture } from '../themeMedia'
 import styles from '../../styles/certificates.module.css'
 
 /** "Label: value" lines from the words file, as a list of terms and their values. */
@@ -18,9 +19,9 @@ const rowsOf = (details: string) =>
 
 /**
  * One certificate: its picture whole on an ivory mat, its category, title, issuer, description and details, and the
- * ways to view it large and to open the original file. `asset` is null until the picture's id is in the words file.
+ * ways to view it large and, for a Storefront › Assets upload, to open the original file.
  */
-export const CertificateCard = ({ kind, asset, onView }: { kind: CertificateKey; asset: string | null; onView: (returnFocus: () => void) => void }) => {
+export const CertificateCard = ({ kind, picture, onView }: { kind: CertificateKey; picture: ViewerPicture; onView: (returnFocus: () => void) => void }) => {
   const { t } = useStorefront()
   const view = useRef<HTMLButtonElement>(null)
   const title = t(`certificates.items.${kind}.title` as const)
@@ -28,22 +29,15 @@ export const CertificateCard = ({ kind, asset, onView }: { kind: CertificateKey;
   return (
     <article className={styles.card}>
       <div className={styles.mat}>
-        {asset ? (
-          <button type="button" className={styles.matButton} onClick={open} aria-label={t('certificates.card.view')}>
-            <MerchantImage asset={asset} alt={t('certificates.card.previewAlt', { title })} ratio={0.75} sizes="(min-width: 1200px) 400px, (min-width: 640px) 46vw, 92vw" className={styles.matImage} />
-            <span className={styles.matZoom} aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false">
-                <circle cx="11" cy="11" r="6.5" />
-                <path d="M16 16l4.5 4.5M11 8v6M8 11h6" />
-              </svg>
-            </span>
-          </button>
-        ) : (
-          <div className={styles.matEmpty}>
-            <CertificateIcon kind={iconOf(kind)} className={styles.matEmptyIcon} />
-            <p>{t('certificates.gallery.pending')}</p>
-          </div>
-        )}
+        <button type="button" className={styles.matButton} onClick={open} aria-label={t('certificates.card.view')}>
+          <Picture picture={picture} alt={t('certificates.card.previewAlt', { title })} uploadRatio={0.75} sizes="(min-width: 1024px) 400px, (min-width: 640px) 46vw, 92vw" className={styles.matImage} />
+          <span className={styles.matZoom} aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <circle cx="11" cy="11" r="6.5" />
+              <path d="M16 16l4.5 4.5M11 8v6M8 11h6" />
+            </svg>
+          </span>
+        </button>
       </div>
       <div className={styles.cardBody}>
         <p className={styles.category}>
@@ -63,16 +57,16 @@ export const CertificateCard = ({ kind, asset, onView }: { kind: CertificateKey;
             </div>
           ))}
         </dl>
-        {asset ? (
-          <div className={styles.actions}>
-            <button ref={view} type="button" className={styles.primary} onClick={open}>
-              {t('certificates.card.view')}
-            </button>
-            <Link href={fileOf(asset)} className={styles.secondary}>
+        <div className={styles.actions}>
+          <button ref={view} type="button" className={styles.primary} onClick={open}>
+            {t('certificates.card.view')}
+          </button>
+          {picture.asset ? (
+            <Link href={fileOf(picture.asset)} className={styles.secondary}>
               {t('certificates.card.download')}
             </Link>
-          </div>
-        ) : null}
+          ) : null}
+        </div>
       </div>
     </article>
   )

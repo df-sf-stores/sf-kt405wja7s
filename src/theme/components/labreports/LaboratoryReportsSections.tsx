@@ -1,5 +1,4 @@
 import { Link, useStorefront } from '@dripfunnel/storefront-core/theme'
-import { uploaded } from '../assets'
 import { reportForProduct, reportsPath } from '../labReports'
 import styles from '../../styles/labreports.module.css'
 
@@ -102,12 +101,12 @@ export const LaboratoryReportsCTA = () => {
 
 /**
  * On a product's page: its own laboratory report, opened in the reports page's viewer. Nothing shows for a product with
- * no report, or until that report's image is uploaded, so no product links to another's report or to an empty card.
+ * no report, so no product links to another's report.
  */
 export const ProductLabReport = ({ href, className, titleClassName }: { href: string; className?: string; titleClassName?: string }) => {
   const { t } = useStorefront()
   const key = reportForProduct(href)
-  if (!key || !uploaded(t(`labreports.assets.${key}` as const))) return null
+  if (!key) return null
   return (
     <section className={className} aria-labelledby="product-lab-report">
       <h2 id="product-lab-report" className={titleClassName}>

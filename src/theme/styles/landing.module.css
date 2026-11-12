@@ -1066,15 +1066,18 @@
 /* Desktop */
 
 @media (min-width: 1080px) {
+  /* The hero fits the first screen under the announcement bar and header (about 116px together on desktop): its
+     padding and its still life shrink on shorter windows, such as a 1366×768 laptop, so the benefits strip starts
+     just below the fold instead of the hero running past it. */
   .heroInner {
     gap: 56px;
     grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-    padding: 64px 32px 88px;
+    padding: clamp(28px, 5vh, 64px) 32px clamp(36px, 7vh, 88px);
   }
 
   .stage {
     width: 100%;
-    max-width: 560px;
+    max-width: min(560px, calc((100svh - 124px - 12vh) / 1.02));
   }
 
   .trustList {

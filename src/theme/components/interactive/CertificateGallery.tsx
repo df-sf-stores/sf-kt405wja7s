@@ -2,18 +2,18 @@
 
 import { useRef, useState } from 'react'
 import { useHead, useStorefront } from '@dripfunnel/storefront-core/theme'
-import { uploaded } from '../assets'
 import { certificates } from '../certificates'
+import { certificatePicture } from '../themeMedia'
 import { CertificateCard } from './CertificateCard'
 import { CertificateImageViewer, type ViewerItem } from './CertificateImageViewer'
 import styles from '../../styles/certificates.module.css'
 
-/** The six certificate cards and the viewer they open, which steps through every certificate whose picture is in. */
+/** The six certificate cards and the viewer they open, which steps through all six. */
 export const CertificateGallery = () => {
   const { t } = useStorefront()
   useHead({ title: t('certificates.seo.title'), description: t('certificates.seo.description') })
-  const cards = certificates.map((key) => ({ key, asset: uploaded(t(`certificates.assets.${key}` as const)), title: t(`certificates.items.${key}.title` as const) }))
-  const items: ViewerItem[] = cards.flatMap((c) => (c.asset ? [{ asset: c.asset, title: c.title }] : []))
+  const cards = certificates.map((key) => ({ key, picture: certificatePicture(key, t(`certificates.assets.${key}` as const)) }))
+  const items: ViewerItem[] = cards.map((c) => ({ ...c.picture, title: t(`certificates.items.${c.key}.title` as const) }))
   const [open, setOpen] = useState<number | null>(null)
   const returnTo = useRef<() => void>(undefined)
   const close = () => {
@@ -30,19 +30,19 @@ export const CertificateGallery = () => {
         <p className={styles.galleryLead}>{t('certificates.gallery.lead')}</p>
       </div>
       <div className={styles.grid}>
-        {cards.map((c) => (
+        {cards.map((c, index) => (
           <CertificateCard
             key={c.key}
             kind={c.key}
-            asset={c.asset}
+            picture={c.picture}
             onView={(returnFocus) => {
               returnTo.current = returnFocus
-              setOpen(items.findIndex((i) => i.asset === c.asset))
+              setOpen(index)
             }}
           />
         ))}
       </div>
-      {open !== null && open >= 0 ? <CertificateImageViewer items={items} index={open} onIndex={setOpen} onClose={close} /> : null}
+      {open !== null ? <CertificateImageViewer items={items} index={open} onIndex={setOpen} onClose={close} /> : null}
     </section>
   )
 }

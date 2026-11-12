@@ -1,10 +1,11 @@
 'use client'
 
 import { useEffect, useRef, useState, type KeyboardEvent } from 'react'
-import { MerchantImage, useStorefront } from '@dripfunnel/storefront-core/theme'
+import { useStorefront } from '@dripfunnel/storefront-core/theme'
+import { Picture, type ViewerPicture } from '../themeMedia'
 import styles from '../../styles/labreports.module.css'
 
-export type ReportViewerItem = { key: string; asset: string; title: string; issued: string }
+export type ReportViewerItem = ViewerPicture & { key: string; title: string; issued: string }
 
 /** Fit to the screen first, then three steps up; the bigger steps scroll inside the viewer. */
 const zooms = [styles.zoomFit, styles.zoom150, styles.zoom200, styles.zoom300] as const
@@ -12,7 +13,8 @@ const zooms = [styles.zoomFit, styles.zoom150, styles.zoom200, styles.zoom300] a
 /**
  * A large viewer for one report page at a time: the original page whole on fit, then zoomed to read the table, with
  * previous and next across the reports. Fitted, the left and right arrows change report; zoomed, the arrows scroll the page.
- * Escape closes it; focus starts on Close and stays inside while it's open. `full` opens it zoomed all the way in.
+ * Escape or a click on the backdrop closes it; focus starts on Close and stays inside while it's open, and the page behind
+ * holds still. `full` opens it zoomed all the way in.
  */
 export const LaboratoryReportViewer = ({ items, index, onIndex, onClose, full = false }: { items: ReportViewerItem[]; index: number; onIndex: (index: number) => void; onClose: () => void; full?: boolean }) => {
   const { t } = useStorefront()
@@ -39,7 +41,7 @@ export const LaboratoryReportViewer = ({ items, index, onIndex, onClose, full = 
   }
   const n = items.slice(0, index + 1).length
   return (
-    <div className={styles.backdrop} onKeyDown={keys}>
+    <div className={styles.backdrop} onKeyDown={keys} onClick={(event) => event.target === event.currentTarget && onClose()}>
       <div className={styles.viewer} role="dialog" aria-modal="true" aria-labelledby="report-viewer-title">
         <span tabIndex={0} className={styles.sentinel} onFocus={() => (last.current ?? first.current)?.focus()} />
         <div className={styles.viewerBar}>
@@ -83,7 +85,7 @@ export const LaboratoryReportViewer = ({ items, index, onIndex, onClose, full = 
           ) : null}
           <div className={styles.viewerScroll} tabIndex={0} aria-label={t('labreports.viewer.hint')}>
             <div key={item.key} className={`${styles.viewerSheet} ${zooms[zoom]}`}>
-              <MerchantImage asset={item.asset} alt={item.title} ratio={0.7} sizes="(min-width: 1200px) 1600px, 100vw" className={styles.viewerImage} />
+              <Picture picture={item} alt={item.title} uploadRatio={0.7} sizes="(min-width: 1200px) 1600px, 100vw" className={styles.viewerImage} />
             </div>
           </div>
           {total > 1 ? (

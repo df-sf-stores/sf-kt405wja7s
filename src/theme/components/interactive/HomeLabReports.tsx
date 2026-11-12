@@ -1,39 +1,24 @@
 'use client'
 
 import { useRef, useState } from 'react'
-import { Link, MerchantImage, useStorefront } from '@dripfunnel/storefront-core/theme'
-import { uploaded } from '../assets'
+import { Link, useStorefront } from '@dripfunnel/storefront-core/theme'
 import { cx } from '../cx'
 import { reports, type ReportKey } from '../labReports'
+import { Picture, reportPicture, type ViewerPicture } from '../themeMedia'
 import { LaboratoryReportViewer, type ReportViewerItem } from './LaboratoryReportViewer'
 import styles from '../../styles/landing.module.css'
 import home from '../../styles/homesections.module.css'
 
-/** A conical flask drawn in a fine line, for a report whose image is still to come. */
-const Flask = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
-    <path d="M18 6h12M20 6v12L10 38a3 3 0 002.7 4h22.6a3 3 0 002.7-4L28 18V6" />
-    <path d="M14.5 30h19" />
-  </svg>
-)
-
-/** One product's report in brief: its page (which opens the viewer) or "coming soon", the product, report number and date. */
-const Card = ({ kind, asset, onView }: { kind: ReportKey; asset: string | null; onView: (returnFocus: () => void) => void }) => {
+/** One product's report in brief: its first page, whole (which opens the viewer), the product, report number and date. */
+const Card = ({ kind, picture, onView }: { kind: ReportKey; picture: ViewerPicture; onView: (returnFocus: () => void) => void }) => {
   const { t } = useStorefront()
   const button = useRef<HTMLButtonElement>(null)
   return (
     <li className={cx(home.report, styles.reveal)}>
       <div className={home.reportMat}>
-        {asset ? (
-          <button ref={button} type="button" className={home.reportButton} onClick={() => onView(() => button.current?.focus())} aria-label={t(`labreports.items.${kind}.viewLabel` as const)}>
-            <MerchantImage asset={asset} alt={t(`labreports.items.${kind}.alt` as const)} ratio={0.7} sizes="(min-width: 1080px) 180px, (min-width: 700px) 30vw, 45vw" className={home.reportImage} />
-          </button>
-        ) : (
-          <div className={home.reportEmpty}>
-            <Flask className={home.reportEmptyIcon} />
-            <span>{t('labreports.gallery.pending')}</span>
-          </div>
-        )}
+        <button ref={button} type="button" className={home.reportButton} onClick={() => onView(() => button.current?.focus())} aria-label={t(`labreports.items.${kind}.viewLabel` as const)}>
+          <Picture picture={picture} alt={t(`labreports.items.${kind}.alt` as const)} uploadRatio={0.7} sizes="(min-width: 1080px) 220px, (min-width: 700px) 30vw, 50vw" className={home.reportImage} />
+        </button>
       </div>
       <div className={home.reportBody}>
         <h3 className={home.reportTitle}>{t(`labreports.items.${kind}.short` as const)}</h3>
@@ -54,14 +39,18 @@ const Card = ({ kind, asset, onView }: { kind: ReportKey; asset: string | null; 
 
 /**
  * Laboratory Test Reports on the home page: what the reports are (from the reports page's own words), the six product
- * reports in brief opening the same viewer, and the reports' own caveat that results relate only to the sample tested.
+ * reports in brief (pictures per reportPicture) opening the same viewer, and the reports' own caveat that
+ * results relate only to the sample tested.
  */
 export const HomeLabReports = () => {
   const { t } = useStorefront()
-  const cards = reports.map((key) => ({ key, asset: uploaded(t(`labreports.assets.${key}` as const)) }))
-  const items: ReportViewerItem[] = cards.flatMap((c) =>
-    c.asset ? [{ key: c.key, asset: c.asset, title: t(`labreports.items.${c.key}.product` as const), issued: t(`labreports.items.${c.key}.issued` as const) }] : [],
-  )
+  const cards = reports.map((key) => ({ key, picture: reportPicture(key, t(`labreports.assets.${key}` as const)) }))
+  const items: ReportViewerItem[] = cards.map(({ key, picture }) => ({
+    ...picture,
+    key,
+    title: t(`labreports.items.${key}.product` as const),
+    issued: t(`labreports.items.${key}.issued` as const),
+  }))
   const [open, setOpen] = useState<number | null>(null)
   const returnTo = useRef<() => void>(undefined)
   const close = () => {
@@ -100,20 +89,20 @@ export const HomeLabReports = () => {
           </Link>
         </div>
         <ul className={home.reportGrid}>
-          {cards.map((c) => (
+          {cards.map((c, index) => (
             <Card
               key={c.key}
               kind={c.key}
-              asset={c.asset}
+              picture={c.picture}
               onView={(returnFocus) => {
                 returnTo.current = returnFocus
-                setOpen(items.findIndex((i) => i.key === c.key))
+                setOpen(index)
               }}
             />
           ))}
         </ul>
       </div>
-      {open !== null && open >= 0 ? <LaboratoryReportViewer key={open} items={items} index={open} onIndex={setOpen} onClose={close} /> : null}
+      {open !== null ? <LaboratoryReportViewer key={open} items={items} index={open} onIndex={setOpen} onClose={close} /> : null}
     </section>
   )
 }

@@ -1,6 +1,8 @@
 /* Certificates & Registrations: forest-green hero, trust indicators, a wide certificate gallery, its viewer and a closing band. */
 
-.page {
+/* The page's colours, on the viewer too, which opens from the home page as well as this one. */
+.page,
+.backdrop {
   --forest: var(--gm-primary);
   --forest-deep: var(--gm-primary-soft);
   --ivory: var(--gm-ivory);
@@ -8,7 +10,9 @@
   --gold-text: var(--gm-gold-text);
   --charcoal: var(--gm-ink);
   --warm-line: #e6e1d4;
+}
 
+.page {
   overflow-x: clip;
   background: var(--ivory);
   color: var(--charcoal);
@@ -213,12 +217,14 @@
   position: relative;
   display: block;
   width: 100%;
-  padding: 14px;
-  border: 1px solid rgb(var(--gm-gold-rgb) / 35%);
+  /* A fixed display area so every card lines up; the document sits whole and centred inside it (object-fit). */
+  box-sizing: border-box;
+  height: 240px;
+  padding: 12px;
+  border: 1px solid #e8e0cc;
   border-radius: 6px;
-  background: var(--ivory);
+  background: #fbf9f2;
   cursor: zoom-in;
-  aspect-ratio: 0.78;
   box-shadow: 0 8px 20px rgb(var(--gm-primary-dark-rgb) / 10%);
 }
 
@@ -268,11 +274,12 @@
   justify-content: center;
   gap: 12px;
   padding: 24px;
+  box-sizing: border-box;
+  height: 240px;
   border: 1px dashed rgb(var(--gm-gold-rgb) / 50%);
   border-radius: 6px;
-  background: var(--ivory);
+  background: #fbf9f2;
   color: var(--muted);
-  aspect-ratio: 0.78;
   font-size: 0.92rem;
   text-align: center;
 }
@@ -502,8 +509,11 @@
   z-index: 99;
   inset: 0;
   display: flex;
+  overflow: hidden;
   align-items: center;
   justify-content: center;
+  /* A scroll container that never passes a wheel or swipe on, so the page behind holds still while a viewer is open. */
+  overscroll-behavior: contain;
   background: rgb(var(--gm-primary-dark-rgb) / 82%);
 }
 
@@ -800,10 +810,21 @@
   }
 }
 
-/* Large desktop: three columns */
-@media (min-width: 1200px) {
+/* Desktop: three columns, with a shorter display area per document */
+@media (min-width: 1024px) {
   .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .matButton,
+  .matEmpty {
+    height: 200px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid {
     gap: 32px;
   }
 }
