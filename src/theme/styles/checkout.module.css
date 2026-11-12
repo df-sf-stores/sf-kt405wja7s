@@ -494,11 +494,16 @@
 
 /* Checkout's footer is light, unlike the main footer, so its sealed pieces keep the page's ink from .shell. */
 /* The checkout footer is light: the credit takes the page's muted ink, at the right. */
+/* The logo at the right; core's "Powered by" line, when shown, sits just before it. */
 .credit {
-  --credit-ink: var(--muted);
   margin-left: auto;
 }
 
 .powered {
   display: block;
+  margin-left: auto;
+}
+
+.powered ~ .credit {
+  margin-left: 0;
 }

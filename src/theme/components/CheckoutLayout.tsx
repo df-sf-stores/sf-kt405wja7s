@@ -29,8 +29,8 @@ export const CheckoutLayout = ({ children }: { children: ReactNode }) => {
       </header>
       <main className={layout.main}>{children}</main>
       <footer className={styles.footer}>
-        <DripFunnelCredit className={styles.credit} />
         <PoweredBy brand={poweredBy} t={t} className={styles.powered} />
+        <DripFunnelCredit className={styles.credit} />
       </footer>
       <ConsentBanner t={t} className={layout.consent} />
     </div>

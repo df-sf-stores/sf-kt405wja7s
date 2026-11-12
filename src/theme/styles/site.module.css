@@ -509,8 +509,8 @@
 }
 
 /* "Powered by" and the DripFunnel logo, one link to DripFunnel's site, at the right of the copyright line and centred
-   on it. No chip: a faint light halo keeps the logo's blue letters readable on the dark green footer. A footer on a
-   light ground (checkout) sets --credit-ink for the words. */
+   on it. No chip: a faint light halo keeps the logo's blue letters readable on the dark green footer. The checkout
+   footer (light) reuses .credit through DripFunnelCredit and sets --credit-ink if it ever shows words. */
 .credit {
   display: inline-flex;
   flex-shrink: 0;
@@ -547,11 +547,6 @@
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 0 1px rgb(255 255 255 / 85%)) drop-shadow(0 0 4px rgb(255 255 255 / 30%));
-}
-
-.powered {
-  display: block;
-  --df-sealed-muted: var(--footer-muted);
 }
 
 /* Focus */

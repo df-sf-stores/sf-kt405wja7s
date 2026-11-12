@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react'
-import { ConsentBanner, Link, PoweredBy, PreviewBanner, useStorefront } from '@dripfunnel/storefront-core/theme'
+import { ConsentBanner, Link, PreviewBanner, ThemeImage, useStorefront } from '@dripfunnel/storefront-core/theme'
 import { BrandLockup } from './BrandLockup'
-import { DripFunnelCredit } from './DripFunnelCredit'
 import { CertificatesFooterLink } from './interactive/CertificatesFooterLink'
 import { LabReportsFooterLink } from './interactive/LabReportsFooterLink'
 import { RecipesFooterLink } from './interactive/RecipesFooterLink'
@@ -9,6 +8,9 @@ import { TestimonialsFooterLink } from './interactive/TestimonialsFooterLink'
 import { SiteHeader } from './interactive/SiteHeader'
 import layout from '../styles/layout.module.css'
 import styles from '../styles/site.module.css'
+
+/** The DripFunnel logo file's own shape (845 × 143), so its box keeps it and nothing is cropped. */
+const DRIPFUNNEL_LOGO_RATIO = 845 / 143
 
 /** Each social network's glyph, by the name Site settings gives it; one without a glyph shows its name. */
 const SocialGlyph = ({ network }: { network: string }) => {
@@ -40,7 +42,7 @@ const SocialGlyph = ({ network }: { network: string }) => {
 }
 
 export const Layout = ({ children }: { children: ReactNode }) => {
-  const { store, t, mode, poweredBy } = useStorefront()
+  const { store, t, mode } = useStorefront()
   const whatsapp = store.social.find((s) => s.network === 'whatsapp')
   const address = store.address ? [store.address.street, store.address.city, store.address.region, store.address.postal].filter(Boolean).join(', ') : ''
   return (
@@ -138,8 +140,10 @@ export const Layout = ({ children }: { children: ReactNode }) => {
         </div>
         <div className={styles.footerBase}>
           <p className={styles.copyright}>{t('common.footer.rights', { store: store.name })}</p>
-          <DripFunnelCredit />
-          <PoweredBy brand={poweredBy} t={t} className={styles.powered} />
+          <Link href={t('common.footer.credit.href')} className={styles.credit}>
+            <span className={styles.creditLabel}>{t('common.footer.credit.label')}</span>
+            <ThemeImage src="dripfunnel.png" alt={t('common.footer.credit.logoAlt')} ratio={DRIPFUNNEL_LOGO_RATIO} sizes="110px" className={styles.creditLogo} />
+          </Link>
         </div>
       </footer>
       {whatsapp ? (
